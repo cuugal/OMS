@@ -1,0 +1,6 @@
+Database changes:
+
+- FA_Audits.fadate - change to type date.  This will result in loss of any bad data (e.g. dates that will not convert), please fix up any dates manually before this operation
+- FA_Audits.faAuditType - new field, type short text.  This will hold the type of audit (e.g. facility, Management, Research, Curriculum)
+- AP_Procedures.prOrigProc - new field, contains the procedure text at the time of audit creation.
+- AD_Users.lgAuditor - new field, flag to show if the user is an auditor

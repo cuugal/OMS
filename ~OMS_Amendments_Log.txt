@@ -1,0 +1,238 @@
+21 July 2006
+Minor typographical amendments to ComplianceMenu.asp
+
+28 July 2006
+AuditWorksheet.asp
+- Corrected formatting of the audit worksheet
+- Made minor typographical amendments e.g. corrected the reference to "HIGH RISK HAZARD PROGRAMS" to "SPECIFIC/HIGH RISK HAZARD PROGRAMS", in line with elsewhere in the OMS; corrected typo of "EHS MANAGMENT" to "EHS MANAGEMENT"
+
+4 Aug 2006 - [CL]
+Amended all references in .asp files in the OMS where the term "Compliance Checking" was used, to become "Compliance Assessment".
+
+4 September 2006 - [CL]
+Made two amendments to the ServiceAgreementReportNA.asp file.
+
+i) Changed an old "EHS Action Plan" reference to "EHS Plan".
+
+OLD:
+The purpose of this EHS Service Agreement is to document the services the <%=rsAP("dpName")%> requires from the EHS Branch to assist in the implementation of the EHS Action Plan.
+
+NEW:
+This Service Agreement documents the services required from the Environment, Health and Safety Branch by the <%=rsAP("dpName")%> to assist in the implementation of its EHS Plan.
+
+ii) Changed the following line, which referred only to Faculties:
+
+OLD:
+<li>Updating the Faculty EHS Plan every <%=rsAP("dpActionPlanDuration")%> years (next one in <%=year(rsAP("apCompletionDate")) + rsAP("dpActionPlanDuration")%>)</li>
+
+NEW:
+<li>Updating the EHS Plan every <%=rsAP("dpActionPlanDuration")%> years (next one in <%=year(rsAP("apCompletionDate")) + rsAP("dpActionPlanDuration")%>)</li>
+
+
+24 October 2006
+1. Updated formatting of the audit report (AuditReport.asp)
+2. Changed "SPECIFIC/HIGH RISK HAZARD PROGRAMS" to "HIGH-RISK HAZARD PROGRAMS" in the IN_STEPS table of the ehs.mdb file, for consistency across the mgmt system.
+[C.Lee]
+
+25 October 2006
+Amended the ActionPlanReport.asp with minor formatting and spelling changes.
+[C.Lee]
+
+27 October 2006
+Corrected minor spelling errors in the AuditMenu.asp file.
+[C.Lee]
+
+7 October 2006
+Corrected minor grammar errors in the ServiceAgreementReport.asp and ServiceAgreementReportNA.asp files.
+[C.Lee]
+
+25 January 2007
+Updated the introductory text in the index.asp file for the OMS front page with content as supplied by DLJ.
+[C.Lee]
+
+29 March 2007
+Shrunk the EHS Branch logo graphic used on:
+the front page (index.asp)
+the header menu (includes/header_menu.asp)
+ActionPlanFormA.asp
+ActionPlanFormB.asp
+ActionPlanReport.asp
+AuditForm.asp
+AuditReport.asp
+AuditWorksheet.asp
+ComplianceForm.asp
+ComplianceReport.asp
+ComplianceWorksheet.asp
+ReportingByFaculty.asp
+ReportingByRequirement.asp
+ReportingByYear.asp
+ServiceAgreementForm.asp
+ServiceAgreementReport.asp
+ServiceAgreementReportNA.asp
+
+
+8 May 2007
+Amended the compliance assessment worksheet and forms (ComplianceWorksheet.asp and ComplianceForm.asp) to include the explanation of the rating scale (0, 1, 2, 3 etc.) for easy reference.
+Also added the rating scale explanation to the ReportingByFaculty.asp file.
+[C.Lee]
+
+
+7 June 2007
+i) Created a new ServiceAgreementStatus.asp file that allows for the comments on the service agreement items to be presented within the comments field directly, and not within a <TEXTAREA> input field. This enables all of the comments to be correctly displayed for printing and taking to a EHS Compliance Assessment meeting. It's a bit of a kludge, as you first have to generate a standard service agreement report from the "super" log-in i.e.
+http://www.oms.uts.edu.au/ServiceAgreementReport_new.asp?apID=349&saID=172
+and then copy and paste the code i.e.
+http://www.oms.uts.edu.au/ServiceAgreementStatus.asp?apID=349&saID=172
+I will add a button to the main menu for a supervisor login (in menu.asp) to enable this function to be more easily accessed shortly. [C.Lee]
+
+ii) Edited Menu.asp so that it allows for the ServiceAgreementStatus.asp file to be linked when SUPER user logs in.
+
+8 June 2007
+Edited index.asp to include references where Faculties/Units have been merged/amalgamated i.e. IWERM into the Faculty of Science etc. in the Login-ID table at the bottom of the index.asp page.
+
+15 June 2007
+OBSERVATION: Elements such as 'high risk hazard programs' are in a different order in body of plan and audit documents to the summary of results. One order is based on chronological sequence of development, the other is based on the 'Display order' field in the DB. Should these be matched up?
+OBSERVATION: Audit results printed from IE gives a incorrect alignment of compliance ratings when printed out. This is due to Hazardous substances/dangerous goods going over a line, while the compliance ratings do not. From this point on there is an incorrect alignment in the printed document. We need to fix this.
+
+16 October 2007
+For ActionPlanFormA.asp, amended the travel section to read "overnight domestic travel".
+For IN_Procedures table within ehs.mdb, amended references from:
+"Escape from UTS" video 
+
+to read:
+"Escape from UTS" emergency evacuation video
+C.Lee
+
+19 October 2007
+Added explanation of compliance ratings to the audit report AuditReport.asp.
+C.Lee
+
+22 October 2007
+Amended the "Contact the EHS Branch" section of the login page, index.asp.
+C.Lee
+
+29 October 2007
+Very slight amendments to the Audit Report file (AuditReport.asp) for the legend of the compliance rating system.
+C.Lee
+
+
+31 October 2007
+Slight changes made to AuditReport.asp formatting (so that the list of high risk hazard programs lines up in the table with its associated compliance ratings).
+C.Lee
+
+29 January 2008
+Amended HTML in the ComplianceReport.asp file so that it validates as valid HTML 4.01 Transitional.
+C.Lee
+
+2 and 3 July 2008
+Amended the Menu.asp and AuditMenu.asp & created ServiceAgreementReportDraft.asp, ActionPlanReportDraft.asp and AuditReportDraft.asp.  Added a function whereby draft audit reports, draft service agreements and draft ehs plans can be printed showing all form fields when logged in as Admin user.
+C.Lee
+
+7 July 2008
+Amended ReportingMenu.asp form field size for Year field [previously it was only 2 characters for the 4-digit year field - changed this to 4 digits].
+C.Lee
+
+7 July 2008
+Cash handling changes
+i) Changed the ipName (under IN_Procedures) for cash handling that read:
+"Provide and pay for Robbery Safety Training"
+to instead become:
+"Ensure cash handlers attend Robbery Safety Training where indicated in cash handling risk assessments".  
+
+ii) Changed the corresponding audit text for the cash handling change specified in i) above.  Change the ipDefaultAuditText (under IN_Procedures) for cash handling that read:
+"Training records and/or invoices sighted"
+to instead become:
+"Training records sighted"
+C. Lee 
+
+
+
+10 July 2008
+Added function to ServiceAgreementMenu.asp whereby draft service agreements can be printed [showing all form fields] when logged in as the Admin user [by calling ServiceAgreementReportDraft.asp].
+C.Lee
+
+
+
+11 August 2008
+Amended index.asp (OMS login page) so that login/passwords for view-only access are brought to the top of this page.
+C.Lee
+
+5 November 2008
+Amended ActionPlanReport.asp and ActionPlanFormB.asp intro paragraphs for clarity & consistency.
+C.Lee
+
+21 May 2009
+Removed <img src="ehslogo2.gif" width="142" height="111" alt="EHS logo" border="0">
+this link to old EHS logo from
+ServiceAgreementForm.asp
+AuditReport.asp
+AuditForm.asp
+ReportingByFaculty.asp
+ReportingByRequirement.asp
+ReportingByYear.asp
+
+
+16 September 2009
+i) In  IN_Requirements, changed from:
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Policy and Procedures available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/emergency/firstaid.html">http://www.ehs.uts.edu.au/emergency/firstaid.html</a> or contact the S&amp;W branch on 1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers</li><li>A UTS poster for displaying the names of First Aid Officers and Emergency Wardens is available from the S&amp;W branch via ext 1102</li>
+
+to:
+
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Policy and Procedures available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/emergency/firstaid.html">http://www.ehs.uts.edu.au/emergency/firstaid.html</a> or contact the S&amp;W branch on 1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers.</li><li>A UTS poster for displaying the names of First Aid Officers and Emergency Wardens is available from the Emergency Procedures Manager via ext 4689.</li>
+
+
+ii) In  IN_Requirements, changed from:
+<li>UTS Security is responsible for emergency management - contact UTS Security on ext 1192 for assistance</li><li><i>Dial 6</i> stickers are available from UTS Security on ext 1192</li><li>UTS Emergency Procedures posters are available from the UTS Emergency Procedures Manager on ext 4689</li><li>Contact the Emergency Procedures Manager on ext 4689 for information on nominating emergency wardens</li><li>The emergency evacuation video - <i>Escape From UTS</i> - can be accessed on the UTS Emergency Procedures web site at <a href="http://www.fmu.uts.edu.au/emergency/index.html">http://www.fmu.uts.edu.au/emergency/index.html</a> and on all computerised lecturns.</li>
+
+to:
+
+<li>Contact the Emergency Procedures Manager within the Facilities Management Unit on ext 4689 for assistance.</li><li><i>Dial 6</i> stickers are available from the Emergency Procedures Manager on ext 4689.</li><li>UTS Emergency Procedures posters are available from the UTS Emergency Procedures Manager on ext 4689</li><li>Contact the Emergency Procedures Manager on ext 4689 for information on nominating emergency wardens</li><li>The <i>Escape From UTS</i> emergency evacuation video can be accessed on the UTS Emergency Procedures web site at <a href="http://www.fmu.uts.edu.au/security/emergencies/escape.html">www.fmu.uts.edu.au/security/emergencies/escape.html</a> and on all computerised lecturns.</li>
+
+
+v) In IN_Requirements, changed from:
+<li>See the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html">http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html</a> or contact the S&amp;W branch on ext 4540 or 1326 if you require assistance with workstation set-up or other ergonomic issues</li><li>To organise an individual workstation ergonomic assessment for staff, contact the S&amp;W branch on ext 4540</li><li>The VDU Workstations factsheet is available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html">http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html</a>.</li><li>Information on how to minimise the risks associated with laptop and notebook computer use is available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/laptops.html">http://www.ehs.uts.edu.au/hazardguidelines/laptops.html</a></li>
+
+to:
+
+<li>See the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/computercomfort.html">www.ehs.uts.edu.au/hazardguidelines/computercomfort.html</a> or contact the S&amp;W branch on ext 4540 or 1326 if you require assistance with workstation set-up or other ergonomic issues.</li><li>To organise an individual workstation ergonomic assessment for staff, contact the S&amp;W branch on ext 4540</li><li>The <i>Computer Comfort</i> factsheet is available from the S&W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/computercomfort.html">www.ehs.uts.edu.au/hazardguidelines/computercomfort.html</a>.</li>
+
+4/5/2010 - C.Lee
+Amended index.asp to include reference to the Creative Industries Innovation Centre entry.
+
+18/6/2010 - C. Lee
+Amended index.asp. Changed references to MCUEVENTS login to instead read MCU. 
+
+7 January 2011 - D Lloyd-Jones
+Removed part of two SQL queries in the file ReportingByYear.asp. This means that the only compliance ratings to be returned in the report at those ratings from Planning Meetings and NOT also those ratings from Compliance Assessments. The database was not changed. See the comments in the file for more detail.
+
+13/12/2012 - C. Lee
+Amended "EHS Policy" references to become "Health and Safety Policy", in:
+ActionPlanReportDraft.asp
+ActionPlanReport.asp
+ActionPlanFormB.asp
+
+
+16/10/2013 - C. Lee
+In keeping with the rest of the system, amended AuditWorksheet.asp to change the following references in the Summary of Results table:
+	"EHS MANAGEMENT" to become "HEALTH AND SAFETY MANAGEMENT"
+	"SPECIFIC/HIGH RISK HAZARD PROGRAMS" to become "SPECIFIC HAZARD PROGRAMS"
+	"EHS PROCEDURES" to become "HEALTH AND SAFETY PROCEDURES"
+
+12/11/2013 - C. Lee
+T Todd has advised todat that the HRU signatory on the service agreement is now to be the Safety & Wellbeing contact for that faculty/unit - this was previously the Safety & Wellbeing Manager.
+I have amended the relevant OMS template files (ServiceAgreementReport.asp; ServiceAgreementReportDraft.aspServiceAgreementReportNA.asp) accordingly.
+
+13/11/2013 - C. Lee
+Amended AuditReport.asp so that it removes references to environment e.g. "ENVIRONMENT, HEALTH AND SAFETY AUDIT REPORT" to become "HEALTH AND SAFETY AUDIT REPORT".
+
+31/3/2014 - C. Lee
+Following launch of the Staff Connect intranet today:
+
+i) In IN_Requirements, changed irResourceList for first aid (irID=3) from:
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Guidelines available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/first-aid/management/">www.safetyandwellbeing.uts.edu.au/first-aid/management/</a> or contact the Human Resources Unit on x1056 for assistance. First aid kits are the responsibility of nominated First Aid Officers.</li><li>A poster for displaying the names of First Aid Officers and Emergency Wardens is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/first-aid/signage/">www.safetyandwellbeing.uts.edu.au/first-aid/signage/</a>.</li>
+
+to:
+
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is available from the <a href="https://staff.uts.edu.au/topichub/Pages/Doing%20my%20job/Health%20and%20Safety/First%20aid/first-aid.aspx">Being a UTS First Aid Officer</a> web page in the Staff Connect intranet, or staff can contact the Human Resources Unit on x1056 for assistance. First aid kits are the responsibility of nominated First Aid Officers.</li><li>A poster for displaying the names of First Aid Officers and Emergency Wardens is available from the <a href="https://staff.uts.edu.au/topichub/Pages/Doing%20my%20job/Health%20and%20Safety/First%20aid/first-aid.aspx">Being a UTS First Aid Officer</a> web page in the Staff Connect intranet.</li>
+
+8/05/2014 - C. Lee
+In IN_Procedures, for ipID=37 : changed erroneous entry for manual handling compliance requirement from, "Provide information on safe work practices to <i>staff</i> at risk" to become "Provide instruction on safe work practices to <i>staff</i> at risk"
