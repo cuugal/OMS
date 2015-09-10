@@ -340,10 +340,10 @@
 			end if
 			
 			'Over-ride this if we have come from a draft plan
-			if rsPro("prChecked") <> No then
+			if rsPro("prChecked") <> False then
 				checked = "checked"
 			end if
-			if rsPro("prChecked") <> Yes then
+			if rsPro("prChecked") <> True then
 				checked = ""
 			end if
 			
@@ -364,7 +364,7 @@
 			if rsPro("ipMandatory") = true then
 				Response.Write "<td><font color='#FF0000'><B>M</B> " & rsPro("ipName") & "</font> " & rsPro("ipDescription")
 			else
-				Response.Write "<td><input type='checkbox' name='pro_" & rsPro("prProcedure") & "' " & checked & ">" & rsPro("ipName") & " " & rsPro("ipDescription")
+				Response.Write "<td><input type='checkbox' name='pro_" & rsPro("prProcedure") & "' " & checked & ">" & rsPro("ipName") & " " & rsPro("ipDescription")		
 			end if
 			
 			'Save the procedure against the plan for future reference in case the procedure changes
