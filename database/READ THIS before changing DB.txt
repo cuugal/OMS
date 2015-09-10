@@ -1,0 +1,11 @@
+Make sure that:
+
+a) there are no current DRAFT PLANS or DRAFT AUDITS when new IN_Requirements OR IN_Procedures are added. 
+b) when changes to IN_Requirements are added, make sure that you create a new draft Plan to test so that the changes flow through.
+
+Otherwise serious formatting problems with draft plan table will ensue.
+
+
+When creating a new field, give the item a new number in the database table.
+When updating a field (e.g. typo) you can reuse the same number.
+When deleting a field, don't reuse the database table number, just make it inactive and put an "X" at the end of the content.

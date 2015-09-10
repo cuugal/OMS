@@ -1,0 +1,1283 @@
+Amendments to the ehs.mdb file
+------------------------------
+
+20 July 2006
+CL made the following changes:
+
+In the table named AD_Departments:
+1) Renamed "International Office" to "UTS International", as advised by David Laws.
+2) Renamed "ELSSA" to "ELSSA Centre"
+3) Renamed "Faculty of Humanities & Social Sciences" to "Faculty of Humanities and Social Sciences", in keeping with that area's naming convention.
+4) Renamed "Executive Group" to "UTS Executive Group", for consistency
+5) Renamed "Access UTS" to blank, removing it from the system. Access UTS is a separate entity to the University.
+6) Renamed "UTS Union" to blank, removing it from the system. The UTS Union is a separate entity to the University.
+
+In the table named Ad_Users
+1) Renamed the view, edit and create logins for UTS International (formerly the International Office) from "io" to "international".
+
+The OMS was tested following these changes and was found to be working correctly.
+
+--
+
+24 July 2006
+CL made the following changes:
+
+In the table named IN_Requirements:
+- Changed all old references in the irResourceList table to reference the new EHS web site's URLS.
+- Corrected minor typographical errors in the same irResourceList table
+
+Changed:
+1)
+<li>Information on how to nominate First Aid Offices and establish and maintain first aid kits is provided in the UTS First Aid Policy and Procedures available from the EHS Web site at <a href="http://www.ehs.uts.edu.au/ehsproc/firstaid.html">http://www.ehs.uts.edu.au/ehsproc/firstaid.html</a> or contact the EHS Branch on 1056 or 1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers</li><li>A UTS poster that displays the names of First Aid Officers is available from the EHS Branch ext 1102 or ext 1056</li>
+
+to
+
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Policy and Procedures available from the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsproc/firstaid.html">http://www.ehs.uts.edu.au/ehsproc/firstaid.html</a> or contact the EHS Branch on 1056 or 1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers</li><li>A UTS poster that displays the names of First Aid Officers is available from the EHS Branch via ext 1102 or ext 1056</li>
+
+2)
+<li> See the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/workstationsetup.html">http://www.ehs.uts.edu.au/hazards/workstationsetup.html</a> or contact the EHS Branch on ext 1056, 1326, or 1062 if you require assistance with workstation set up or other ergonomic issues</li><li>To organise an individual workstation ergonomic assessment for staff, contact the EHS Branch on ext 1056</li><li>The VDU Workstations factsheet is available from the EHS Branch by calling ext 1102, or via the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/workstationsetup.html">http://www.ehs.uts.edu.au/hazards/workstationsetup.html</a>.</li><li>Information on how to minimise the risks associated with laptop and notebook computer use is available from the EHS Branch's web site at <a href="http://www.ehs.uts.edu.au/hazards/laptops.html">http://www.ehs.uts.edu.au/hazards/laptops.html</a></li>
+
+to
+
+<li>See the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/workstationsetup.html">http://www.ehs.uts.edu.au/hazards/workstationsetup.html</a> or contact the EHS Branch on ext 1056, 1326, or 1062 if you require assistance with workstation set-up or other ergonomic issues</li><li>To organise an individual workstation ergonomic assessment for staff, contact the EHS Branch on ext 1056</li><li>The VDU Workstations factsheet is available from the EHS Branch by calling ext 1102, or via the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/workstationsetup.html">http://www.ehs.uts.edu.au/hazards/workstationsetup.html</a>.</li><li>Information on how to minimise the risks associated with laptop and notebook computer use is available from the EHS Branch's web site at <a href="http://www.ehs.uts.edu.au/hazards/laptops.html">http://www.ehs.uts.edu.au/hazards/laptops.html</a></li>
+
+3)
+<li>UTS procedures for the purchase, storage, use and disposal of chemicals 
+    is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/sections/level2/chemical.htm">http://www.ehs.uts.edu.au/sections/level2/chemical.htm</a> 
+    or contact the EHS Branch on ext 1063 for assistance</li>
+  <li>A template for documenting a hazardous substances risk assessment is available 
+    from the EHS web site at <a href="http://www.ehs.uts.edu.au/sections/level2/chemical.htm#policy">http://www.ehs.uts.edu.au/sections/level2/chemical.htm#policy</a></li>
+  <li>UTS procedures for selection, use and maintenance of personal protective 
+    equipment (PPE) are on the EHS Web site at <a href="http://www.ehs.uts.edu.au/sections/level2/ppe.htm">http://www.ehs.uts.edu.au/sections/level2/ppe.htm</a></li>
+  <li>Information on how to dispose of chemical waste at UTS is available from 
+    the disposal of hazardous waste section of the EHS web site at <a href="http://www.ehs.uts.edu.au">http://www.ehs.uts.edu.au</a></li>
+
+to:
+
+<li>UTS procedures for the purchase, storage, use and disposal of chemicals are available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/chemical.html">http://www.ehs.uts.edu.au/hazards/chemical.html</a> or contact the EHS Branch on ext 1063 for assistance</li><li>A template for documenting a hazardous substances risk assessment is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/chemical.html#riskassess">http://www.ehs.uts.edu.au/hazards/chemical.html#riskassess</a></li><li>UTS procedures for selection, use and maintenance of personal protective equipment (PPE) are on the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/ppe.html">http://www.ehs.uts.edu.au/hazards/ppe.html</a></li><li>Information on how to dispose of chemical waste at UTS is available from the Disposal of Hazardous Waste section of the EHS web site at <a href="http://www.ehs.uts.edu.au">http://www.ehs.uts.edu.au</a></li>
+
+3)
+<li>See the EHS web site at <a href="http://www.ehs.uts.edu.au/sections/level2/chemical.htm">http://www.ehs.uts.edu.au/sections/level2/chemical.htm</a> 
+    for more information on UTS procedures for the disposal of hazardous waste 
+    or contact the EHS Branch on ext 1063 for assistance</li>
+  <li>UTS- EHS waste stickers and forms are available from the Disposal of hazardous 
+    waste section of the EHS web site at <a href="http://www.ehs.uts.edu.au/sections/waste/index.htm">http://www.ehs.uts.edu.au/sections/waste/index.htm</a></li>
+  <li>Schedule for disposal of chemical waste and location of waste depots is 
+    available from the EHS web site at <a href="http://www.ehs.uts.edu.au/sections/waste/index.htm">http://www.ehs.uts.edu.au/sections/waste/index.htm</a></li>
+
+to:
+
+<li>See the Hazardous Waste Disposal section of the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/hazardouswaste.html">http://www.ehs.uts.edu.au/hazards/hazardouswaste.html</a> for information on UTS procedures for the disposal of hazardous waste</a>
+<li>For UTS hazardous waste stickers and forms, or for assistance on hazardous waste disposal, contact the EHS Branch on ext 1063</li><li>The schedule for hazardous chemical waste disposal is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/wastecollectiondates.html">http://www.ehs.uts.edu.au/hazards/wastecollectiondates.html</a></li>
+
+
+4)
+<li>For information electrical safety and UTS procedures for inspecting and 
+    testing electrical equipment see the EHS web site at <a href="http://www.uts.edu.au/div/hru/ehs/sections/level2/electricalra.html">http://www.uts.edu.au/div/hru/ehs/sections/level2/electricalra.html</a> 
+    or contact the EHS Branch on ext 1063 for assistance</li>
+  <li>Contact EHS Branch on ext 1063 to organise training in use of Portable Appliance 
+    Tester
+  </li>
+
+To:
+
+<li>For information on electrical safety and UTS's procedures for inspecting and testing electrical equipment, see the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/electrical.html">http://www.ehs.uts.edu.au/hazards/electrical.html</a> or contact the EHS Branch on ext 1063 for assistance</li><li>Contact the EHS Branch on ext 1063 to organise training in use of the Portable Appliance Tester, or for assistance in the development of an electrical testing protocol</li>
+
+5) irFormADescription for Plant/Equipment Safety
+FROM:
+- Plant/ equipment<br>- Lifts/ hoists/ cranes<br>- Pressure vessels/boilers/compressed gases
+
+TO:
+- Plant/equipment<br>- Lifts/hoists/cranes<br>- Pressure vessels/boilers/compressed gases
+
+irResourceList for Plant/Equipment Safety
+FROM:
+<li>For information on how to implement program/procedures for plant/equipment 
+    safety see the risk management section of the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a> 
+    or contact EHS Branch on ext 1326, 1063 or 1062 for assistance</li>
+  <li>A process and template for conducting and documenting risk assessments for 
+    high-risk plant and equipment is available from the risk management section 
+    of the EHS web site -<a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li>
+  <li>A template for documenting Safe Work Method Statements for tasks involving 
+    high risk plant and equipment is available from the risk management section 
+    of the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li>
+  <li>UTS procedures for selection, use and maintenance of personal protective 
+    equipment (PPE) are on the EHS Web site at <a href="http://www.ehs.uts.edu.au/sections/level2/ppe.htm">http://www.ehs.uts.edu.au/sections/level2/ppe.htm</a></li>
+
+TO:
+<li>For information on how to implement a program or procedures for plant/equipment safety, see both the risk management (<a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a>) and plant/equipment safety (<a href="http://www.ehs.uts.edu.au/hazards/plant.html">http://www.ehs.uts.edu.au/hazards/plant.html</a>) sections of the EHS web site, or contact the EHS Branch on ext 1326, 1063 or 1062 for assistance</li><li>A process and template for conducting and documenting risk assessments for high-risk plant and equipment is available from the risk management section of the EHS web site - <a href="http://www.ehs.uts.edu.au/riskmgt/">http://www.ehs.uts.edu.au/riskmgt/</a></li><li>A template for documenting Safe Work Method Statements for tasks involving high-risk plant and equipment is available from the risk management section of the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/ppe.html">http://www.ehs.uts.edu.au/hazards/ppe.html</a></li>
+
+
+5) For irResourceList for Noise
+FROM:
+
+<li> Contact EHS Branch on ext 1326 or ext 1063 for assistance to measure and 
+    document noise levels and implement controls </li>
+
+TO:
+<li>Contact EHS Branch on ext 1326 or ext 1063 for assistance in measuring and documenting noise levels and implementing controls</li>
+
+6) For irResourceList for Radiation:
+FROM:
+  <li> For assistance with implementing the UTS radiation safety program contact 
+    the EHS Branch on ext 1063. For information on unsealed sources contact Bill 
+    Booth, Radiation Safety Officer on ext 4107 </li>
+  <li>A template for documenting Safe Work Method Statements is available from 
+    the risk management section of the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a> 
+  </li>
+
+TO:
+<li>For assistance with implementing the UTS radiation safety program, contact 
+the EHS Branch on ext 1063 or the Radiation Safety section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/hazards/radiation.html">http://www.ehs.uts.edu.au/hazards/radiation.html</a>. For information on unsealed sources, contact Bill Booth, Radiation Safety Officer on ext 4107</li><li>A template for documenting Safe Work Method Statements is available from the risk management section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li>
+
+
+
+
+---
+Updates to the irResourceList URLs - 3 August 2006 - [CL]
+1) For the "Contractor Safety in Construction Work" item, changed the irResourceList entry..
+FROM:
+<li>UTS Permit-to-Work Passes are issued by UTS Security and must be carried 
+    by all contractor and sub-contractor staff at all times whilst working on 
+    a UTS site</li>
+  <li>Safety Rules and Working Conditions for contractors are available from the 
+    EHS web site at <a href="http://www.ehs.uts.edu.au/sections/level2/consaf.htm">http://www.ehs.uts.edu.au/sections/level2/consaf.htm</a></li>
+  <li>A process and template for contactors to document a Risk Management Plan 
+    is available from the risk management section of the EHS web site <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li>
+
+TO:
+
+<li>UTS Permit-to-Work Passes are issued by UTS Security and must be carried by all contractor and sub-contractor staff at all times whilst working on UTS sites</li><li>Safety Rules and Working Conditions for contractors are available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/contractorrules.html">http://www.ehs.uts.edu.au/hazards/contractorrules.html</a></li><li>A process and template for contactors to document a Risk Management Plan is available from the risk management section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li>
+
+2) For the "Fieldwork" item, changed the irResourceList entry...
+FROM:
+<li>For assistance with EHS issues related to field work safety contact EHS 
+    Branch on ext 1063, 1326 or 1062</li>
+  <li>A process and templates for documenting risk assessments and Safe Work Method 
+    Statements for fieldwork are available from the Risk Management section of 
+    the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li>
+
+TO:
+<li>For assistance with EHS issues related to field work safety, contact the EHS Branch on ext 1063, 1326 or 1062</li><li>A process and templates for documenting risk assessments and Safe Work Method Statements for fieldwork are available from the Risk Management section of the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li>
+
+3) For the "High Risk Facilities and Work Areas" item;
+
+Changed the irFormADescription..
+FROM:
+Work in:<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;- Laboratories<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;- Workshops<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;- Plant rooms<br>
+TO:
+Work in:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Laboratories<br>&nbsp;&nbsp;&nbsp;&nbsp;- Workshops<br>&nbsp;&nbsp;&nbsp;&nbsp;- Plant rooms<br>
+
+& changed the irResourceList entry...
+FROM:
+<li>Contact the EHS Branch on ext 1326, 1063 or 1062 if you require assistance 
+    with EHS issues in high risk facilities and work areas</li>
+  <li>The UTS Hazard Information Poster is available from the EHS Branch on ext 
+    1102 or ext 1092. See the EHS web site at <a href="http://www.ehs.uts.edu.au/sections/level2/hazsigns.htm">http://www.ehs.uts.edu.au/sections/level2/hazsigns.htm</a> 
+    for more information</li>
+  <li>A checklist for conducting and documenting workplace inspections in laboratories 
+    and workshops is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/sections/level2/labinspe.htm">http://www.ehs.uts.edu.au/sections/level2/labinspe.htm</a></li>
+  <li>A checklist of contents for orientation of new staff/students is available 
+    from the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li>
+  <li>Information on establishing and documenting an accreditation program for 
+    students working in laboratories and workshops is available from the EHS web 
+    site at <a href="http://www.ehs.uts.edu.au/sections/level2/acredit.htm">http://www.ehs.uts.edu.au/sections/level2/acredit.htm</a></li>
+
+TO:
+<li>Contact the EHS Branch on ext 1326, 1063 or 1062 if you require assistance with EHS issues in high risk facilities and work areas</li><li>The UTS Hazard Information Poster is available from the EHS Branch on ext 1102 or 1342. See the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/hazardposter.html">http://www.ehs.uts.edu.au/hazards/hazardposter.html</a> for more information</li><li>A checklist for conducting and documenting workplace inspections in laboratories and workshops is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsproc/labchecklist.html">http://www.ehs.uts.edu.au/ehsproc/labchecklist.html</a></li>
+<li>A checklist of contents for orientation of new staff/students is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li><li>Information on establishing and documenting an accreditation program for students working in laboratories and workshops is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/accreditationprograms.html">http://www.ehs.uts.edu.au/hazards/accreditationprograms.html</a></li>
+
+
+----
+
+
+4) For the "Information" item, changed the irResourceList entry...
+
+FROM:
+<li>EHS web stickers and EHS fact sheets are available from the EHS Branch on ext 1102 or ext 1092</li>
+
+TO:
+<li>EHS web stickers and EHS fact sheets are available from the EHS Branch on ext 1102</li>
+
+
+-----------------------------------------------------
+Updates to the IN_Procedures table - 3 August 2006
+- ipDefaultText updates - corrected spelling and grammatical errors.
+FROM: Evident that staff have viewed the Escape from UTS video.
+TO: Evidence that staff have viewed the Escape from UTS video.
+
+FROM: Evident that students have viewd the Escape from UTS video.
+TO: Evidence that students have viewed the Escape from UTS video.
+
+FROM: Evident that staff are encouraged to participate in emergency exercises.
+TO: Evidence that staff are encouraged to participate in emergency exercises.
+
+FROM: Evident that staff/ students at risk aware of, and follow, safe work procedures
+TO: Evidence that staff/students at risk are aware of, and follow, safe work procedures
+
+FROM: Observed evidence that immunisation guidelines are folowed.
+TO: Observed evidence that immunisation guidelines are followed.
+
+FROM: Sighted printers and photocopiers defaulted to double sided printing.
+TO: Observed that printers and photocopiers default to double-sided printing.
+
+FROM: Staff report that recycled paper and toner cartridges are purchased. Sighted evidence of recycled paper and cartidges being used.
+TO: Staff report that recycled paper and toner cartridges are purchased. Observed evidence of recycled paper and cartridges being used.
+
+FROM: Observed documented risk assessments available and easily accessible for * high risk projects/ tasks (list if appropriate)
+TO: Observed that documented risk assessments are available and easily accessible for high risk projects/tasks (list if appropriate)
+
+FROM: Observed documented safe work method statements available and easily accessible for * high risk projects/ tasks (list if appropriate)
+TO: Observed that documented safe work method statements are available and easily accessible for high risk projects/tasks (list if appropriate)
+
+FROM: Identify staff/students at risk and, Provide training as appropriate
+TO: Identify staff/students at risk and provide training as appropriate
+
+FROM: Identify high-risk manual handling tasks and contact EHS to perform risk assessment/training
+TO: Identify high-risk manual handling tasks and contact EHS to perform risk assessments/training
+
+FROM: Make available safe work procedures for high risk activities
+TO: Make safe work procedures available for high risk activities
+
+FROM: Provide Personal Protective Equipment (PPE) as required
+TO: Provide personal protective equipment (PPE) as required
+
+FROM: Provide medical assessment for needlesticks (post exposure)
+TO: Provide medical assessment for needlesticks (post-exposure)
+
+FROM: Provide personal protective equipment
+TO: Provide personal protective equipment (PPE)
+
+FROM: Report hazards through faculty/unit email network
+TO: Report hazards through faculty/unit e-mail network
+
+FROM: Provide 'VDU workstations factsheet'
+TO: Provide the 'VDU workstations' factsheet
+
+FROM: Make available safe work procedures for high risk activities
+TO: Make safe work procedures available for high risk activities
+
+FROM: Provide barriers and PPE
+TO: Provide barriers and personal protective equipment (PPE)
+
+FROM: Reported that access is restricted by (note system) to (note who) and that new staff/students are supervised until they are competent to undertake high risk activities/ use high risk plant/ equipment/substances/ materials
+TO: Reported that access is restricted by (note system) to (note whom) and that new staff/students are supervised until they are competent to undertake high risk activities/use high risk plant/equipment/substances/materials
+
+FROM: Reported that managers/ supervisors responsibilities for EHS are included PD’s/work plans. Copy of PD/work plan sighted.
+TO: Reported that manager's/supervisor's EHS responsibilities are included in position descriptions/work plans. Copy of PD/work plan sighted.
+
+FROM: Reported that specific EHS responsibilities are included in PD’s/ work plans for (note position). Copy sighted
+TO: Reported that specific EHS responsibilities are included in PDs/work plans for (note position). Copy sighted.
+
+FROM: Reported that links to EHS information are available on faculty/unit web site. Auditor observed information post audit
+TO: Reported that links to EHS information are available on faculty/unit web site. Auditor observed information post-audit.
+
+
+Added an Audit Criteria - for "Display 'EHS and Security' poster in work areas", added the following criteria:
+Sighted the 'EHS and Security' poster in work area/s
+
+
+
+FROM: Reported that EHS Is a regular agenda item at faculty/unit meetings and that minutes of meetings are circulated. Copies of minutes sighted
+TO: Reported that EHS is a regular agenda item at faculty/unit meetings and that minutes of meetings are circulated. Copies of minutes sighted.
+
+FROM: Reported that consultation on EHS Issues is maintained through email network. Demonstrated awareness of how to raise EHS issues, reported by example how email network works
+TO: Reported that consultation on EHS issues is maintained via e-mail. Demonstrated awareness of how to raise EHS issues, reported how e-mail network operates by example.
+
+
+---------------------------------------------------------------------------
+Updates to IN_Procedures In_MAP and IN_Lists 21 Nov 2006 [dlj]
+
+Changed cash handling Section
+
+New procedures 123-126
+New corresponding Audit Compliance
+New EHS Plan dot point items (IPId) 164 mapped to 92, 93, 94
+Added Cash in transit to list of Descriptors in Procedures
+STOP PRESS - could not make these changes active until 2 outstanding draft plans are finalised
+
+---------------------------------------------------------------------------
+Updates to IN_Procedures 20 Feb2007 [dlj]
+
+Removed reference to 'Quick And Obvious'in Plant requirement and High risk facility requirement, so requirements now just refer to 'a risk assessment'.
+
+Change 'Use' to 'Ensure students and staff use' in 3 instances - communicable diseases and haz subs waste disposal.  
+
+---------------------------------------------------------------------------
+Update to IN_Procedures 26 Feb2007 [dlj]
+
+Amended the compliance requirement within the "Research/Consulting" section that reads:
+"Include training on safe work practices for all relevant high risk hazards in orientation for staff"
+to say
+"Include EHS safe work practices for specific high risk hazards in orientation for staff"
+
+Amended
+"Include EHS safe work practices for specific high risk hazards in orientation at faculty level for students"
+to say
+"Include EHS safe work practices for specific high risk hazards in faculty level orientation for students"
+
+
+---------------------------------------------------------------------------
+
+Update to IN_Procedures 12 April 2007 [dlj]
+Made active the new requirements for cash handling (display order 120-127), now that all plans have been finalised.
+
+---------------------------------------------------------------------------
+
+Updates to URLs [clee]
+Fixed incorrect (old) URLs (and some grammatical errors) called by the "RESOURCE LIST" section of the ActionPlanReport.asp file from ehs.mdb. These are located in the IN_Requirements table, irResourceList column.
+
+Fix incorrect (old) URLs (and some grammatical errors) called by the "RESOURCE LIST" section of the ActionPlanReport.asp file from ehs.mdb.
+
+30-10-2007 a)
+FROM:
+<li>A basic workplace inspection checklist for conducting and documenting workplace inspections is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsproc/basicchecklist.html">http://www.ehs.uts.edu.au/ehsproc/basicchecklist.html</a></li><li>A laboratory, workshop and chemical stores safety inspection checklist is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsproc/labchecklist.html">http://www.ehs.uts.edu.au/ehsproc/labchecklist.html</a>.</li>
+
+TO:
+<li>A basic workplace inspection checklist for conducting and documenting workplace inspections is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/workingsafely/ehsriskandsafetychecklist.html">http://www.ehs.uts.edu.au/workingsafely/ehsriskandsafetychecklist.html</a></li><li>A laboratory, workshop and chemical stores safety inspection checklist is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/workingsafely/labchecklist.html">http://www.ehs.uts.edu.au/workingsafely/labchecklist.html</a>.</li>
+
+30-10-2007 b)
+FROM:
+<li>UTS Accident/Incident Report Books are available from the EHS Branch on ext 1102 or ext 1056</li>
+<li>The EHS Branch provides an annual report to all Faculties and Units, containing information on accidents/incidents and workers' compensation claims.</li>
+
+TO:
+<li>UTS Accident/Incident Report Forms are available from the EHS Branch website at <a href="http://www.ehs.uts.edu.au/forms">http://www.ehs.uts.edu.au/forms</a>.</li>
+<li>The EHS Branch provides an annual report to all Faculties and Units, containing information on accidents/incidents and workers' compensation claims.</li>
+
+30-10-2007 c)
+FROM:
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Policy and Procedures available from the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsproc/firstaid.html">http://www.ehs.uts.edu.au/ehsproc/firstaid.html</a> or contact the EHS Branch on 1056 or 1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers</li><li>A UTS poster that displays the names of First Aid Officers is available from the EHS Branch via ext 1102 or ext 1056</li>
+
+TO:
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Policy and Procedures available from the EHS web site at <a href="http://www.ehs.uts.edu.au/emergency/firstaid.html">http://www.ehs.uts.edu.au/emergency/firstaid.html</a> or contact the EHS Branch on 1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers</li><li>A UTS poster for displaying the names of First Aid Officers and Emergency Wardens is available from the EHS Branch via ext 1102</li>
+
+30-10-2007 c) irDetailedDescription
+FROM:
+Information on how to nominate first aid officers is on the EHS web site <br>
+UTS First Aid poster is available from the EHS Branch<br>
+First aid kits are the responsibility of nominated First Aid Officers
+
+TO:
+Information on how to nominate first aid officers is on the EHS web site <br>
+UTS First Aid Officer and Emergency Wardens poster is available from the EHS Branch<br>
+First aid kits are the responsibility of nominated First Aid Officers
+
+30-10-2007 d)
+FROM:
+<li>UTS Security is responsible for emergency management - contact UTS Security on ext 1192 for assistance</li><li><i>Dial 6</i> stickers are available from UTS Security on ext 1192</li><li>UTS Emergency Posters are available from the UTS Emergency Procedures Manager on ext 4689</li><li>Contact the Emergency Procedures Manager on 4689 for information on nominating emergency wardens</li><li>The emergency evacuation video - <i>Escape From UTS</i> - can be accessed on the UTS Emergency Procedures web site at <a href="http://www.fmu.uts.edu.au/emergency/index.html">http://www.fmu.uts.edu.au/emergency/index.html</a> and on all ITS lecturns.</li>
+
+TO:
+<li>UTS Security is responsible for emergency management - contact UTS Security on ext 1192 for assistance</li><li><i>Dial 6</i> stickers are available from UTS Security on ext 1192</li><li>UTS Emergency Procedures posters are available from the UTS Emergency Procedures Manager on ext 4689</li><li>Contact the Emergency Procedures Manager on ext 4689 for information on nominating emergency wardens</li><li>The emergency evacuation video - <i>Escape From UTS</i> - can be accessed on the UTS Emergency Procedures web site at <a href="http://www.fmu.uts.edu.au/emergency/index.html">http://www.fmu.uts.edu.au/emergency/index.html</a> and on all ITS lecturns.</li>
+
+
+30-10-2007 e)
+FROM:
+<li>The EHS Branch's Wellness &amp; Health Promotion web page <a href="http://www.ehs.uts.edu.au/ehsmgt/wellness.html">http://www.ehs.uts.edu.au/ehsmgt/wellness.html</a> has a range of links with information to support Faculties and Units in promoting wellness and health. These include links to health promotion topics and activities, and links to national organisations which offer advice on a range of health/life difficulties such as depression, relationship breakdown, cancer and heart disease.</li>
+
+TO:
+<li>The EHS Branch's Wellness &amp; Health Promotion web page, at <a href="http://www.ehs.uts.edu.au/wellness/">http://www.ehs.uts.edu.au/wellness/</a>, has a range of links with information to support Faculties and Units in promoting wellness and health. These include links to health promotion topics and activities, and links to national organisations which offer advice on a range of health/life difficulties such as depression, relationship breakdown, cancer and heart disease.</li>
+
+
+
+30-10-2007 f)
+FROM:
+<li>See the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/workstationsetup.html">http://www.ehs.uts.edu.au/hazards/workstationsetup.html</a> or contact the EHS Branch on ext 1056, 1326, or 1062 if you require assistance with workstation set-up or other ergonomic issues</li><li>To organise an individual workstation ergonomic assessment for staff, contact the EHS Branch on ext 1056</li><li>The VDU Workstations factsheet is available from the EHS Branch by calling ext 1102, or via the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/workstationsetup.html">http://www.ehs.uts.edu.au/hazards/workstationsetup.html</a>.</li><li>Information on how to minimise the risks associated with laptop and notebook computer use is available from the EHS Branch's web site at <a href="http://www.ehs.uts.edu.au/hazards/laptops.html">http://www.ehs.uts.edu.au/hazards/laptops.html</a></li>
+
+TO:
+<li>See the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html">http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html</a> or contact the EHS Branch on ext 1056, 1326, or 1062 if you require assistance with workstation set-up or other ergonomic issues</li><li>To organise an individual workstation ergonomic assessment for staff, contact the EHS Branch on ext 1056</li><li>The VDU Workstations factsheet is available from the EHS Branch by calling ext 1102, or via the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html">http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html</a>.</li><li>Information on how to minimise the risks associated with laptop and notebook computer use is available from the EHS Branch's web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/laptops.html">http://www.ehs.uts.edu.au/hazardguidelines/laptops.html</a></li>
+
+30-10-2007 g) irFormADescription
+FROM:
+ - Domestic or overseas travel as part of work or study (UTS approved travel)
+
+TO:
+ - Overnight domestic or overseas travel as part of work or study (UTS-approved travel)
+
+
+30-10-2007 h)
+FROM:
+<li>More information on how to minimise the risks associated with manual handling is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/manualhandling.html">http://www.ehs.uts.edu.au/hazards/manualhandling.html</a> 
+or contact the EHS Branch for assistance on 1056 or 1326</li><li>A documented risk assessment is recommended for high-risk manual handling tasks. A process and template for conducting and documenting risk assessments is available from the Risk Management section of the EHS web site -<a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li>
+<li>A template for documenting a Safe Work Method Statement is available from 
+the Risk Management section of the EHS web site - <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li><li>Contact the EHS Branch on ext 1102 to coordinate an information/training session on manual handling</li>
+
+TO:
+<li>More information on how to minimise the risks associated with manual handling is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/manualhandling.html">http://www.ehs.uts.edu.au/hazardguidelines/manualhandling.html</a> 
+or contact the EHS Branch for assistance on 1056 or 1326</li><li>A documented risk assessment is recommended for high-risk manual handling tasks. A process and template for conducting and documenting a risk assessment, as well as documenting a safe work method statement, is available from the Risk Management section of the EHS web site - <a href="http://www.ehs.uts.edu.au/riskmgt/ehsrmatuts.html">http://www.ehs.uts.edu.au/riskmgt/ehsrmatuts.html</a></li>
+<li>Contact the EHS Branch on ext 1102 to coordinate an information/training session on manual handling</li>
+
+
+30-10-2007 i)
+FROM:
+<li>Procedure for applying for UTS Biosafety Committee approval is available from the 
+Biosafety web site at <a href="http://www.uts.edu.au/research/policies/biosafety.html">http://www.uts.edu.au/research/policies/biosafety.html</a></li><li>A template for documenting Safe Work Method Statements for high risk activities is available from the risk management section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the EHS web site, at <a href="http://www.ehs.uts.edu.au/hazards/ppe.html">http://www.ehs.uts.edu.au/hazards/ppe.html</a></li>
+<li>Information on how to dispose of hazardous waste at UTS is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/hazardouswaste.html">http://www.ehs.uts.edu.au/hazards/hazardouswaste.html</a></li>
+
+TO:
+<li>Procedure for applying for UTS Biosafety Committee approval is available from the 
+Biosafety web site at <a href="http://www.uts.edu.au/research/policies/biosafety.html">http://www.uts.edu.au/research/policies/biosafety.html</a></li><li>A template for documenting Safe Work Method Statements for high-risk activities is available from the risk management section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the EHS web site, at <a href="http://www.ehs.uts.edu.au/riskmgt/ppe.html">http://www.ehs.uts.edu.au/riskmgt/ppe.html</a></li>
+<li>Information on how to dispose of hazardous waste at UTS is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/hazardouswaste.html">http://www.ehs.uts.edu.au/hazardguidelines/hazardouswaste.html</a></li>
+
+30-10-2007 j)
+FROM:
+<li>UTS procedures for the purchase, storage, use and disposal of chemicals are available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/chemical.html">http://www.ehs.uts.edu.au/hazards/chemical.html</a> or contact the EHS Branch on ext 1063 for assistance</li><li>A template for documenting a hazardous substances risk assessment is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/chemical.html#riskassess">http://www.ehs.uts.edu.au/hazards/chemical.html#riskassess</a></li><li>UTS procedures for selection, use and maintenance of personal protective equipment (PPE) are on the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/ppe.html">http://www.ehs.uts.edu.au/hazards/ppe.html</a></li><li>Information on how to dispose of chemical waste at UTS is available from the Disposal of Hazardous Waste section of the EHS web site at <a href="http://www.ehs.uts.edu.au">http://www.ehs.uts.edu.au</a></li>
+
+TO:
+<li>UTS procedures for the purchase, storage, use and disposal of chemicals are available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/chemical.html">http://www.ehs.uts.edu.au/hazardguidelines/chemical.html</a> or contact the EHS Branch on ext 1063 for assistance</li><li>A template for documenting a hazardous substances risk assessment is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/forms/">http://www.ehs.uts.edu.au/forms/</a></li><li>UTS procedures for selection, use and maintenance of personal protective equipment (PPE) are on the EHS web site at <a href="http://www.ehs.uts.edu.au/riskmgt/ppe.html">http://www.ehs.uts.edu.au/riskmgt/ppe.html</a></li><li>Information on how to dispose of chemical waste at UTS is available from the Disposal of Hazardous Waste section of the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/hazardouswaste.html">http://www.ehs.uts.edu.au/hazardguidelines/hazardouswaste.html</a></li>
+
+
+30-10-2007 k)
+FROM:
+<li>See the Hazardous Waste Disposal section of the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/hazardouswaste.html">http://www.ehs.uts.edu.au/hazards/hazardouswaste.html</a> for information on UTS procedures for the disposal of hazardous waste</a>
+<li>For UTS hazardous waste stickers and forms, or for assistance on hazardous waste disposal, contact the EHS Branch on ext 1063</li><li>The schedule for hazardous chemical waste disposal is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/wastecollectiondates.html">http://www.ehs.uts.edu.au/hazards/wastecollectiondates.html</a></li>
+
+TO:
+<li>See the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/hazardouswaste.html">http://www.ehs.uts.edu.au/hazardguidelines/hazardouswaste.html</a> for information on UTS procedures for the disposal of hazardous waste</a>
+<li>For UTS hazardous waste stickers and forms, or for assistance on hazardous waste disposal, contact the EHS Branch on ext 1063</li><li>The schedule for hazardous chemical waste disposal is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/wastecollectiondates.html">http://www.ehs.uts.edu.au/hazardguidelines/wastecollectiondates.html</a></li>
+
+
+30-10-2007 l)
+FROM:
+<li>For information on electrical safety and UTS's procedures for inspecting and testing electrical equipment, see the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/electrical.html">http://www.ehs.uts.edu.au/hazards/electrical.html</a> or contact the EHS Branch on ext 1063 for assistance</li><li>Contact the EHS Branch on ext 1063 to organise training in use of the Portable Appliance Tester, or for assistance in the development of an electrical testing protocol</li>
+
+TO:
+<li>For information on electrical safety and UTS's procedures for inspecting and testing electrical equipment, see the EHS web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/electrical.html">http://www.ehs.uts.edu.au/hazardguidelines/electrical.html</a> or contact the EHS Branch on ext 1063 for assistance</li><li>Contact the EHS Branch on ext 1063 to organise training in use of the Portable Appliance Tester, or for assistance in the development of an electrical testing protocol</li>
+
+30-10-2007 m)
+FROM:
+<li>For information on how to implement a program or procedures for plant/equipment safety, see both the risk management (<a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a>) and plant/equipment safety (<a href="http://www.ehs.uts.edu.au/hazards/plant.html">http://www.ehs.uts.edu.au/hazards/plant.html</a>) sections of the EHS web site, or contact the EHS Branch on ext 1326, 1063 or 1062 for assistance</li><li>A process and template for conducting and documenting risk assessments for 
+high-risk plant and equipment is available from the risk management section 
+of the EHS web site - <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li><li>A template for documenting Safe Work Method Statements for tasks involving 
+high risk plant and equipment is available from the risk management section 
+of the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/ppe.html">http://www.ehs.uts.edu.au/hazards/ppe.html</a></li>
+
+TO:
+<li>For information on how to implement a program or procedures for plant/equipment safety, see the plant/equipment safety section of the EHS web site (at <a href="http://www.ehs.uts.edu.au/hazardguidelines/plant.html">http://www.ehs.uts.edu.au/hazardguidelines/plant.html</a>), or contact the EHS Branch on ext 1326, 1063 or 1062 for assistance</li><li>A process and templates for documenting risk assessments and Safe Work Method Statements for tasks involving high-risk plant and equipment is available from the risk management section of the EHS web site at <a href="http://www.ehs.uts.edu.au/riskmgt/">http://www.ehs.uts.edu.au/riskmgt/</a></li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the EHS web site at <a href="http://www.ehs.uts.edu.au/riskmgt/ppe.html">http://www.ehs.uts.edu.au/riskmgt/ppe.html</a></li>
+
+
+30-10-2007 n)
+FROM:
+<li>For assistance with implementing the UTS radiation safety program, contact 
+the EHS Branch on ext 1063 or the Radiation Safety section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/hazards/radiation.html">http://www.ehs.uts.edu.au/hazards/radiation.html</a>. For information on unsealed sources, contact Bill Booth, Radiation Safety Officer on ext 4107</li><li>A template for documenting Safe Work Method Statements is available from the risk management section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li>
+
+TO:
+<li>For assistance with implementing the UTS radiation safety program, contact the EHS Branch on ext 1063 or the Radiation Safety section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/hazardguidelines/radiation.html">http://www.ehs.uts.edu.au/hazardguidelines/radiation.html</a>. For information on unsealed sources, contact Bill Booth, Radiation Safety Officer on ext 4107</li><li>A template for documenting Safe Work Method Statements is available from the risk management section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/riskmgt/">http://www.ehs.uts.edu.au/riskmgt/</a></li>
+
+30-10-2007 o)
+FROM:
+<li>UTS Permit-to-Work Passes are issued by UTS Security and must be carried by all contractor and sub-contractor staff at all times whilst working on UTS sites</li><li>Safety Rules and Working Conditions for contractors are available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/contractorrules.html">http://www.ehs.uts.edu.au/hazards/contractorrules.html</a></li><li>A process and template for contactors to document a Risk Management Plan is available from the risk management section of the EHS web site, at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li>
+
+TO:
+<li>UTS Permit-to-Work Passes are issued by UTS Security and must be carried by all contractor and sub-contractor staff at all times whilst working on UTS sites</li><li>Safety Rules and Working Conditions for contractors, as well as a process and template for contactors to document a Risk Management Plan, are available from the EHS web site at <a href="http://www.ehs.uts.edu.au/workingsafely/contractors.html">http://www.ehs.uts.edu.au/workingsafely/contractors.html</a></li>
+
+
+30-10-2007 p)
+FROM:
+<li>For assistance with EHS issues related to field work safety, contact the EHS Branch on ext 1063, 1326 or 1062</li><li>A process and templates for documenting risk assessments and Safe Work Method Statements for fieldwork are available from the Risk Management section of the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html">http://www.ehs.uts.edu.au/ehsmgt/riskmgt.html</a></li>
+
+TO:
+<li>For assistance with issues related to fieldwork health and safety, contact the EHS Branch on ext 1063, 1326 or 1062</li><li>A process and templates for documenting risk assessments and Safe Work Method Statements for fieldwork are available from the EHS web site at <a href="http://www.ehs.uts.edu.au/workingsafely/fieldwork.html">http://www.ehs.uts.edu.au/workingsafely/fieldwork.html</a></li>
+
+30-10-2007 q)
+FROM:
+<li>Contact the EHS Branch on ext 1326, 1063 or 1062 if you require assistance with EHS issues in high risk facilities and work areas</li><li>The UTS Hazard Information Poster is available from the EHS Branch on ext 1102 or 1342. See the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/hazardposter.html">http://www.ehs.uts.edu.au/hazards/hazardposter.html</a> for more information</li><li>A checklist for conducting and documenting workplace inspections in laboratories and workshops is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/ehsproc/labchecklist.html">http://www.ehs.uts.edu.au/ehsproc/labchecklist.html</a></li>
+<li>A checklist of contents for orientation of new staff/students is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li><li>Information on establishing and documenting an accreditation program for students working in laboratories and workshops is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/hazards/accreditationprograms.html">http://www.ehs.uts.edu.au/hazards/accreditationprograms.html</a></li>
+
+TO:
+<li>Contact the EHS Branch on ext 1326, 1063 or 1062 if you require assistance with EHS issues in high-risk facilities and work areas</li><li>The UTS Hazard Information Poster is available from the EHS Branch on ext 1102 or 1342. See the EHS web site at <a href="http://www.ehs.uts.edu.au/workingsafely/hazardposter.html">http://www.ehs.uts.edu.au/workingsafely/hazardposter.html</a> for more information</li><li>A checklist for conducting and documenting workplace inspections in laboratories and workshops is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/workingsafely/labchecklist.html">http://www.ehs.uts.edu.au/workingsafely/labchecklist.html</a></li>
+<li>A checklist of contents for orientation of new staff/students is available from the HRU web site at <a href="http://www.hru.uts.edu.au/start/checklist.html">http://www.hru.uts.edu.au/start/checklist.html</a></li><li>Information on establishing and documenting an accreditation program for students working in laboratories and workshops is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/workingsafely/accreditationprograms.html">http://www.ehs.uts.edu.au/workingsafely/accreditationprograms.html</a></li>
+
+30-10-2007 r)
+FROM:
+<li>Contact the EHS Branch on 1062, 1063 and 1326 for more information or assistance 
+    to integrate EHS into research</li>
+  <li>A checklist of information to include in orientation of new staff/students 
+    is available from the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li>
+
+TO:
+<li>Contact the EHS Branch on 1062, 1063 and 1326 for more information or assistance in integrating EHS into research</li><li>A checklist of information to include in orientation of new staff/students is available from the HRU web site at <a href="http://www.hru.uts.edu.au/start/checklist.html">http://www.hru.uts.edu.au/start/checklist.html</a></li>
+
+30-10-2007 s)
+FROM:
+<li>A checklist of information to include in orientation of new students is 
+    available from the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li>
+  <li>A check list of contents for laboratory manuals and course notes is available 
+    from the EHS web site at <a href="http://www.ehs.uts.edu.au/">http://www.ehs.uts.edu.au/</a></li>
+
+TO:
+<li>A checklist of information to include in orientation of new students is available from the HRU web site at <a href="http://www.hru.uts.edu.au/start/checklist.html">http://www.hru.uts.edu.au/start/checklist.html</a></li>
+<li>The procedure and templates required to conduct risk assessments on undergraduate subjects that possess EHS risks are available on the EHS web site at <a href="http://www.ehs.uts.edu.au/workingsafely/curriculum.html">http://www.ehs.uts.edu.au/workingsafely/curriculum.html</a>.</li>
+
+30-10-2007 t)
+FROM:
+<li>EHS web stickers and EHS fact sheets are available from the EHS Branch on ext 1102</li>
+
+TO:
+<li>A range of EHS informational products, such as posters and factsheets, are available from the EHS Branch by calling ext 1342.</li>
+
+4January2008 - DLJ
+Put 4 new procedures in IN_Procedures Table to match the existing Audit Text that was incorrectly associated with the text boxes for Hazards, Accidents/Incident, Emergencies & Wellness&Sustainability
+217|1|6 Include Hazard Reporting procedures in student orientation
+218|2|23 Include Accident/Incident Reporting procedures in student orientation
+219|3|43 Include First Aid procedures in student orientation
+220|4|66 Include Emergency procedures in student orientation
+
+
+19 May 2008 - CL
+1) Changed the wording for the irResourceList within IN_Requirements relating to the resources available for cash handling (called by ActionPlanReport.asp etc.).
+2) Changed the login name for the Childcare edit-level login ID from "childcare" to "utscc" for consistency in AD_Users table.
+3) Added (to an existing item within irResourceList in IN_Requirements relating to the resources available for communicable diseases - called by ActionPlanReport.asp etc.) a reference to the EHS Branch's Comm. Diseases web site.
+
+
+28 July 2008 - CL
+Deleted from AD_Users the AccessUTS; TSIU, UTS Union; University Enterprises logins;
+[as no longer used]
+
+
+6 April 2009 - CL & DLJ
+i) In the IN_Procedures table, for ipID items 168-173 with associated ipRequirement 28 (i.e. all Wellness and Sustainability items), all were deactivated.
+Also, in the IN_Requirements table, for irId item, deactivated item irId=28 (i.e. removed Wellness and Sustainability top-level heading item).
+
+ii) In the IN_Procedures table, for ipID item 111, changed the requirement from "Conduct and document workplace safety inspections at least annually" to become "Conduct and document workplace safety inspections at least every six months".
+
+iii) In the IN_Procedures table, made the task "Include EHS as an agenda item at Faculty/Unit meetings" (ipId 138, ipDisplayOrder 482) mandatory.
+
+iv) In the IN_Procedures table, changed wording to ipId 25.
+
+v) In the IN_Procedures table, deactivated ipId 145 ("Include EHS responsibilities in position descriptions/work plans") and 209 ("Distribute the 'EHS and Security Faculty Contact Card' to students").
+
+vi) In the IN_Procedures table, changed the wording of ipId 142 (to become "Induct all new staff within a week of commencing work") and made this item mandatory.
+
+vii) In the IN_Requirements table, for irId=22 item, changed the irName for this from "Information" to "Information and Training".
+
+27 April 2009 - CL & DLJ [done]
+NOTE: Once the Faculty of DAB's plan has been finalised, add the optional compliance requirement for the high risk facilities and work areas part of IN_PROCEDURES table:
+
+ipID	ipRequirement	ipDisplayOrder	ipActive	ipMandatory	ipName	ipDescription	ipIsTextBox	ipDefaultAuditText
+221	16	408	Yes	False	Conduct and document regular housekeeping inspections		No	Observed records of housekeeping inspections
+116	16	409	Yes	False		(other)	Yes	
+
+
+23 July 2009
+In IN_Lists, changed IsPoints wording of:
+
+a) For cash handling
+from:
+"Where cash handling remains a requirement of the job role, include a PD"
+to:
+"Where cash handling remains a requirement of the job role, included in the PD"
+"Cash handling duties included in PD where required as part of job role"
+
+
+16 September 2009
+i) In IN_Requirements, changed from:
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Policy and Procedures available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/emergency/firstaid.html">http://www.ehs.uts.edu.au/emergency/firstaid.html</a> or contact the S&amp;W branch on 1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers</li><li>A UTS poster for displaying the names of First Aid Officers and Emergency Wardens is available from the S&amp;W branch via ext 1102</li>
+
+to:
+
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Policy and Procedures available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/emergency/firstaid.html">http://www.ehs.uts.edu.au/emergency/firstaid.html</a> or contact the S&amp;W branch on 1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers.</li><li>A UTS poster for displaying the names of First Aid Officers and Emergency Wardens is available from the Emergency Procedures Manager via ext 4689.</li>
+
+
+ii) In IN_Requirements, changed from:
+<li>UTS Security is responsible for emergency management - contact UTS Security on ext 1192 for assistance</li><li><i>Dial 6</i> stickers are available from UTS Security on ext 1192</li><li>UTS Emergency Procedures posters are available from the UTS Emergency Procedures Manager on ext 4689</li><li>Contact the Emergency Procedures Manager on ext 4689 for information on nominating emergency wardens</li><li>The emergency evacuation video - <i>Escape From UTS</i> - can be accessed on the UTS Emergency Procedures web site at <a href="http://www.fmu.uts.edu.au/emergency/index.html">http://www.fmu.uts.edu.au/emergency/index.html</a> and on all computerised lecturns.</li>
+
+to:
+
+<li>Contact the Emergency Procedures Manager within the Facilities Management Unit on ext 4689 for assistance.</li><li><i>Dial 6</i> stickers are available from the Emergency Procedures Manager on ext 4689.</li><li>UTS Emergency Procedures posters are available from the UTS Emergency Procedures Manager on ext 4689</li><li>Contact the Emergency Procedures Manager on ext 4689 for information on nominating emergency wardens</li><li>The <i>Escape From UTS</i> emergency evacuation video can be accessed on the UTS Emergency Procedures web site at <a href="http://www.fmu.uts.edu.au/security/emergencies/escape.html">www.fmu.uts.edu.au/security/emergencies/escape.html</a> and on all computerised lecturns.</li>
+
+
+iii) In IN_Requirements, changed from:
+<li>See the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html">http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html</a> or contact the S&amp;W branch on ext 4540 or 1326 if you require assistance with workstation set-up or other ergonomic issues</li><li>To organise an individual workstation ergonomic assessment for staff, contact the S&amp;W branch on ext 4540</li><li>The VDU Workstations factsheet is available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html">http://www.ehs.uts.edu.au/hazardguidelines/workstationsetup.html</a>.</li><li>Information on how to minimise the risks associated with laptop and notebook computer use is available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/laptops.html">http://www.ehs.uts.edu.au/hazardguidelines/laptops.html</a></li>
+
+to:
+
+<li>See the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/computercomfort.html">www.ehs.uts.edu.au/hazardguidelines/computercomfort.html</a> or contact the S&amp;W branch on ext 4540 or 1326 if you require assistance with workstation set-up or other ergonomic issues.</li><li>To organise an individual workstation ergonomic assessment for staff, contact the S&amp;W branch on ext 4540</li><li>The <i>Computer Comfort</i> factsheet is available from the S&W branch web site at <a href="http://www.ehs.uts.edu.au/hazardguidelines/computercomfort.html">www.ehs.uts.edu.au/hazardguidelines/computercomfort.html</a>.</li>
+
+2/10/2009
+CL made a new Faculty/Unit entry,  Centre for Local Government.
+
+16/11/2009 - CLee
+Replaced “M Provide contractor with UTS Contractor Safety Rules and Working Conditions” procedure with “M Ensure that all construction contractors complete online safety induction prior to commencing work” in ipName in table IN_Procedures.
+ipID=94; ipRequirement=14; ipDisplayOrder=341
+Amended IN_Requirements irId=14 accordingly.
+
+
+15/1/2010 - C Lee
+i) Amended Contractor Safety in Construction Work item (IR_ID=14 in IN_Requirements table) from:
+
+<li>UTS Permit-to-Work Passes are issued by UTS Security and must be carried by all contractor and sub-contractor staff at all times whilst working on UTS sites</li><li>Safety Rules and Working Conditions for contractors, as well as a process and template for contactors to document a Risk Management Plan, are available from the S&amp;W branch web site at <a href="http://www.ehs.uts.edu.au/workingsafely/contractors.html">www.ehs.uts.edu.au/workingsafely/contractors.html</a></li>
+<li>The online construction contractor induction is available at <a href="http://www.elearn.com.au/uts/">http://www.elearn.com.au/uts/</a>.</li>
+
+to become:
+
+<li>The Construction Worker Induction module must be completed by persons engaged in any construction work at UTS prior to commencing this work. A certificate of completion of this module must carried by all contractor and sub-contractor staff at all times whilst working on UTS sites. The module is available at <a href="http://www.elearn.com.au/uts/">http://www.elearn.com.au/uts/</a>.  Login: UTS  password: safety</li>
+<li>Safety rules and working conditions for contractors undertaking construction work are provided in the Construction Worker Induction module.</li>
+
+ii) Amended Emergency Management item (IR_ID=4 in IN_Requirements table) from:
+<li>UTS Security is responsible for emergency management - contact UTS Security on ext 1192 for assistance</li><li><i>Dial 6</i> stickers are available from UTS Security on ext 1192</li><li>UTS Emergency Procedures posters are available from the UTS Emergency Procedures Manager on ext 4689</li><li>Contact the Emergency Procedures Manager on ext 4689 for information on nominating emergency wardens</li><li>The emergency evacuation video - <i>Escape From UTS</i> - can be accessed on the UTS Emergency Procedures web site at <a href="http://www.fmu.uts.edu.au/emergency/index.html">www.fmu.uts.edu.au/emergency/index.html</a> and on all computerised lecturns.</li>
+
+to become:
+
+<li>UTS Security is responsible for emergency management - contact UTS Security on ext 1192 for assistance</li><li><i>Dial 6</i> telephone stickers are available from UTS Security on ext 1192</li><li>UTS Emergency Procedures posters are available from the Essential Services Compliance Manager on ext 4689</li><li>Contact the Essential Services Compliance Manager on ext 4689 for information on nominating emergency wardens</li><li>The emergency evacuation video - <i>Escape From UTS</i> - can be accessed on the Facilities Management Unit web site at <a href="http://www.fmu.uts.edu.au/security/emergencies/escape.html">http://www.fmu.uts.edu.au/security/emergencies/escape.html</a> and on all computerised lecturns.</li>
+
+
+
+18/1/2010 - C Lee
+i) Amended Contractor Safety in Construction Work item (IR_ID=14 in IN_Requirements table) from:
+
+<li>The Construction Worker Induction module must be completed by persons engaged in any construction work at UTS prior to commencing this work. A certificate of completion of this module must carried by all contractor and sub-contractor staff at all times whilst working on UTS sites. The module is available at <a href="http://www.elearn.com.au/uts/">http://www.elearn.com.au/uts/</a>.  Login: UTS  password: safety</li>
+<li>Safety rules and working conditions for contractors undertaking construction work are provided in the Construction Worker Induction module.</li>
+
+to become:
+
+<li>The UTS Construction Worker Induction module must be completed by persons engaged in any construction work at UTS prior to commencing this work. A certificate of completion of this module must carried by all contractor and sub-contractor staff at all times whilst working on UTS sites. The module is available at <a href="http://www.elearn.com.au/uts/">http://www.elearn.com.au/uts/</a>.  Login: UTS  password: safety</li>
+<li>Safety rules and working conditions for contractors undertaking construction work are provided in the UTS Construction Worker Induction module.</li>
+
+
+4 March 2010 - C Lee
+i) Amended item (ipID=206 in IN_Procedures table) from:
+Display the 'EHS and Security' poster in work areas
+
+to
+
+Display the 'Safety &amp; Wellbeing at UTS: Guide for Students and Staff' poster in work areas
+
+ii) Amended item (ipID=207 in IN_Procedures table) from:
+Distribute the 'EHS and Security' brochure to staff
+
+to
+
+Distribute the 'Safety &amp; Wellbeing at UTS: Guide for Students and Staff' brochure to staff
+
+iii) Amended item (ipID=208 in IN_Procedures table) from:
+Distribute the 'EHS and Security' brochure to students
+
+to
+
+Distribute the 'Safety &amp; Wellbeing at UTS: Guide for Students and Staff' brochure to students
+
+
+iv) For High-risk facilities and work areas: in IN_Procedures table, for item ipID=110 - made inactive the item:
+Conduct a risk assessment for each high-risk facility at least every two years AND for all new or changed tasks
+
+v) For High-risk facilities and work areas: in IN_Procedures table, for item ipID=114 - changed item from:
+Document Safe Work Method Statements for high-risk tasks and make them available to staff and students
+
+to 
+
+Ensure Safe Work Method Statements are readily accessible
+
+vi) For Radiation: in IN_Procedures table, for item ipID=193 - changed item from:
+Register with EPA prescribed radiation apparatus, sealed source devices and premises where a radioactive substance not contained in a sealed source device is kept
+
+to
+
+Register (with NSW Dept. of Environment, Climate Change and Water) sealed source devices and premises where a radioactive substance not contained in a sealed source device is kept
+
+
+
+30 March 2010 - C Lee
+Edited finalised MCU EHS Plan 2008-2012 to reflect restructure where Events, Exhibitions & Projects dept was amalgamated.
+
+4 May 2010 - C Lee
+Added a Creative Industries Innovation Centre item to the OMS, which may be required for their 4/5/2010 EHS Planning Workshop. This will later be deleted if not required.
+
+
+18 June 2010 - C Lee
+In AD_Departments table, for dpID=40, renamed the dpName for Marketing and Communication Unit to become Marketing and Communication Unit-OLD.
+In AD_Departments table, for dpID=52, renamed the dpName for Marketing and Communication Unit (incl. EEP) to become Marketing and Communication Unit.
+In AD_Users, for lgID=89 renamed lgName from mcu to mcu-old, and renamed lgPassword from mcu to mcu-old.
+In AD_Users, for lgID=90 renamed lgName from mcu to mcu-old, and renamed lgPassword from solutions to mcu-old-admin.
+
+In AD_Users, for lgID=117 renamed lgName from mcuevents to mcu, and renamed lgPassword from mcuevents to mcu.
+In AD_Users, for lgID=118 renamed lgName from mcuevents to mcu. lgPassword remains unchanged.
+
+
+8 September 2010 - C Lee
+Edited IsPoints items in IN_Lists table to reflect Hazard and Incident Reporting Online (HIRO) system.
+
+4 November 2010 - C Lee
+As Events, Exhibitions and Projects is no longer part of the UTS Executive Group (since its move to MCU), renamed the Exec Group (dpID=11 in AD_Departments table) to Exec Group OLD and replaced with similar EHS Plan (dpID=55 in AD_Departments table) that omits references to EHS responsibilities within the Events, Exhibitions and Projects team.
+
+8 December 2010 - C Lee
+Changed old reference to Accident/Incident Report form to HIRO. In IN_Lists, changed IsPoints string from "UTS Accident/Incident Report Forms" to "Hazard and Incident Reporting Online (HIRO) system reports" (IsId=60).
+
+
+3 May 2011 - C Lee
+Added a resource relating to the need to induct staff within a week of their commencement at UTS - accomplished by editing the IN_Requirements table entry irId=22, so that its irResourceList changed from "<li>A range of health and safety information products, such as posters and factsheets, are available from the S&amp;W Branch by calling ext 1342.</li>" to instead become "<li>A range of health and safety information products, such as posters and factsheets, are available from the S&amp;W Branch by calling ext 1342.</li><li>A template for a local health and safety induction checklist is available at <a href="http://www.ehs.uts.edu.au/managers/inducting.html">www.ehs.uts.edu.au/managers/inducting.html</a>.</li>
+
+
+~April 2012 - C Lee
+Amendments to IN_Procedures / ipName to bring actions in line with new WHS legislation.
+
+21/6/2012 - C Lee
+Increased field size of ipName in IN_Procedures from 200 to 255 chars.
+
+Amendment to IN_Procedures / ipName: Changed induction requirement from "Induct all new staff in their health and safety responsibilities, procedures and relevant hazard management programs within a week of commencing work" to become "Induct new staff, contractors/subcontractors, labour hire company employees, outworkers, apprentices, trainees, work exp. students and volunteers in their H&amp;S responsibilities, procedures and relevant hazard mgt. programs within a week of starting.", as requested by SK 18/6/2012.
+
+23/7/2012 - C Lee
+Amended all references to "Clinical and industrial placements" to become "Student placements" per advice from DLJ, and to reflect S&W web site changes - namely:
+In table IN_Requirements: for irId=30
+Also, removed duplicate item that was appearing under the Hazards section ("Consider health and safety risks before purchasing plant/equipment/materials/substances") by unselecting ipActive for IN_Procedures item ipID=3.
+
+24/7/2012 - C Lee
+i) Updated resources for travel safety. 
+Amended IN_Requirements table, irID=29, irResourceList
+A reference to an old URL for the FSU's travel safety web page was updated.
+
+ii) Updated a reference to a first aid POLICY to the first aid GUIDELINES
+Amended IN_Requirements table, irID=3, irResourceList
+
+iii) Changed Faculty of Business to UTS Business School
+in AD_Departments, dpID=2
+
+iv) Changed EHS references (where appropriate) to "health and safety" in
+IN_Lists, IsId=25
+IN_Lists, IsId=26
+
+Changed references to "Quick and obvious risk assessments" to become "Health and safety risk assessments".
+
+13/12/2012 - C. Lee
+In IN_Requirements, edited irId=22 (Information and Training) to include more detailed information on S&W Essentials, S&W for Supervisors, and S&W for Academics training courses, following feedback from ITD H&S Plan consultation.
+From:
+<li>A range of health and safety information products, such as posters and brochures, are available from Safety &amp; Wellbeing by calling ext 1342.</li><li>A template for a local health and safety induction checklist is available at <a href="http://www.safetyandwellbeing.uts.edu.au/managers/inducting.html">www.safetyandwellbeing.uts.edu.au/managers/inducting.html</a>.</li>
+
+To:
+<li>The "Safety and Wellbeing Essentials" training module is accessible through the Neo <acronym title="Online Learning Management">OLM</acronym> system. To access the module, enrol via <a href="http://neo.itd.uts.edu.au:8001/OA_HTML/RF.jsp?function_id=25207&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=KZhZIvJjm9P0XR4HycMI20JaacaIrzWmOXwByoD9XO0wPe-5ydANxXGWVy1iM8suE3teG0vQrwZUD4FOAzPTdg&oas=W1OiWMOqBR1V2cFZ0LB6zQ">Neo</a>. Once enrolled, select the Play button from the Enrolments section of the My Learning page, then follow the instructions.</li><li>Details of the "Safety and Wellbeing for Supervisors" and "Safety and Wellbeing for Academics" training sessions are available at <a href="http://www.safetyandwellbeing.uts.edu.au/responsibilities/index.html">www.safetyandwellbeing.uts.edu.au/responsibilities/</a>.</li><li>A range of health and safety information products, such as posters and brochures, are available from Safety &amp; Wellbeing by calling ext 1342.</li><li>A template for a local health and safety induction checklist is available at <a href="http://www.safetyandwellbeing.uts.edu.au/managers/inducting.html">www.safetyandwellbeing.uts.edu.au/managers/inducting.html</a>.</li>
+
+
+
+23/1/2013 – C. Lee
+Amended IN_Procedures, ipDescription from:
+<BR><I>*Please note that WHS Committee members must attend a 4 day WorkCover-accredited committee training course, funded by the Faculty/Unit.</I>
+to become:
+<BR><I>*Please note that WHS Committee members must attend a three-day health and safety committee training course, funded by the Faculty/Unit.</I>
+
+Amended IN_Procedures, ipDescription from:
+<BR><I>*Please note that WHS Representatives must attend a 4 day WorkCover-accredited committee training course, funded by the Faculty/Unit.</I>
+
+to become:
+<BR><I>*Please note that WHS Representatives must attend a five-day WorkCover-accredited committee training course, funded by the Faculty/Unit.</I>
+
+
+
+08/02/2013 - C. Lee
+Amended IN_Procedures, ipDescription from:
+
+<BR><I>*Please note that WHS Committee members must attend a five-day WorkCover-accredited committee training course, funded by the Faculty/Unit.</I>
+to become:
+<br><i>Requests to establish workplace H&amp;S committees must be from a H&amp;S  representative for a group of workers carrying out work at a workplace, or from 5 or more workers at that workplace.</i>
+
+--
+In IN_Requirements:
+Changed irName for the title of the section "Health and Safety Management" to become "Health and Safety Responsibilities".
+
+Changed irDescription from "<b>Consultation</b> - Staff are consulted on health and safety issues" to become "<b>Consultation</b> - Workers (staff, contractors/subcontractors, labour hire company employees, outworkers, apprentices, trainees, work exp. students and volunteers) are consulted on health and safety issues".
+
+--
+
+In IN_Procedures, ipName:
+Changed "Make all staff aware of their health and safety responsibilities" to become "Communicate health and safety responsibilities (e.g. Health and Safety Responsibilities Vice-Chancellor's Operational Directive; this Health and Safety Plan) to all staff".
+
+Changed "Integrate health and safety management into the current management structure i.e. Managers/supervisors responsible" to become "Include specific health and safety responsibilities in position descriptions and workplans".
+
+De-activated (by unchecking ipActive) the item "Establish a health and safety management committee" from the Health and Safety Management section.
+
+Changed "Establish small groups/teams for high risk projects/programs/hazard solutions" to become "Establish small groups/teams to develop hazard solutions".
+
+Changed "Distribute the 'Safety &amp; Wellbeing at UTS: Guide for Students and Staff' brochure to staff" to become "Distribute the 'Safety &amp; Wellbeing at UTS: Guide for Students and Staff' brochure to <i>staff</i>".
+
+Changed "Distribute the 'Safety &amp; Wellbeing at UTS: Guide for Students and Staff' brochure to students" to become "Distribute the 'Safety &amp; Wellbeing at UTS: Guide for Students and Staff' brochure to <i>students</i>".
+
+Changed "Distribute the 'SAFE@UTS' card to staff" to become "Distribute the 'SAFE@UTS' card to <i>staff</i>".
+
+Changed "Distribute the 'SAFE@UTS' card to students" to become "Distribute the 'SAFE@UTS' card to <i>students</i>".
+
+De-activated (by unchecking ipActive) the item "Include health and safety responsibilities in position descriptions/work plans".
+
+Changed "Consider health and safety risks before purchasing plant/equipment/materials/substances" to become "Follow UTS Procurement and Payments Procedures by completing the Health and Safety Pre-Purchase Checklist when purchasing equipment, materials and chemicals".
+
+For the First Aid compliance requirement, changed "Post signage" to become "Post first aid signage".
+
+Changed "Ensure cash handlers attend Robbery Safety Training where indicated in cash handling risk assessments and keep training current" to become "Ensure cash handlers complete online Robbery Safety Training where indicated in cash handling risk assessments and keep training current".
+
+For the Travel compliance requirement, changed "If travel is approved, download the International SOS Overseas Travel Emergency Card from FSU web site and provide final itinerary" to become "If overseas travel is approved, download the International SOS Overseas Travel Emergency Card from FSU web site and provide final itinerary to Faculty/Unit".
+
+--
+
+26/02/2013 - C. Lee
+For the Manual handling compliance requirement:
+===============================================
+Amended IN_Procedures, ipName:
+i) Changed "Identify high-risk manual handling tasks and apply hierarchy of controls based on risk assessment" to become "Identify high-risk manual handling tasks".
+ii) Added new mandatory item (with ipID auto-assigned to 235, ipRequirement=7) as "Apply control measures based on risk assessment".
+iii) Changed "Provide information on safe work practices to staff at risk" to become "Provide information on safe work practices to <i>staff</i> at risk".
+iv) Changed "Provide instruction on safe work practices to students at risk" to become "Provide instruction on safe work practices to <i>students</i> at risk".
+
+For the Biological Safety compliance requirement:
+=================================================
+
+In IN_Requirements:
+i) Changed irDescription from "- risks are identified and managed" to become "- includes intentional work with microbes, animals, plants, insects and genetically modified organisms (GMOs)".
+
+Amended IN_Procedures, ipName as follows:
+i) Changed item, "Implement controls required by UTS Biosafety Committee approval" to become "Apply control measures based on risk assessment".
+ii) Changed "Provide instruction on safe work practices to staff at risk" to become "Provide instruction on safe work practices to <i>staff</i> at risk".
+iii) Changed "Provide instruction on safe work practices to students at risk" to become "Provide instruction on safe work practices to <i>students</i> at risk".
+iv) Changed "Make safe work procedures available for high risk activities" to become "Make safe work practices available for high risk activities".
+v) Removed (by deactivating) the item "Provide personal protective equipment (PPE) as required".
+vi) Inserted a new mandatory first item, "Identify biological hazards".
+vii) Reactivated an optional item "Ensure students and staff use UTS hazardous waste disposal system".
+
+
+For the Communicable Diseases compliance requirement:
+=====================================================
+In IN_Requirements:
+i) Changed irDescription from "- risks are identified and managed" to become "- where staff and students are not intentionally working with pathogens, and potential for incidental exposure exists".
+
+Amended IN_Procedures, ipName as follows:
+i) Removed (by deactivating) the item "Provide personal protective equipment (PPE) as required".
+ii) Changed the item, "Provide instruction on safe work practices to staff at risk" to become "Provide instruction on safe work practices to <i>staff</i> at risk".
+iii) Changed the item, "Provide instruction on safe work practices to students at risk" to become "Provide instruction on safe work practices to <i>students</i> at risk".
+iv) Changed the item, "Provide medical assessment for needlesticks (post-exposure)" to become "Provide medical assessment post-exposure (e.g. for needlestick injuries)".
+v) Inserted a new mandatory first item, "Identify activities where exposure to communicable diseases is possible".
+
+
+For the Hazardous Substances/Dangerous Goods compliance requirement:
+====================================================================
+In IN_Requirements, irName
+i) Changed from "Hazardous Substances/Dangerous Goods" to become instead "Hazardous Chemicals".
+
+Amended IN_Procedures, ipName as follows:
+i) Changed "Maintain registers of hazardous substances and dangerous goods" to become "Maintain registers of hazardous chemicals".
+ii) Changed "Make MSDSs available to staff and students" to become "Make Safety Data Sheets available to staff and students".
+iii) Removed (by deactivating) the item "Provide appropriate personal protective equipment (PPE)".
+iv) Changed "Provide instruction on safe work practices to staff at risk" to become "Provide instruction on safe work practices to <i>staff</i> at risk".
+v) Changed "Provide instruction on safe work practices to students at risk" to become "Provide instruction on safe work practices to <i>students</i> at risk".
+vi) Inserted the item "Identify activities that use hazardous chemicals" with ipRequirement=8. 
+
+
+For the Hazardous Waste compliance requirement:
+===============================================
+In IN_Requirements, irDescription:
+i) Changed "- risks are identified and managed" to become "- risks relating to clinical, biological and chemical waste are identified and managed".
+
+Amended IN_Procedures, ipName as follows:
+i) Changed "Provide instruction on safe work practices to staff at risk" to become "Provide instruction on safe work practices to <i>staff</i> at risk".
+ii) Changed "Provide instruction on safe work practices to students at risk" to become "Provide instruction on safe work practices to <i>students</i> at risk".
+iii) Added the item "Nominate staff to act as designated hazardous waste contacts".
+
+
+For the Electrical Safety compliance requirement:
+=================================================
+In IN_Requirements, irDescription:
+i) Changed "- risks are identified and managed" to become "- risks relating to the use of plug-in electrical equipment in hostile operating environments are identified and managed".
+
+Amended IN_Procedures, ipName as follows:
+i) Changed "Conduct a risk assessment on plug-in electrical equipment to determine if testing or tagging is required (contact the Safety & Wellbeing Branch for assistance)" to become "Conduct a risk assessment on plug-in electrical equipment to determine if testing or tagging is required (contact Safety &amp; Wellbeing for assistance)".
+ii) Changed "Complete testing and tagging of plug-in electrical equipment if required" to become "Test and tag plug-in electrical equipment as required".
+iii) Removed (by deactivating) the item "Provide access to Portable Appliance Tester and tags".
+iv) Changed "Provide training in the use of Portable Appliance Tester and tagging system" to become "Organise training of staff in the use of Portable Appliance Tester and tagging system".
+v) Inserted the item "Identify plug-in electrical equipment in hostile operating environments" as first item.
+
+
+For the Plant/Equipment Safety compliance requirement:
+======================================================
+In IN_Requirements, irDescription:
+i) Changed "- risks are identified and managed" to become "- risks relating to the use of high-risk plant and equipment are identified and managed".
+
+Amended IN_Procedures, ipName as follows:
+i) Changed "Conduct a risk assessment on tasks involving use of high-risk plant and equipment and apply hierarchy of controls" to become "Apply control measures based on risk assessment".
+ii) Removed (by deactivating) the item "Make appropriate personal protective equipment (PPE) available".
+iii) Changed "Document safe work procedures" to become "Document safe work practices".
+iv) Changed "Provide instruction on safe work practices to staff at risk" to become "Provide instruction on safe work practices to <i>staff</i> at risk".
+v) Changed "Provide instruction on safe work practices to students at risk" to become "Provide instruction on safe work practices to <i>students</i> at risk".
+vi) Inserted the item "Identify tasks involving the use of high-risk plant and equipment" as first item.
+
+
+For the Noise compliance requirement:
+=====================================
+In IN_Requirements, irDescription:
+i) Changed "- risks are identified and managed" to become "- risks involving exposure to excessive noise are identified and managed. &quot;Excessive noise&quot; exceeds an 8-hour noise equivalent of 85 dB&#40;A&#41;, or peaks at more than 140 dB&#40;C&#41;".
+
+Amended IN_Procedures, ipName as follows:
+i) Changed "Identify noisy areas and activities and contact the Safety & Wellbeing Branch to measure noise levels" to become "Identify noisy areas and activities and contact Safety &amp; Wellbeing to measure noise levels".
+ii) Changed "Implement hierarchy of controls" to become "Apply control measures based on risk assessment".
+iii) Changed "Provide instruction on safe work practices to staff at risk" to become "Provide instruction on safe work practices to <i>staff</i> at risk".
+iv) Changed "Provide instruction on safe work practices to students at risk" to become "Provide instruction on safe work practices to <i>students</i> at risk".
+
+
+For the Radiation Safety compliance requirement:
+================================================
+Amended IN_Procedures, ipName as follows:
+i) Changed "Make safe work procedures available for high risk activities" to become "Make safe work practices available for high risk activities".
+ii) Removed (by deactivating) the item "Provide barriers and personal protective equipment (PPE)".
+iii) Changed "Provide radiation safety training to staff who deal with radiation" to become "Provide radiation safety training to <i>staff</i> who deal with radiation".
+iv) Changed "Provide radiation safety training to students who deal with radiation" to become "Provide radiation safety training to <i>students</i> who deal with radiation".
+
+
+For the Health and Safety Management / Consultation compliance requirement:
+===========================================================================
+Amended IN_Procedures, ipName as follows:
+i) Changed "Use email to consult" to become "Conduct regular toolbox talks".
+
+
+For the Health and Safety Management / Information and Training compliance requirement:
+=======================================================================================
+Amended IN_Procedures, ipName as follows:
+i) Changed "Encourage all staff to undertake online 'Safety and Wellbeing Essentials' training" to become "Encourage all <i>staff</i> to undertake online 'Safety and Wellbeing Essentials' training".
+ii) Added an item "Encourage all <i>students</i> to undertake online 'Safety and Wellbeing Essentials' training".
+iii) Re-ordered this section (ipRequirement=22; ipDisplayOrder=500+)
+
+
+For the Computers/Workstations compliance requirement:
+=====================================================
+Amended IN_Procedures, ipName as follows:
+i) Inserted a new item "Organise Safety &amp; Wellbeing to conduct workstation ergonomics assessment for staff at risk". Re-ordered.
+ii) Changed "Coordinate 'Safety and Wellbeing Essentials' training for staff" to become "Provide Safety &amp; Wellbeing Computer Comfort site link to staff".
+
+
+1/3/2013 -  C. Lee
+
+For Travel:
+===========
+In IN_Requirements, for irID=29:
+i) Amended irName from "Travel" to become "Overseas Travel"
+ii) Amended irDescription from "- Domestic or overseas travel as part of work or study (UTS approved travel)" to become "- Health and safety risks of overseas travel as part of work or study (UTS approved travel) are managed in accordance with the Travel Vice-Chancellor's Directive".
+iii) Amended irFormADescription from " - Overnight domestic or overseas travel as part of work or study (UTS-approved travel)" to become "- Overseas travel as part of work or study (UTS approved travel)".
+
+In IN_Procedures:
+i) For ipID=180, amended ipName from "Maintain records on all overseas and overnight domestic travellers" to become "Maintain records on all overseas travellers".
+ii) For ipID=181, amended ipName from "Complete the Travel Approval Form (including DFAT travel advisory level information if travelling overseas), attach itinerary and submit to Dean/Director" to become "Complete the Travel Approval Form (including DFAT travel advisory level information), attach itinerary and submit to Dean/Director".
+
+For Radiation Safety:
+=====================
+In IN_Procedures:
+i) For ipID=84, amended ipName from "Make safe work procedures available for high risk activities" to become "Make safe work practices available for high risk activities".
+ii) For ipID=86, disabled ipName "Provide barriers and personal protective equipment (PPE)" by deactivating ipActive.
+iii) For ipID=88, amended ipName from "Provide radiation safety training to staff who deal with radiation" to become "Provide radiation safety training to <i>staff</i> who deal with radiation".
+iv) For ipID=194, amended ipName from "Provide radiation safety training to students who deal with radiation" to become "Provide radiation safety training to <i>students</i> who deal with radiation".
+
+
+For Fieldwork:
+=============
+In IN_Requirements, for irID=15:
+i) Amended irDescription from "- Health and safety risks are identified and managed for field work" to become "- Health and safety risks are identified and managed for field work in accordance with the US 
+Fieldwork Guidelines".
+
+In IN_Procedures:
+i) For ipID=99, amended ipName from "Conduct a risk assessment on field work excursions" to become "Conduct a risk assessment on fieldwork excursions".
+ii) For ipID=105, disabled ipName "Document safe work procedures if required" by deactivating ipActive.
+iii) For ipID=104, disabled ipName "Check insurance" by deactivating ipActive.
+iv) For ipID=103, amended ipName from "Provide communication and other emergency equipment as appropriate" to become "Provide communication and other emergency equipment as appropriate (e.g. EPIRB)".
+v) For ipID=195, amended ipName from "Provide training and/or information on safe work practices to students as required" to become "Provide training and/or information on safe work practices to <i>students</i> as required".
+vi) For ipID=101, amended ipName from "Provide first aid equipment that is appropriate to level of risk and takes into account requirements for specific hazards" to become "Provide first aid equipment that is appropriate to fieldwork risks".
+vii) Added an item "Complete UTS Fieldwork Form" as ipID=244.
+viii) Added an item "Nominate Fieldwork Leader for fieldwork excursions".
+ix) Added an item "Provide training and/or information on safe work practices to <i>staff</i> as required".
+
+
+For Student Placements:
+=======================
+In IN_Requirements, for irID=30:
+i) Amended irDescription from "- Risks are identified and managed" to become "- Health and safety risks are identified and managed in accordance with the Course Related Work Experience Vice-Chancellor's Directive".
+
+In IN_Procedures:
+i)  For ipID=199, disabled ipName "If the placement involves a high level of risk to the health and safety of students, contact the FSU Insurance Officer and the Safety &amp; Wellbeing Branch" by deactivating ipActive.
+ii) For ipID=197, disabled ipName "Obtain evidence that students will be provided with training on safe work practices" by deactivating ipActive.
+iii) For ipID=198, disabled ipName "Negotiate supervision appropriate to the level of risk to students' health and safety" by deactivating ipActive.
+iv) Added an item "Complete Student Placement Health and Safety Checklist".
+v) Added an item "Follow the Course Related Work Experience Vice-Chancellor's Directive".
+vi) For ipID=196, disabled ipName "Obtain confirmation that the external organisation has an occupational health and safety management system in place" by deactivating ipActive.
+
+
+For High Risk Facilities and Work Areas:
+========================================
+In IN_Requirements, for irID=16:
+i) Amended irName from "High Risk Facilities and Work Areas" to become "Hazardous Areas".
+ii) Amended irDescription from "- are identified and action taken to minimise risk" to become "- Facilities such as labs, workshops and plant rooms are identified and action taken to minimise risk". 
+
+In IN_Procedures:
+i) For ipID=114, amended "Ensure Safe Work Method Statements are readily accessible" to become "Ensure any Safe Work Method Statements are readily accessible".
+ii) For ipID=113, amended "Provide orientation/accreditation program and ongoing training for staff and maintain records" to become "Provide orientation/accreditation program and ongoing training for <i>staff</i> and maintain records".
+iii) For ipID=201, amended "Provide orientation/accreditation program and ongoing training for students and maintain records" to become "Provide orientation/accreditation program and ongoing training for <i>students</i> and maintain records".
+
+
+For Research/Consulting:
+========================
+In IN_Requirements, for irID=18:
+i) Amended irName from "Research/Consulting" to become "Research".
+
+In IN_Procedures:
+i) For ipID=122, amended "Include health and safety in research approval process at faculty/department level (e.g. Research Risk Management Plan)" to become "Complete Research Risk Management Plan for research work".
+ii) For ipID=125, amended "Include safe work practices for specific high risk hazards in orientation for research staff" to become "Include safe work practices for specific high risk hazards in orientation for research <i>staff</i>".
+iii) For ipID=202, amended "Include safe work practices for specific high risk hazards in orientation for research students" to become "Include safe work practices for specific high risk hazards in orientation for research <i>students</i>".
+
+
+
+For the Specific/High Risk Hazard Programs section and heading:
+===============================================================
+In IN_Steps, where stID=2:
+
+i) Amended stTableHeader from:
+
+<tr>
+ <td colspan="5" class="StepMenu">STEP 2 - SPECIFIC/HIGH RISK HAZARD PROGRAMS</td>
+</tr>
+<tr>
+ <td class="label">COMPLIANCE REQUIREMENT</td>
+ <td><span class="label">1. Rate compliance at <%=monthname(month(Date()),true)%>&nbsp;<%=year(Date())%><br />
+ 0, 1, 2, or 3</span></td>
+ <td><span class="label">2. Note what is required to comply</span><br />&nbsp;&nbsp;<font color="#FF0000">M - mandatory procedures to comply with legislative requirements</font><br /><input type="checkbox" disabled>- optional activities that might be undertaken to achieve compliance</td>
+ <td class="label">3. Allocate responsibilities</td>
+ <td class="label">4. Allocate timeframe to complete by</td>
+</tr>
+
+to become:
+
+<tr>
+ <td colspan="5" class="StepMenu">STEP 2 - SPECIFIC HAZARD PROGRAMS</td>
+</tr>
+<tr>
+ <td class="label">COMPLIANCE REQUIREMENT</td>
+ <td><span class="label">1. Rate compliance at <%=monthname(month(Date()),true)%>&nbsp;<%=year(Date())%><br />
+ 0, 1, 2, or 3</span></td>
+ <td><span class="label">2. Note what is required to comply</span><br />&nbsp;&nbsp;<font color="#FF0000">M - mandatory procedures to comply with legislative requirements</font><br /><input type="checkbox" disabled>- optional activities that might be undertaken to achieve compliance</td>
+ <td class="label">3. Allocate responsibilities</td>
+ <td class="label">4. Allocate timeframe to complete by</td>
+</tr>
+
+ii) Amended stBasicHeader from:
+
+<tr>
+ <td colspan="5" class="StepMenu">SPECIFIC/HIGH RISK HAZARD PROGRAMS</td>
+</tr>
+<tr>
+ <td class="label">COMPLIANCE REQUIREMENT</td>
+ <td><span class="label">Compliance at <%=monthname(month(Date()),true)%>&nbsp;<%=year(Date())%></span></td>
+ <td><span class="label">EHS Procedures</span></td>
+ <td class="label">Responsibilities</td>
+ <td class="label">Complete by</td>
+</tr>
+
+to become:
+
+<tr>
+ <td colspan="5" class="StepMenu">SPECIFIC HAZARD PROGRAMS</td>
+</tr>
+<tr>
+ <td class="label">COMPLIANCE REQUIREMENT</td>
+ <td><span class="label">Compliance at <%=monthname(month(Date()),true)%>&nbsp;<%=year(Date())%></span></td>
+ <td><span class="label">Health and Safety Procedures</span></td>
+ <td class="label">Responsibilities</td>
+ <td class="label">Complete by</td>
+</tr>
+
+30/4/2013
+Name of the Faculty of Nursing, Midwifery and Health changed to the Faculty of Health.
+
+
+28/5/2013 [CL]
+Added new optional item to Radiation Safety - 
+Ensure Biosafety Committee applications are submitted for work involving ionizing radiation sources
+
+
+18/10/2013 -  C. Lee
+For the Hazardous Waste compliance requirement (ipID=188, ipRequirement=9, ipDisplayOrder=246 - Provide instruction on safe work practices to <i>students</i> at risk), changed the audit criteria (ipDefaultAuditText in IN_Procedures) from:
+
+"Observed/reported that staff and students are reminded not to put waste down the sink."
+
+to become:
+
+"Observed evidence that students are provided instruction on the safe disposal of hazardous waste."
+
+
+31/10/2013 - C. Lee
+Amended the resource (irResourceList) for the Health and Safety Responsibilities (irID=20) in IN_Requirements from:
+
+<li>Refer to the operational health and safety management web page at <a href="http://www.safetyandwellbeing.uts.edu.au/management/operational/">www.safetyandwellbeing.uts.edu.au/management/operational/</a>.</li>
+
+to become:
+
+<li>Refer to the health and safety responsibilities web page at <a href="http://www.safetyandwellbeing.uts.edu.au/responsibilities/">www.safetyandwellbeing.uts.edu.au/responsibilities/</a>.</li>
+
+
+
+25/11/2013 - C. Lee
+In IN_Requirements, for irId=3, updated the first aid irResourceList from:
+
+	<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Guidelines available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/first-aid/management/">www.safetyandwellbeing.uts.edu.au/first-aid/management/</a> or contact the S&amp;W branch on x1102 for assistance. First aid kits are the responsibility of nominated First Aid Officers.</li><li>A poster for displaying the names of First Aid Officers and Emergency Wardens is available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/first-aid/signage/">www.safetyandwellbeing.uts.edu.au/first-aid/signage/</a>.</li>
+
+	to become:
+
+	<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is provided in the UTS First Aid Guidelines available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/first-aid/management/">www.safetyandwellbeing.uts.edu.au/first-aid/management/</a> or contact the Human Resources Unit on x1056 for assistance. First aid kits are the responsibility of nominated First Aid Officers.</li><li>A poster for displaying the names of First Aid Officers and Emergency Wardens is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/first-aid/signage/">www.safetyandwellbeing.uts.edu.au/first-aid/signage/</a>.</li>
+
+
+Changed the manual handling irResourceList from:
+	<li>More information on how to minimise the risks associated with manual handling is available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/manual/">www.safetyandwellbeing.uts.edu.au/hazards/manual/</a> or contact the S&amp;W branch for assistance on ext 1326</li><li>A documented risk assessment is recommended for high-risk manual handling tasks. A process and template for conducting and documenting a risk assessment, as well as documenting a safe work method statement, is available from the Risk Management section of the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/risk-management/">www.safetyandwellbeing.uts.edu.au/risk-management/</a></li><li>Contact the S&amp;W branch on ext 1326 to coordinate an information/training session on manual handling</li>
+
+	to become:
+
+	<li>More information on how to minimise the risks associated with manual handling is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/manual/">www.safetyandwellbeing.uts.edu.au/hazards/manual/</a></li><li>A documented risk assessment is recommended for high-risk manual handling tasks. A process and template for conducting and documenting a risk assessment, as well as documenting a safe work method statement, is available from the Risk Management section of the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/risk-management/">www.safetyandwellbeing.uts.edu.au/risk-management/</a></li><li>Contact the Human Resources Unit at <a href="mailto:clientservices@uts.edu.au?subject=Manual handling information and training session">clientservices@uts.edu.au</a> to coordinate an information/training session on manual handling</li>
+
+Changed the Electrical Safety irResourceList from:
+	<li>For information on electrical safety and UTS's procedures for inspecting and testing electrical equipment, see the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/electrical/">www.safetyandwellbeing.uts.edu.au/hazards/electrical/</a>.</li><li>Contact Safety &amp; Wellbeing on ext 1063 to organise training in use of the Portable Appliance Tester, or for assistance in the development of an electrical testing protocol.</li>
+
+	to become:
+
+	<li>For information on electrical safety and UTS's procedures for inspecting and testing electrical equipment, see the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/electrical/">www.safetyandwellbeing.uts.edu.au/hazards/electrical/</a>.</li><li>Contact Safety &amp; Wellbeing on ext 1063 for assistance in the development of an electrical testing protocol.</li>
+
+Changed the Computers/Workstations irResourceList from:
+	<li>See the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/computer/">www.safetyandwellbeing.uts.edu.au/activities/computer/</a> or contact the S&amp;W branch on ext 1326 if you require assistance with workstation set-up or other ergonomic issues.</li><li>To organise an individual workstation ergonomic assessment for staff, contact the S&amp;W branch on ext 1326</li><li>The <i>Computer Comfort</i> factsheet is available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/computer/">www.safetyandwellbeing.uts.edu.au/activities/computer/</a>.</li>
+
+	to become:
+
+	<li>See the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/computer/">www.safetyandwellbeing.uts.edu.au/activities/computer/</a> if you require assistance with workstation set-up or other ergonomic issues.</li><li>The <i>Computer Comfort</i> factsheet is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/computer/">www.safetyandwellbeing.uts.edu.au/activities/computer/</a>.</li>
+
+For Information and Training, changed the irResourceList from:
+	<li>The "Safety and Wellbeing Essentials" training module is accessible through the Neo <acronym title="Online Learning Management">OLM</acronym> system. To access the module, enrol via <a href="http://neo.itd.uts.edu.au:8001/OA_HTML/RF.jsp?function_id=25207&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=YTp21Coqe22uyrrO7T9vjxli3Cjn6hgTFtu-jyaJq5HNVDX7MNBwBcb0GyTSyhMlrlE2v3L-4Kp4TQW1FcnWUQ&oas=yQM-8Vj6ODV7TnCSAMMqsQ">Neo</a>. Once enrolled, select the Play button from the Enrolments section of the My Learning page, then follow the instructions.</li><li>Details of the "Safety and Wellbeing for Supervisors" and "Safety and Wellbeing for Academics" training sessions are available at <a href="http://www.safetyandwellbeing.uts.edu.au/responsibilities/index.html">www.safetyandwellbeing.uts.edu.au/responsibilities/</a>.</li><li>A range of health and safety information products, such as posters and brochures, are available from Safety &amp; Wellbeing by calling ext 1342.</li><li>A template for a local health and safety induction checklist is available at <a href="http://www.safetyandwellbeing.uts.edu.au/managers/inducting.html">www.safetyandwellbeing.uts.edu.au/managers/inducting.html</a>.</li>
+
+	to become:
+
+	<li>The "Safety and Wellbeing Essentials" training module is accessible through the Neo <acronym title="Online Learning Management">OLM</acronym> system. Access this module via the <a href="http://www.safetyandwellbeing.uts.edu.au/training/index.html#essentials">Training</a> section of the Safety &amp; Wellbeing web site.</li><li>Details of the "Safety and Wellbeing for Supervisors" and "Safety and Wellbeing for Academics" training sessions are also available at the <a href="http://www.safetyandwellbeing.uts.edu.au/training/index.html#essentials">Training</a> section of the Safety &amp; Wellbeing web site</li>
+
+
+26/11/2013 - C. Lee
+In IN_Requirements, for irId=6, updated the biological safety irResourceList from:
+	<li>Procedure for applying for UTS Biosafety Committee approval is available from the Biosafety web site at <a href="http://www.research.uts.edu.au/policies/restricted/biosafety/">www.research.uts.edu.au/policies/restricted/biosafety/</a> (UTS-internal only)</li><li>The Online Risk Register (<a href="http://www.orr.uts.edu.au">www.orr.uts.edu.au</a>) provides templates for documenting risk assessments and safe work method statements for high-risk activities.</li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/preventing/ppe/">www.safetyandwellbeing.uts.edu.au/preventing/ppe/</a>.</li><li>Information on how to dispose of hazardous clinical/biological waste at UTS is available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/waste/clinical.html">www.ehs.uts.edu.au/activities/waste/clinical.html</a>.</li>
+
+	to become:
+	<li>Procedure for applying for UTS Biosafety Committee approval is available from the Biosafety web site at <a href="http://www.research.uts.edu.au/policies/restricted/biosafety/">www.research.uts.edu.au/policies/restricted/biosafety/</a> (UTS-internal access only)</li><li>The Online Risk Register (<a href="http://www.orr.uts.edu.au">www.orr.uts.edu.au</a>) provides templates for documenting risk assessments and safe work method statements for high-risk activities.</li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/preventing/ppe/">www.safetyandwellbeing.uts.edu.au/preventing/ppe/</a>.</li><li>Information on how to dispose of hazardous clinical/biological waste at UTS is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/waste/clinical.html">www.safetyandwellbeing.uts.edu.au/activities/waste/clinical.html</a>.</li>
+
+15/5/2014 - C. Lee
+In IN_Procedures, under “Information and Training:
+
+i) Changed the item ipID=205 from:
+Mandate support staff supervisors attendance at ‘Safety and Wellbeing for Supervisors’ training sessions
+to become
+Mandate support staff supervisors completion of 'Health and Safety for Supervisors' training
+
+ii) Changed the item ipID=223 from:
+Mandate academic staff attendance at 'Safety and Wellbeing for Academics' training sessions 
+to become
+Mandate academic staff completion of 'Health and Safety for Supervisors' training
+
+
+19/5/2014 - C. Lee
+In IN_Requirements, for irId=1, changed the irResourceList for Hazards from:
+
+<li>A basic checklist for conducting and documenting workplace inspections is available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/environment/office/">www.safetyandwellbeing.uts.edu.au/environment/office/</a></li><li>A laboratory, workshop and chemical stores safety inspection checklist is available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/environment/lab/">www.safetyandwellbeing.uts.edu.au/environment/lab/</a>.</li>
+<li>The Hazard and Incident Reporting Online (HIRO) system is accessible at <a href="https://uts.riskcloud.net/">https://uts.riskcloud.net/</a>.</li>
+
+to become:
+
+<li>The Office and General Work Area Safety Inspection Checklist is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/environment/office/">www.safetyandwellbeing.uts.edu.au/environment/office/</a></li><li>The Laboratory and Workshop Safety Inspection Checklist is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/environment/lab/">www.safetyandwellbeing.uts.edu.au/environment/lab/</a>.</li>
+<li>The Hazard and Incident Reporting Online (HIRO) system is accessible at <a href="https://uts.riskcloud.net/">https://uts.riskcloud.net/</a>.</li>
+
+
+In IN_Requirements, for irId=2, changed the irResourceList for Accidents/Incidents from:
+<li>The Hazard and Incident Reporting Online (HIRO) system is accessible at <a href="https://uts.riskcloud.net/">https://uts.riskcloud.net/</a>.</li><li>The S&amp;W branch provides an annual report to all Faculties and Units, containing information on accidents/incidents and workers' compensation claims.</li>
+
+to become:
+<li>The Hazard and Incident Reporting Online (HIRO) system is accessible at <a href="https://uts.riskcloud.net/">https://uts.riskcloud.net/</a>.</li><li>Safety &amp; Wellbeing provides an annual report to all Faculties and Units, containing information on accidents/incidents and workers' compensation claims.</li>
+
+
+
+In IN_Requirements, for irId=3, changed the irResourceList for First Aid from:
+
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is available from the <a href="https://staff.uts.edu.au/topichub/Pages/Doing%20my%20job/Health%20and%20Safety/First%20aid/first-aid.aspx">Being a UTS First Aid Officer</a> web page on the Staff Connect intranet, or staff can contact the Human Resources Unit on x1056 for assistance. First aid kits are the responsibility of nominated First Aid Officers.</li><li>A poster for displaying the names of First Aid Officers and Emergency Wardens is available from the <a href="https://staff.uts.edu.au/topichub/Pages/Doing%20my%20job/Health%20and%20Safety/First%20aid/first-aid.aspx">Being a UTS First Aid Officer</a> web page on the Staff Connect intranet.</li>
+
+to become:
+
+<li>Information on how to nominate First Aid Officers and establish and maintain first aid kits is available from the <a href="https://staff.uts.edu.au/topichub/Pages/Doing%20my%20job/Health%20and%20Safety/First%20aid/first-aid.aspx">Being a UTS First Aid Officer</a> web page on the Staff Connect intranet, or staff can contact the Human Resources Unit on x1062 for assistance. First aid kits are the responsibility of nominated First Aid Officers.</li><li>A poster for displaying the names of First Aid Officers and Emergency Wardens is available from the <a href="https://staff.uts.edu.au/topichub/Pages/Doing%20my%20job/Health%20and%20Safety/First%20aid/first-aid.aspx">Being a UTS First Aid Officer</a> web page on the Staff Connect intranet.</li>
+
+
+In IN_Requirements, for irId=4, changed the irResourceList for Emergency Management from:
+<li>UTS Security is responsible for emergency management - contact UTS Security on ext 1192 for assistance</li><li><i>Dial 6</i> telephone stickers are available from UTS Security on ext 1192</li><li>UTS Emergency Procedures posters are available from the Essential Services Compliance Manager on ext 4689</li><li>Contact the Essential Services Compliance Manager on ext 4689 for information on nominating emergency wardens</li><li>The emergency evacuation video - <i>Escape From UTS</i> - can be accessed on the UTS: Facilities Management web site at <a href="http://www.fmu.uts.edu.au/security/emergencies/escape.html">www.fmu.uts.edu.au/security/emergencies/escape.html</a> and on all computerised lecturns.</li>
+
+to become:
+<li>UTS Security is responsible for emergency management - contact UTS Security on ext 1192 for assistance</li><li><i>Dial 6</i> telephone stickers and <i>UTS Emergency Procedures</i> posters are available from UTS Security on ext 7221</li><li>Contact the Emergency Coordinator on ext 7221 for information on nominating emergency wardens</li><li>The emergency evacuation video - <i>Escape From UTS</i> - can be accessed on the UTS: Facilities Management web site at <a href="http://www.fmu.uts.edu.au/security/emergencies/escape.html">www.fmu.uts.edu.au/security/emergencies/escape.html</a> and on all computerised lecturns.</li>
+
+
+
+In IN_Requirements, for irId=8, changed the irResourceList for Hazardous Chemicals from:
+
+<li>UTS procedures for the purchase, storage, use and disposal of chemicals are available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/chemical/">www.safetyandwellbeing.uts.edu.au/hazards/chemical/</a>. Contact the S&amp;W branch on ext 1063 for assistance.</li><li>Templates for documenting a hazardous substance/dangerous good risk assessment are available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/forms/">www.safetyandwellbeing.uts.edu.au/forms/</a>.</li><li>UTS procedures for selection, use and maintenance of personal protective equipment (PPE) are on the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/preventing/ppe/">www.safetyandwellbeing.uts.edu.au/preventing/ppe/</a>.</li><li>Information on how to dispose of chemical waste at UTS is available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/waste/">www.safetyandwellbeing.uts.edu.au/activities/waste/</a>.</li>
+
+to become:
+
+<li>UTS procedures for the purchase, storage, use and disposal of chemicals are available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/chemical/">www.safetyandwellbeing.uts.edu.au/hazards/chemical/</a>. Contact Safety &amp; Wellbeing on ext 1063 for assistance.</li><li>Templates for documenting a hazardous substance/dangerous good risk assessment are available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/forms/">www.safetyandwellbeing.uts.edu.au/forms/</a>.</li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/preventing/ppe/">www.safetyandwellbeing.uts.edu.au/preventing/ppe/</a>.</li><li>Information on how to dispose of chemical waste at UTS is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/waste/">www.safetyandwellbeing.uts.edu.au/activities/waste/</a>.</li>
+
+
+In IN_Requirements, for irId=8, changed the irResourceList for Hazardous Waste from:
+
+<li>See the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/waste/">www.safetyandwellbeing.uts.edu.au/activities/waste/</a> for information on UTS procedures for the disposal of hazardous waste</a>.</li>
+<li>For UTS hazardous waste stickers and forms, or for assistance on hazardous waste disposal, contact Safety &amp; Wellbeing on ext 1063.</li><li>The schedule for hazardous chemical waste disposal is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/waste/chemical.html">www.safetyandwellbeing.uts.edu.au/activities/waste/chemical.html</a>.</li>
+
+to become:
+
+<li>See the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/waste/">www.safetyandwellbeing.uts.edu.au/activities/waste/</a> for information on UTS procedures for the disposal of hazardous waste</a>.</li>
+<li>For UTS hazardous waste stickers and forms, or for assistance on hazardous waste disposal, contact Safety &amp; Wellbeing on ext 1342.</li><li>The schedule for hazardous chemical waste disposal is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/waste/chemical.html">www.safetyandwellbeing.uts.edu.au/activities/waste/chemical.html</a>.</li>
+
+
+In IN_Requirements, for irId=10, changed irDetailedDescription from:
+
+Safety &amp; Wellbeing organises training in use of the Portable Appliance Tester
+
+to become:
+
+Safety &amp; Wellbeing can provide advice on developing and maintaining a testing and tagging protocol for plug-in electrical equipment.
+
+
+
+In IN_Requirements, for irId=11, changed the irResourceList from:
+
+<li>For information on how to implement a program or procedures for plant/equipment safety, see the plant/equipment safety section of the S&amp;W branch web site (at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/plant/">www.safetyandwellbeing.uts.edu.au/hazards/plant/</a>), or contact the S&amp;W branch on ext 1063 for assistance.</li><li>A process and templates for documenting risk assessments and Safe Work Method Statements for tasks involving high-risk plant and equipment is available from the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/plant/#riskmanagement">www.safetyandwellbeing.uts.edu.au/hazards/plant/#riskmanagement</a>.</li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the S&amp;W branch web site at <a href="http://www.safetyandwellbeing.uts.edu.au/preventing/ppe/">www.safetyandwellbeing.uts.edu.au/preventing/ppe/</a>.</li>
+
+to become:
+
+<li>For information on how to implement a program or procedures for plant/equipment safety, see the plant/equipment safety section of the Safety &amp; Wellbeing web site (at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/plant/">www.safetyandwellbeing.uts.edu.au/hazards/plant/</a>), or contact ext 1063 for assistance.</li><li>A process and templates for documenting risk assessments and Safe Work Method Statements for tasks involving high-risk plant and equipment is available from the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/hazards/plant/#riskmanagement">www.safetyandwellbeing.uts.edu.au/hazards/plant/#riskmanagement</a>.</li><li>UTS procedures for the selection, use and maintenance of personal protective equipment (PPE) are on the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/preventing/ppe/">www.safetyandwellbeing.uts.edu.au/preventing/ppe/</a>.</li>
+
+
+
+In IN_Requirements, for irId=18, changed the irResourceList from:
+
+<li>Contact Safety &amp; Wellbeing on x1063 for more information or assistance in integrating health and safety into research.</li><li>A sample schedule for the orientation of new staff/students is available from the HRU web site.</li>
+
+to become:
+
+<li>For information on how to integrate health and safety risk maangement into research, see the Safety &amp; Wellbeing web site at <a href="http://www.safetyandwellbeing.uts.edu.au/activities/research/">www.safetyandwellbeing.uts.edu.au/activities/research/</a>. Contact Safety &amp; Wellbeing on x1063 for more information or assistance.</li><li>A sample schedule for the orientation of new staff/students is available from the Human Resources web site at <a href="http://www.hru.uts.edu.au/start/">www.hru.uts.edu.au/start/</a>.</li>
+
+
+
+
+In IN_Requirements, for irId=21, changed the irResourceList from:
+
+<li>Refer to the "Consultation in the health and safety management system" web page at <a href="http://www.safetyandwellbeing.uts.edu.au/management/consultation/">www.safetyandwellbeing.uts.edu.au/management/consultation/</a>.</li>
+
+to become:
+
+<li>Refer to the "Consultation within the health and safety management system" web page at <a href="http://www.safetyandwellbeing.uts.edu.au/management/consultation/">www.safetyandwellbeing.uts.edu.au/management/consultation/</a>.</li>
+
+
+In IN_Requirements, for irId=22, changed the irResourceList from:
+
+<li>The "Safety and Wellbeing Essentials" training module is accessible through the Neo <acronym title="Online Learning Management">OLM</acronym> system. Access this module via the <a href="http://www.safetyandwellbeing.uts.edu.au/training/index.html#essentials">Training</a> section of the Safety &amp; Wellbeing web site.</li><li>Details of the "Safety and Wellbeing for Supervisors" and "Safety and Wellbeing for Academics" training sessions are also available at the <a href="http://www.safetyandwellbeing.uts.edu.au/training/index.html">Training</a> section of the Safety &amp; Wellbeing web site</li>
+
+to become:
+
+<li>The "Safety and Wellbeing Essentials", "Health and Safety for Supervisors" and "Preventing Bullying in the Workplace" online training modules are accessible through the Neo <acronym title="Online Learning Management">OLM</acronym> system. Access this module via the <a href="https://staff.uts.edu.au/topichub/Pages/Doing%20my%20job/Health%20and%20Safety/Safety%20training/safety-training.aspx">Safety training</a> section of the Staff Connect intranet.</li>
+
+
+In IN_Requirements, for irId=27, changed the irResourceList from:
+
+<li>Petty cash procedures and risk management forms are available via the Financial Services Unit's web site at <a href="http://www.fsu.uts.edu.au" title="Financial Services Unit's web site">www.fsu.uts.edu.au</a>.</li>
+
+to become:
+
+<li>Petty cash procedures and risk management forms are available via the Financial Services Unit's web site at <a href="http://www.fsu.uts.edu.au" title="UTS: Financial Services Unit">www.fsu.uts.edu.au</a>.</li>
+<li>Information on access to robbery safety training is available on the Safety training section of the <a href="https://staff.uts.edu.au/topichub/Pages/Doing%20my%20job/Health%20and%20Safety/Safety%20training/safety-training.aspx">Staff Connect intranet</a>.</li>

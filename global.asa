@@ -1,0 +1,40 @@
+
+<script language="vbscript" runat="server">
+
+	Sub Application_OnStart
+		' Set our user count to 0 when we start the server
+		Application("ActiveUsers") = 0
+	End Sub
+	
+	sub Application_OnEnd
+
+	end sub
+
+	Sub Session_OnStart
+		' Change Session Timeout to two hours minutes
+		Session.Timeout = 120
+		Session.LCID = 3081
+		' Set a Session Start Time
+		' This is only important to assure we start a session
+		Session("Start") = Now
+		Session("Login") = ""
+		Session("Pass") = ""
+		Session("DepID") = ""
+		Session("DepName") = ""
+		
+		' Increase the active visitors count when we start the session
+		Application.Lock
+		Application("ActiveUsers") = Application("ActiveUsers") + 1
+		Application.UnLock
+	End Sub 
+	
+	Sub Session_OnEnd
+		' Decrease the active visitors count when the session ends.
+		Application.Lock
+		Application("ActiveUsers") = Application("ActiveUsers") - 1
+		Application.UnLock
+	End Sub
+
+
+
+</script>
