@@ -48,13 +48,13 @@
 	dim errortext
 	Select case audittype
 		Case "facility"
-			errortext= "Laboratory/Workshop Supervisor:"
+			errortext= "Workshop/Laboratory Name"
 		Case "research"
-			errortext= "Responsible Investigator:"
+			errortext= "Research Project"
 		Case "curriculum"
-			errortext= "Subject Coordinator:"
+			errortext= "Subject Name"
 		Case "management"
-			errortext= "Audit Contact:"
+			errortext= "Dean Director"
 	End Select
 %>
 	<script type="text/javascript">
@@ -254,7 +254,7 @@
 			objCmd.Parameters("arActionPlan") = cint(ActionPlan)
 
 		end if
-
+ 
 		
 		set rsReq =  server.createobject("adodb.recordset")
 		rsReq.Open objCmd
@@ -546,7 +546,7 @@
 
 
 <script type="text/javascript">
-
+<!--
 	function DoSubmit() {
 	
 		//Replace any commas on the form as they can mess with form reloading
@@ -636,7 +636,7 @@
 		}
 		return true;
 	}
-
+//-->
 </script>
 
 <!-- #Include file="include\footer.asp" -->

@@ -26,7 +26,7 @@
 	if Mode = "New" then
 		' this is a new Audit so make sure the Lab Name is unique to this Action Plan
 		if LabNameInUse = true then
-			Response.Redirect "AuditForm.asp?apID=" & ActionPlan & "&Mode=" & Mode & "&faID=" & AuditID & "&error=Lab" &"type="&audit
+			Response.Redirect "AuditForm.asp?apID=" & ActionPlan & "&Mode=" & Mode & "&faID=" & AuditID & "&error=Lab" &"&type="&audit
 			Response.End
 		end if
 		

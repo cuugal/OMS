@@ -211,7 +211,9 @@
 			<tr>
 				<td><%=rsFormA("irFormADescription")%> </td>
 			
-				<td><% =rating %></td>
+				<td><% =rating %>
+                    <input type="hidden" name="rate_<%=rsFormA("irID")%>" value="<% =rating %>" />              
+				</td>
 			</tr>
 <%		
 			end if

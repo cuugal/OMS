@@ -461,6 +461,7 @@
 		sqlReq =	"SELECT IN_Requirements.*, AP_Requirements.arRating " & _
 					"FROM IN_Requirements INNER JOIN AP_Requirements ON IN_Requirements.irId = AP_Requirements.arRequirement " & _
 					"WHERE AP_Requirements.arActionPlan = " & ActionPlan & " AND IN_Requirements.irId = " & ReqID
+        'response.write sqlReq
 		set rsReq = con.Execute (sqlReq)
 		
 		sqlCount =	"SELECT Count(*) AS Expr1 " & _

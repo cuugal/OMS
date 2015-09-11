@@ -288,15 +288,18 @@
 		
 		' overwrite with the previous draft if previous draft exists
 		if rsReq("arRating") <> "" then
-				rating = rsReq("arRating")
-			end if
+			rating = rsReq("arRating")
+		end if
 			
 		if(rating = "" or rating <0) then rating = "-" end if
+	 
 %>
 		<tr>
 			<td rowspan="<%=rsNumPro("NumProcedures")%>"><span class="label"><%=rsReq("irName")%></span><br><%=rsReq("irdescription")%></td>
 			
-			<td rowspan="<%=rsNumPro("NumProcedures")%>"><% =rating %></td>
+			<td rowspan="<%=rsNumPro("NumProcedures")%>"><% =rating %>
+                <input type="hidden" name="rate_<%=rsReq("irID")%>" value="<% =rating %>" /> 
+			</td>
 <%		
 
 		ShowProcedures ReqID

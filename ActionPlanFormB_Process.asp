@@ -64,9 +64,10 @@
 		
 		while not rsReq.EOF
 			' Only need to get the rating			
-			if Request ("Rate_" & rsReq("arRequirement")) <> "" then
-				sqlReqInsert = "Update AP_Requirements set arRating = " & Request ("Rate_" & rsReq("arRequirement")) & _
+			if Request ("rate_" & rsReq("arRequirement")) <> "" and Request ("rate_" & rsReq("arRequirement")) <> "-" then
+				sqlReqInsert = "Update AP_Requirements set arRating = " & Request ("rate_" & rsReq("arRequirement")) & _
 							   " where arActionPlan = " & ActionPlan & " and arRequirement = " & rsReq("arRequirement")
+				'response.write sqlReqInsert
 				con.Execute (sqlReqInsert)
 			end if
 		
