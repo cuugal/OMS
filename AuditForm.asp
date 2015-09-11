@@ -75,17 +75,17 @@
 
 <table width="100%" border="0" cellspacing="3">
   <tr> 
-    <td><h3>AUDIT FORM - <%=UCase(Left(audittype,1))& Mid(audittype,2) %> Audit</h3></td>
-    <td> 
-      <div align="right"><img src="utslogo.gif" width="135" height="30"></div>
-    </td>
+	<td><h3>AUDIT FORM - <%=UCase(Left(audittype,1))& Mid(audittype,2) %> Audit</h3></td>
+	<td> 
+	  <div align="right"><img src="utslogo.gif" width="135" height="30"></div>
+	</td>
   </tr>
   <tr> 
-    <td colspan="2"> 
-      &nbsp;&nbsp;
-      <table border="1" width="100%">
-        <tr> 
-          <td class="label" width="32%">
+	<td colspan="2"> 
+	  &nbsp;&nbsp;
+	  <table border="1" width="100%">
+		<tr> 
+		  <td class="label" width="32%">
 		  <% 
 			Select case audittype
 				Case "facility"
@@ -99,14 +99,14 @@
 			End Select
 		  %>
 		  <br><br></td>
-          <td class="label" width="33%">
-            <input type="text" name="txt_Sup" size="50" maxlength="150" value="<% if Mode = "Edit" then Response.Write rsAudDetails("faSupervisor")%>"><br><br>
-          </td>
-          <td class="label">Faculty / Unit <br><br></td>
-          <td><%=Session("DepName")%><br><br></td>
-        </tr>
-        <tr> 
-          <td class="label">
+		  <td class="label" width="33%">
+			<input type="text" name="txt_Sup" size="50" maxlength="150" value="<% if Mode = "Edit" then Response.Write rsAudDetails("faSupervisor")%>"><br><br>
+		  </td>
+		  <td class="label">Faculty / Unit <br><br></td>
+		  <td><%=Session("DepName")%><br><br></td>
+		</tr>
+		<tr> 
+		  <td class="label">
 		  <% 
 			Select case audittype
 				Case "facility"
@@ -120,10 +120,10 @@
 			End Select
 		  %>
 		  <br><br></td>
-          <td class="label">
-            <input type="text" name="txt_Lab" size="50" maxlength="150" value="<% if Mode = "Edit" then Response.Write rsAudDetails("faLabName")%>"><br><br>
-          </td>
-          <td class="label">
+		  <td class="label">
+			<input type="text" name="txt_Lab" size="50" maxlength="150" value="<% if Mode = "Edit" then Response.Write rsAudDetails("faLabName")%>"><br><br>
+		  </td>
+		  <td class="label">
 		  <% 
 			Select case audittype
 				Case "facility"
@@ -137,18 +137,18 @@
 			End Select
 		  %>
 		  <br><br></td>
-          <td class="label">
-            <input type="text" name="txt_Loc" maxlength="150" value="<% if Mode = "Edit" then Response.Write rsAudDetails("faLocation")%>"><br><br>
-          </td>
-        </tr>
-        <tr> 
-          <td class="label">Name of Auditors<br><br></td>
-          <td class="label">
-            <input type="text" name="txt_Assr" size="50" maxlength="150" value="<% if Mode = "Edit" then Response.Write rsAudDetails("faAssesName")%>"><br><br>
-          </td>
-          <td class="label"> Date of Audit<br><br></td>
-          <td class="label">
-            <input type="text" name="txt_Date" id="datepicker"  maxlength="150"><br><br>
+		  <td class="label">
+			<input type="text" name="txt_Loc" maxlength="150" value="<% if Mode = "Edit" then Response.Write rsAudDetails("faLocation")%>"><br><br>
+		  </td>
+		</tr>
+		<tr> 
+		  <td class="label">Name of Auditors<br><br></td>
+		  <td class="label">
+			<input type="text" name="txt_Assr" size="50" maxlength="150" value="<% if Mode = "Edit" then Response.Write rsAudDetails("faAssesName")%>"><br><br>
+		  </td>
+		  <td class="label"> Date of Audit<br><br></td>
+		  <td class="label">
+			<input type="text" name="txt_Date" id="datepicker"  maxlength="150"><br><br>
 			
 
 			<script type="text/javascript">
@@ -172,37 +172,37 @@
 
 
 			<script type ="text/javascript">
-                        var parsedDate = $.datepicker.parseDate('dd/mm/yy', '<%=rsAudDetails("faDate")%>');
-                        $( "#datepicker" ).datepicker( "setDate",parsedDate );
-            </script>
+						var parsedDate = $.datepicker.parseDate('dd/mm/yy', '<%=rsAudDetails("faDate")%>');
+						$( "#datepicker" ).datepicker( "setDate",parsedDate );
+			</script>
 
 			<% end if %>
-          </td>
-        </tr>
-      </table>
-    </td>
+		  </td>
+		</tr>
+	  </table>
+	</td>
   </tr>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-      <br><br><h2>&nbsp;&nbsp;HOUSEKEEPING & OBSERVATIONS<br>
-        <textarea name="txt_hous" rows="9" cols="120"><% if Mode = "Edit" then Response.Write rsAudDetails("faHouseKeeping")%></textarea>
-        <br>
-        <br>
-      </h2>
-    </td>
+	</td>
   </tr>
   <tr> 
-    <td colspan="2"> 
-      <h2>&nbsp;&nbsp;STATUS OF COMPLIANCE - RESULTS IN DETAIL<br>
-      </h2>
-    </td>
+	<td colspan="2"> 
+	  <br><br><h2>&nbsp;&nbsp;HOUSEKEEPING & OBSERVATIONS<br>
+		<textarea name="txt_hous" rows="9" cols="120"><% if Mode = "Edit" then Response.Write rsAudDetails("faHouseKeeping")%></textarea>
+		<br>
+		<br>
+	  </h2>
+	</td>
   </tr>
   <tr> 
-    <td colspan="2">
-    
-    <%
+	<td colspan="2"> 
+	  <h2>&nbsp;&nbsp;STATUS OF COMPLIANCE - RESULTS IN DETAIL<br>
+	  </h2>
+	</td>
+  </tr>
+  <tr> 
+	<td colspan="2">
+	
+	<%
 	Function ShowStep(StepID)
 		dim sqlStep, sqlReq
 		dim rsStep, rsReq
@@ -212,15 +212,15 @@
 %>
 		<table border="1" cellpadding="2" width="95%">
 		 <tr> 
-          <td colspan="3" class="StepMenu"><%=rsStep("stShortName")%></td>
-        </tr>
-        <tr> 
-          <td class="label" width="30%">COMPLIANCE REQUIREMENTS</td>
+		  <td colspan="3" class="StepMenu"><%=rsStep("stShortName")%></td>
+		</tr>
+		<tr> 
+		  <td class="label" width="30%">COMPLIANCE REQUIREMENTS</td>
 		  <td class="label" width="35%">PROCEDURE</td>
 
-          <td class="label" width="35%">EVIDENCE OF COMPLIANCE</td>
-          <!--<td class="label" width="50%">EVIDENCE OF COMPLIANCE</td> -->
-        </tr>
+		  <td class="label" width="35%">EVIDENCE OF COMPLIANCE</td>
+		  <!--<td class="label" width="50%">EVIDENCE OF COMPLIANCE</td> -->
+		</tr>
 		
 <%		
 		' Show the requirements
@@ -528,16 +528,16 @@
 <BR><BR>
 <% ShowStep(2) %>
 <BR><BR>
-    
-    </td>
+	
+	</td>
   </tr>
   <tr><Td colspan="2"><% Response.write("Current Timestamp: " &Hour(Now)&":" &Minute(Now) &":"&Second(Now)&" "&Day(Now) & "/"& Month(Now)&"/"&Year(Now)) %></td></tr>
    <tr> 
-    <td colspan="2"> 
-      <input type="button" value="    Save as Draft    " onclick="javascript:audit.action.value='draft';DoSubmit()">
+	<td colspan="2"> 
+	  <input type="button" value="    Save as Draft    " onclick="javascript:audit.action.value='draft';DoSubmit()">
 			&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="button" value="    Save as Final    " onclick="javascript:audit.action.value='final';DoSubmit()">
-    </td>
+	  <input type="button" value="    Save as Final    " onclick="javascript:audit.action.value='final';DoSubmit()">
+	</td>
   </tr>
 </table>
 
@@ -546,7 +546,7 @@
 
 
 <script type="text/javascript">
-<!--
+
 	function DoSubmit() {
 	
 		//Replace any commas on the form as they can mess with form reloading
@@ -636,7 +636,7 @@
 		}
 		return true;
 	}
-//-->
+
 </script>
 
 <!-- #Include file="include\footer.asp" -->
