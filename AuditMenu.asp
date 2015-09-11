@@ -283,9 +283,10 @@
 </table>
 
 <script type="text/javascript">
+   
 
-
-$(document).ready( function () {
+$(document).ready(function () {
+    $.fn.dataTable.moment('D/MM/YYYY');
     $('#audits').dataTable( {
         "dom": 'T<"clear">lfrtip',
         "tableTools": {

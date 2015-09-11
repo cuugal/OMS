@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="datatables/css/jquery.ui.css" type="text/css">
 	<script type="text/javascript" src="datatables/jquery.min.js"></script>
 	<script type="text/javascript" src="datatables/jquery-ui.js"></script>
+    <script type="text/javascript" src="datatables/moment.min.js"></script>
+    <script type="text/javascript" src="datatables/datetime-moment.js"></script>
 </head>
 <body bgcolor="#ffffff" text="#000000">
 

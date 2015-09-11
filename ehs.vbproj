@@ -89,6 +89,8 @@
     <Content Include="ActionPlanFormB_Process.asp" />
     <Content Include="ActionPlanMenu.asp" />
     <Content Include="ActionPlanReport.asp" />
+    <Content Include="adovbs.inc" />
+    <Content Include="AJAXSaveUser.asp" />
     <Content Include="AuditForm.asp" />
     <Content Include="AuditForm_Process.asp" />
     <Content Include="AuditMenu.asp" />
@@ -158,9 +160,11 @@
     <Content Include="datatables\images\sort_both.png" />
     <Content Include="datatables\images\sort_desc.png" />
     <Content Include="datatables\images\sort_desc_disabled.png" />
+    <Content Include="datatables\datetime-moment.js" />
     <Content Include="datatables\jquery-ui.js" />
     <Content Include="datatables\jquery.dataTables.editable.js" />
     <Content Include="datatables\jquery.min.js" />
+    <Content Include="datatables\moment.min.js" />
     <Content Include="datatables\TableTools\css\dataTables.tableTools.css" />
     <Content Include="datatables\TableTools\css\dataTables.tableTools.min.css" />
     <Content Include="datatables\TableTools\examples\ajax.html" />
@@ -200,7 +204,10 @@
     <Content Include="datatables\TableTools\Readme.txt" />
     <Content Include="datatables\TableTools\swf\copy_csv_xls.swf" />
     <Content Include="datatables\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="DbConfig.asp" />
     <Content Include="EHSLogo.jpg" />
+    <Content Include="ehslogo2.gif" />
+    <Content Include="favicon.ico" />
     <Content Include="global.asa" />
     <Content Include="HTMLPage1.htm" />
     <Content Include="include\footer.asp" />
@@ -208,26 +215,37 @@
     <Content Include="include\header.asp" />
     <Content Include="include\header_menu.asp" />
     <Content Include="index.asp" />
+    <Content Include="logout.asp" />
+    <Content Include="ManageAuditors.asp" />
     <Content Include="Menu.asp" />
     <Content Include="oms.css" />
+    <Content Include="overview.html" />
     <Content Include="PasswordAdmin.asp" />
+    <Content Include="printericon.gif" />
     <Content Include="ReportingByFaculty.asp" />
     <Content Include="ReportingByRequirement.asp" />
     <Content Include="ReportingByYear.asp" />
     <Content Include="ReportingMenu.asp" />
     <Content Include="Restricted.asp" />
+    <Content Include="SAMgmtReport.asp" />
+    <Content Include="SARP.asp" />
     <Content Include="ServiceAgreementForm.asp" />
     <Content Include="ServiceAgreementForm_Process.asp" />
     <Content Include="ServiceAgreementMenu.asp" />
     <Content Include="ServiceAgreementReport.asp" />
+    <Content Include="ServiceAgreementReportDraft.asp" />
+    <Content Include="ServiceAgreementReportNA.asp" />
+    <Content Include="ServiceAgreementStatus.asp" />
+    <Content Include="UpgradeLog.htm" />
+    <Content Include="UpgradeLog2.htm" />
     <Content Include="utslogo.gif" />
-    <None Include="database\ehs.mdb" />
     <Content Include="web.config" />
     <Content Include="datatables\images\Sorting icons.psd" />
     <Content Include="datatables\TableTools\images\psd\collection.psd" />
     <Content Include="datatables\TableTools\images\psd\copy document.psd" />
     <Content Include="datatables\TableTools\images\psd\file_types.psd" />
     <Content Include="datatables\TableTools\images\psd\printer.psd" />
+    <Content Include="Thumbs.db" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -236,6 +254,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="database\" />
     <Folder Include="My Project\" />
   </ItemGroup>
   <PropertyGroup>
