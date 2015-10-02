@@ -312,7 +312,11 @@
 			set row = data(i)
 			dim readLines
 			'readlines = row.evidenceCompliance.split(vbCrLf)
-			readLines = Split(row.evidenceCompliance, ", ")
+			readLines = Split(row.evidenceCompliance, "|")
+            'Automatic migration for old data split by comma.  Split on the old character, when we save it will split on the new
+            if UBound(readLines) < 1 then
+                readLines = Split(row.evidenceCompliance, ",")
+            end if
 			
 			
 			
@@ -337,7 +341,7 @@
 			<% if Mode = "Edit" then %>
 			
 			<td>
-				<TEXTAREA rows=3 cols=100 name="text_<%=ReqID%>"><% Response.write(Trim(readlines(i)))%></TEXTAREA>
+				<TEXTAREA rows=3 cols=100 name="text_<%=ReqID%>"><% Response.write( replace(Trim(readlines(i)), ";",","))%></TEXTAREA>
 			</td>
 			<% else %>
 			<td>
@@ -556,8 +560,8 @@
 		
 		for (var i=0; i<x.length; i++) 
 		{
-			console.log(x[i]);
-			x[i].value = x[i].value.replace(/,/g,";");
+			//console.log(x[i]);
+			//x[i].value = x[i].value.replace(/,/g,";");
 		}
 
 

@@ -308,14 +308,14 @@
                   while not rsDraft.EOF
                     if rsDraft("apFormACompleted") = true then
 %>
-                    <a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormB.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%></a>
+                    <a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormB.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%> - <%=rsDraft("apEndYear")%></a>
 					<!-- displays a printer icon for printing a draft version of the ActionPlanFormB (EHS Plan) that shows all form field contents etc. CL 3/7/08 -->					&nbsp;&nbsp;<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanReportDraft.asp?apID=<%=rsDraft("apID")%>');"  title="Click on the printer icon to view a print-friendly version of the draft Health and Safety Plan."><img src="printericon.gif" alt="Print-friendly format" width="16" height="16" border="0"></a>
 					<!-- displays a printer icon for printing a draft version of the ActionPlanFormB (EHS Plan) that shows all form field contents etc. CL 3/7/08 -->
 					<br>
 <%
                     else 
 %>
-                    <a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%></a><br>
+                    <a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%> - <%=rsDraft("apEndYear")%></a><br>
 <%
                     end if 
 
@@ -337,7 +337,7 @@
                 if not rsFinal.BOF then
                   while not rsFinal.EOF
 %>
-                    <a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanReport.asp?apID=<%=rsFinal("apID")%>');"><%=rsFinal("apStartYear")%></a><br>
+                    <a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanReport.asp?apID=<%=rsFinal("apID")%>');"><%=rsFinal("apStartYear")%> - <%=rsFinal("apEndYear")%></a><br>
 <%
                     rsFinal.movenext
                   wend

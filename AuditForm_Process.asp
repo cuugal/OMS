@@ -10,6 +10,12 @@
 %>
 
 <%
+
+    
+
+
+
+
 	dim con, Action, ActionPlan, Mode, AuditID
 	dim sqlVersion, sqlLab, sqlAuditInsert, sqlDetailInsert
 	dim rsLab, rsIdentity, audit
@@ -97,9 +103,16 @@
 			if request("rate_" & rsAud("fdRequirement")) <> "" then				rating = request("rate_" & rsAud("fdRequirement"))			else				rating = 0			end if
 		
 			'Response.Write "Normal: " & request("text_" & rsAud("fdRequirement")) & vbcrlf			'Response.Write "Changed: " & FilterTrailingCrLf(FilterSQL(request("text_" & rsAud("fdRequirement")))) & vbcrlf
-						sqlUpdateAud = "UPDATE	FA_AuditDetails " & _
-						   "SET		fdEvidence	= '" & FilterTrailingCrLf(FilterSQL(request("text_" & rsAud("fdRequirement"))))	& "', " & _
-						   "		fdRating	= " & rating		& " " & _ 
+			            'VBScript concatenates by comma when sending fields with same name, not trivial to change this behaviour.            'Obviously we will have commas in our text fields, need to split on a different character than ','            dim tmp            tmp = ""                        for i=0 to request.form("text_" & rsAud("fdRequirement")).count-1
+                'split by pipe
+                if(i>0) then
+                    tmp = tmp & "|"
+                end if
+                tmp = tmp & request.form("text_" & rsAud("fdRequirement"))(i+1)
+            next    '"SET		fdEvidence	= '" & FilterTrailingCrLf(FilterSQL(request("text_" & rsAud("fdRequirement"))))	& "', " & _
+	                       			sqlUpdateAud = "UPDATE	FA_AuditDetails " & _
+						    "SET		fdEvidence	= '" & FilterTrailingCrLf(FilterSQL(tmp))	& "', " & _					   
+                            "		fdRating	= " & rating		& " " & _ 
 						   "WHERE	fdRequirement = " & rsAud("fdRequirement") & " AND fdAudit = " & AuditID			con.Execute(sqlUpdateAud)						'Response.Write sqlUpdateAud			'Response.End
 			
 			rsAud.movenext		wend

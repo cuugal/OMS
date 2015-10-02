@@ -349,11 +349,12 @@
 					"FROM FA_AuditDetails " & _
 					"WHERE fdAudit = " & AuditID & " AND fdRequirement = " & ReqID
 		set rsPro = con.Execute (sqlPro) 
+        'response.write(sqlPro)
 		
 		if not rsPro.BOF then
 			while not rsPro.EOF
 				' Response.Write replace(rsPro("fdEvidence"), vbcrlf, "<BR>")
-				Response.Write Replace((replace(rsPro("fdEvidence"), vbcrlf, "<BR>")), ",", "")
+				Response.Write Replace((replace(rsPro("fdEvidence"), vbcrlf, "<BR/>")), "|", "<br/>-")
 
 				rsPro.movenext
 			wend

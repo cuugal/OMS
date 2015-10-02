@@ -104,7 +104,7 @@
 										else 
 %>
 										<!--<a href="ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>" target="_blank"><%=rsDraft("apStartYear")%></a><BR>-->
-										<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%></a><BR>
+										<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%> - <%=rsFinal("apEndYear")%></a><BR>
 										<!--<u style="cursor:pointer;cursor:hand;" onclick="javascript:OpenWindow('ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%></u><BR>-->
 <%			
 										end if 
@@ -126,7 +126,7 @@
 								if not rsFinal.BOF then
 									while not rsFinal.EOF
 %>
-									<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanReport.asp?apID=<%=rsFinal("apID")%>');"><%=rsFinal("apStartYear")%></a><BR>
+									<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanReport.asp?apID=<%=rsFinal("apID")%>');"><%=rsFinal("apStartYear")%> - <%=rsFinal("apEndYear")%></a><BR>
 <%
 										rsFinal.movenext
 									wend
