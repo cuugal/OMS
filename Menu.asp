@@ -200,11 +200,11 @@
             if SecurityCheck(1) = true then ' dlj CHANGED SECURITY LEVEL FROM 2
               ' if rsAPYears("dpActionPlanDuration") = 2 then  ' DLJ commented this IF STATEMENT out - dont know why it was included - only allows viewing by high-riskers
 %>
-                <tr bgcolor="#eeeeee"> 
+                <!--tr bgcolor="#eeeeee"> 
                   <td bgcolor="#eeeeee">
                   <font size="2" face="Arial" color="#333333"><a href="ServiceAgreementMenu.asp">Service Agreements</a></font>
                   </td>
-                </tr>
+                </tr-->
 <%
               'end if
             end if
