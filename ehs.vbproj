@@ -68,7 +68,11 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -90,6 +94,7 @@
     <Content Include="ActionPlanMenu.asp" />
     <Content Include="ActionPlanReport.asp" />
     <Content Include="adovbs.inc" />
+    <Content Include="AJAXDeleteDraft.asp" />
     <Content Include="AJAXSaveUser.asp" />
     <Content Include="AuditForm.asp" />
     <Content Include="AuditForm_Process.asp" />

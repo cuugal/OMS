@@ -93,7 +93,7 @@
 %>
 										<!--<a href="ActionPlanFormB.asp?apID=<%=rsDraft("apID")%>" target="_blank"><%=rsDraft("apStartYear")%></a><BR>-->
 										<!--<u style="cursor:pointer;cursor:hand;" onclick="javascript:OpenWindow('ActionPlanFormB.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%></u><BR>-->
-										<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormB.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%></a>
+										<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormB.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%> - <%=rsDraft("apEndYear")%></a>
 										
 										<!-- displays a printer icon for printing a draft version of the ActionPlanFormB (EHS Plan) that shows all form field contents etc. CL 3/7/08 -->
 										&nbsp;&nbsp;<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanReportDraft.asp?apID=<%=rsDraft("apID")%>');"  title="Click on the printer icon to view a print-friendly version of the draft Environment, Health &amp; Safety Plan."><img src="printericon.gif" alt="Print-friendly format" width="16" height="16" border="0"></a>
@@ -104,7 +104,8 @@
 										else 
 %>
 										<!--<a href="ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>" target="_blank"><%=rsDraft("apStartYear")%></a><BR>-->
-										<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%> - <%=rsFinal("apEndYear")%></a><BR>
+										<a href="javascript:void(0)" onclick="javascript:OpenWindow('ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%> - <%=rsDraft("apEndYear")%></a>&nbsp;<a href="#" onclick="checkDelete(<%=rsDraft("apID")%>)">Delete</a><BR>
+                                        
 										<!--<u style="cursor:pointer;cursor:hand;" onclick="javascript:OpenWindow('ActionPlanFormA.asp?apID=<%=rsDraft("apID")%>');"><%=rsDraft("apStartYear")%></u><BR>-->
 <%			
 										end if 
@@ -144,6 +145,27 @@
 			</td>
 		</tr>
 		</table>
+
+        <script type="text/javascript">
+            function checkDelete(abc){
+                var r = confirm("Are you sure you wish to delete this draft?");
+                if (r == true) {
+                    // Fire off the request to /form.php
+                    request = $.ajax({
+                        url: "AJAXDeleteDraft.asp",
+                        type: "post",
+                        data: "apid="+abc,
+                        async: false,
+                        success: function (data) {
+                         
+                            location.reload();
+                        }
+                    });
+                } else {
+                    //Don't need to do anything.
+                }
+            }
+        </script>
 		
 		<br>
 		
