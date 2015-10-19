@@ -287,7 +287,8 @@
 
 $(document).ready(function () {
     $.fn.dataTable.moment('D/MM/YYYY');
-    $('#audits').dataTable( {
+    $('#audits').dataTable({
+        "order": [[ 1, "desc" ]],
         "dom": 'T<"clear">lfrtip',
         "tableTools": {
             "sSwfPath": "/TableTools/swf/copy_csv_xls_pdf.swf",
