@@ -266,6 +266,7 @@
 	end function
 	
 	function ShowRequirement(ReqID)
+        rating = Empty
 		dim sqlReq, sqlPro, sqlNumPro
 		dim rsReq, rsPro, rsNumPro
 		
@@ -340,6 +341,7 @@
 			else
 				responsibility = ""
 				checked = ""
+                timeframe = ""
 			end if
 			
 			'Over-ride this if we have come from a draft plan
@@ -424,7 +426,7 @@
 						<% if rsOpt("aoChecked")= true then Response.Write " checked"%>>
 			<%=rsOpt("ioDescription")%> 
 <%		
-
+            timeframe = Empty
 			'retrieve the procedure info from the previous AP
 			dim lastProcedure, prod, timeframe
 			prod = OptID

@@ -57,7 +57,7 @@
 	
 	' Get the requirements 
 	if ActionPlan = "" then
-		sqlFormA = "SELECT irId, irStep, irName, irFormADescription, 0 as arRating, No as arSelected " & _
+		sqlFormA = "SELECT irId, irStep, irName, irFormADescription, -100 as arRating, No as arSelected " & _
 				   "FROM IN_Requirements " & _
 				   "WHERE irActive = Yes " & _
 				   "ORDER BY irDisplayOrder"
@@ -96,6 +96,7 @@
 		rsprevious.movenext
 	wend
 	
+    'output for troubleshooting
 	'dim allKeys,allItems, myKey, myItem
 	'allKeys = previousData.Keys   'Get all the keys into an array
 	'allItems = previousData.Items 'Get all the items into an array
@@ -190,9 +191,10 @@
 			<!-- td width="25%">Compliance Rating (0, 1, 2, 3) at date: <%=date1%></td -->
         </tr>
 <%
-		
+		dim rating
 		while not rsFormA.EOF
-			dim rating
+			
+             rating = Empty
 			if rsFormA("irStep") = 1 then
 			req = rsFormA("irID")
 			if previousdata.Exists(req) then
@@ -201,7 +203,7 @@
 			end if
 			
 			' overwrite with the previous draft if previous draft exists
-			if rsFormA("arRating") <> "" then
+			if rsFormA("arRating") <> -100 then
 				rating = rsFormA("arRating")
 			end if
 		
@@ -243,6 +245,7 @@
 		checked = ""
 		
 		while not rsFormA.EOF
+            rating = Empty
 			if rsFormA("irStep") = 2 then
 			req = rsFormA("irID")
 			if previousdata.Exists(req) then
@@ -259,7 +262,7 @@
 				checked = ""
 			end if
 			
-			if(rsFormA("arRating") <> "") then
+			if(rsFormA("arRating") <> -100) then
 				rating = rsFormA("arRating")
 			end if
 			if(rating = "" or rating <0) then rating = "-" end if
@@ -296,26 +299,27 @@
 		rsFormA.movefirst
 
 		while not rsFormA.EOF
+            rating = Empty
 			if rsFormA("irStep") = 3 then
 			
-			req = rsFormA("irID")
-			if previousdata.Exists(req) then
-				set prevData =  previousdata.Item(req)
-				rating = prevData.rating
-			end if
+			    req = rsFormA("irID")
+			    if previousdata.Exists(req) then
+				    set prevData =  previousdata.Item(req)
+				    rating = prevData.rating
+			    end if
 			
-			' Override previous if coming from draft
-			if(rsFormA("arRating") <> "") then
-				rating = rsFormA("arRating")
-			end if
-			if(rating = "" or rating <0) then rating = "-" end if
+			    ' Override previous if coming from draft
+			    if(rsFormA("arRating") <> -100) then
+				    rating = rsFormA("arRating")
+			    end if
+			    if(rating = "" or rating <0) then rating = "-" end if
 			
-%>
-			<tr>
-				<td><%=rsFormA("irFormADescription")%></td>
+    %>
+			    <tr>
+				    <td><%=rsFormA("irFormADescription")%></td>
 				
-				<td><% =rating %></td>
-			</tr>
+				    <td><% =rating %> </td>
+			    </tr>
 <%		
 			end if
 

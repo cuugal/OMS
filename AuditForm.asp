@@ -571,14 +571,14 @@
 	
 		if (document.audit.action.value == "draft") {
 			if(!isDate($("#datepicker").val())){
-				message = message + " - Date must be DD-MM-YYYY\n"
+				message = message + " - Date must be DD/MM/YYYY\n"
 			}
 			if (document.audit.txt_Lab.value == "")
 				message = message + " - You must enter the Lab/Workshop name before you can save as a Draft\n"
 		}
 		else {
 			if(!isDate($("#datepicker").val())){
-				message = message + " - Date must be DD-MM-YYYY\n" 
+				message = message + " - Date must be DD/MM/YYYY\n" 
 			}
 		
 			if (document.audit.txt_Sup.value == "") 

@@ -11,11 +11,6 @@
 
 <%
 
-    
-
-
-
-
 	dim con, Action, ActionPlan, Mode, AuditID
 	dim sqlVersion, sqlLab, sqlAuditInsert, sqlDetailInsert
 	dim rsLab, rsIdentity, audit
@@ -52,7 +47,7 @@
 		' We put in all of the Requirements even those that are not selected (also inactive ones that may still be selected)
 		sqlDetailInsert = "INSERT INTO FA_AuditDetails ( fdAudit, fdRequirement, fdRating ) " & _
 						  "SELECT " & AuditID & ", IN_Requirements.irId, 0 " & _
-						  "FROM IN_Requirements INNER JOIN AP_Requirements ON IN_Requirements.irId = AP_Requirements.arRequirement " & _
+						  "FROM IN_Requirements INNER JOIN AP_Requirements ON IN_Requirements.irId =    AP_Requirements.arRequirement " & _
 						  "WHERE arActionPlan = " & ActionPlan
 		con.Execute(sqlDetailInsert)
 	else
@@ -121,12 +116,19 @@
 		dim audittype, auditUpper
 		audittype = request("audittype")
 		auditUpper =  UCase(Left(audittype,1))& Mid(audittype,2) 
+
+        dim exploded, formattedDate
+        exploded = Split(request("txt_Date"), "/")
+        'VBScript has a lot of trouble understanding that dd/mm/yyyy is a valid input date.  
+        'Its happy showing this exact format as an output date though.  Fiddly thing.
+        formattedDate = exploded(2)&"-"&exploded(1)&"-"&exploded(0)
+
 		sqlUpdateAud = "UPDATE FA_Audits " & _
 					   "SET		faSupervisor	= '" & FilterSQL(request("txt_Sup"))	& "', " & _
 					   "		faLabName		= '" & FilterSQL(request("txt_lab"))	& "', " & _
 					   "		faAssesName		= '" & FilterSQL(request("txt_Assr"))	& "', " & _
 					   "		faLocation		= '" & FilterSQL(request("txt_Loc"))	& "', " & _
-					   "		faDate			= '" & FilterSQL(request("txt_Date"))	& "', " & _
+					   "		faDate			= '" & FilterSQL(formattedDate)	& "', " & _
 					   "		faHouseKeeping	= '" & FilterSQL(request("txt_hous"))	& "', " & _
 					   "		faAuditType		= '" & FilterSQL(auditupper)	& "' " & _
 					   "WHERE	faID = " & AuditID
