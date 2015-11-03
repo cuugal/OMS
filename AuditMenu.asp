@@ -222,7 +222,7 @@
 	<thead>
 		<tr class="header" >
 		
-			<th>Action</th>
+			<th style="width:100px">Action</th>
 			<th>Date of Audit</th>
 			<th>Audit Type</th>
 			<th>Name</th>
@@ -262,8 +262,8 @@
 		<tr>
 			<td> <a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditReport.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>');">View</a>
 				<% if not rsFinal("complete") then %>
-					&nbsp;/&nbsp; <a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>&Mode=Edit');">Edit</a>
-			
+			      /<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>&Mode=Edit');">Edit</a>
+			      /<a href="javascript:void(0)" onclick="checkDelete(<%=rsFinal("fa_ID")%>)">Delete</a>
 				<% end if %>
 			</td>
 			<td><%=rsFinal("auditdate")%></td>
@@ -296,5 +296,26 @@ $(document).ready(function () {
         }
     } );
 } );
-</script>
+
+     function checkDelete(abc) {
+         var r = confirm("Are you sure you wish to delete this draft?");
+         if (r == true) {
+             // Fire off the request to /form.php
+             request = $.ajax({
+                 url: "AJAXDeleteDraft.asp",
+                 type: "post",
+                 data: "faid=" + abc,
+                 async: false,
+                 success: function (data) {
+
+                     location.reload();
+                 }
+             });
+         } else {
+             //Don't need to do anything.
+         }
+     }
+        </script>
+
+
 <!-- #Include file="include\footer.asp" -->
