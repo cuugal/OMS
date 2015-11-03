@@ -341,7 +341,10 @@
 			<% if Mode = "Edit" then %>
 			
 			<td>
-				<TEXTAREA rows=3 cols=100 name="text_<%=ReqID%>"><% Response.write( replace(Trim(readlines(i)), ";",","))%></TEXTAREA>
+				<TEXTAREA rows=3 cols=100 name="text_<%=ReqID%>"><% 
+                    if i <= ubound(readLines) then 
+                        Response.write( replace(Trim(readlines(i)), ";",",")) 
+                    end if %></TEXTAREA>
 			</td>
 			<% else %>
 			<td>

@@ -1,6 +1,6 @@
 <!-- #Include file="include\general.asp" -->
 <%
-	if SecurityCheck(4) = false then
+	if SecurityCheck(1) = false then
 		Response.Redirect ("restricted.asp")
 		Response.end
 	end if
@@ -221,8 +221,10 @@
 <table id="audits" class="display"  cellspacing="0">
 	<thead>
 		<tr class="header" >
-		
-			<th style="width:100px">Action</th>
+            <!-- can potentially lower this security setting, depending on who needs to see these menu items.  Also change value @ line 277 -->
+		    <% if SecurityCheck(4) = true then %>
+			    <th style="width:100px">Action</th>
+               <% end if %>
 			<th>Date of Audit</th>
 			<th>Audit Type</th>
 			<th>Name</th>
@@ -239,6 +241,7 @@
 			
 			dim conformance ,  total, nonconformance
 			' why is cint used here?
+            ' AA - VBScript doesn't play nicely with some numbers, using cint ensures we get a math function rather than a string operation
 			conformance= cint(rsFinal("conformance"))
 			total = cint(rsFinal("total"))
 			nonconformance = total-conformance
@@ -260,12 +263,15 @@
 			%>
 			
 		<tr>
-			<td> <a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditReport.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>');">View</a>
-				<% if not rsFinal("complete") then %>
-			      /<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>&Mode=Edit');">Edit</a>
-			      /<a href="javascript:void(0)" onclick="checkDelete(<%=rsFinal("fa_ID")%>)">Delete</a>
-				<% end if %>
-			</td>
+            
+            <% if SecurityCheck(4) = true then %>
+			    <td> <a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditReport.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>');">View</a>
+				    <% if not rsFinal("complete") then %>
+			          /<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>&Mode=Edit');">Edit</a>
+			          /<a href="javascript:void(0)" onclick="checkDelete(<%=rsFinal("fa_ID")%>)">Delete</a>
+				    <% end if %>
+			    </td>
+            <% end if %>
 			<td><%=rsFinal("auditdate")%></td>
 			<td><%=rsFinal("audittype")%></td>
 			<td><%=name%><%if not rsFinal("complete") then %> -[DRAFT]<% end if %></td>
@@ -287,7 +293,7 @@
 
 $(document).ready(function () {
     $.fn.dataTable.moment('D/MM/YYYY');
-    $('#audits').dataTable({
+    var table = $('#audits').dataTable({
         "order": [[ 1, "desc" ]],
         "dom": 'T<"clear">lfrtip',
         "tableTools": {
@@ -295,7 +301,9 @@ $(document).ready(function () {
 			  "aButtons": [ "copy", "print" ]
         }
     } );
-} );
+});
+
+   
 
      function checkDelete(abc) {
          var r = confirm("Are you sure you wish to delete this draft?");
@@ -316,6 +324,5 @@ $(document).ready(function () {
          }
      }
         </script>
-
 
 <!-- #Include file="include\footer.asp" -->

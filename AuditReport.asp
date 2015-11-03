@@ -283,13 +283,17 @@
 %>
 		<table border="1" cellpadding="2" width="100%">
 		 <tr> 
-          <td colspan="5" class="StepMenu"><%=rsStep("stShortName")%></td>
+          <td colspan="6" class="StepMenu"><%=rsStep("stShortName")%></td>
         </tr>
         <tr> 
           <td class="label" width="15%">COMPLIANCE REQUIREMENTS</td>
           <td width="10%"><span class="label"><center>COMPLIANCE RATING 0,1,2,3</center></span> </td>
           <td class="label">EVIDENCE OF COMPLIANCE</td>
-		  <!-- <td class="label" width="50%">EVIDENCE OF COMPLIANCE</td> -->
+            <% if rsAudDetails("faComplete") then  %>
+             <td class="label">PERSON TO ACTION</td>
+             <td class="label">TARGET COMPLETION DATE</td>
+             <td class="label">DATE COMPLETED</td>
+		    <% end if  %>
         </tr>
 		
 <%		
@@ -337,6 +341,11 @@
 			<td>
 				<%ShowProcedures ReqID%>
 			&nbsp;</td>
+            <% if rsAudDetails("faComplete") then  %>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <% end if  %>
 		</tr>
 <%
 	end function
@@ -354,7 +363,7 @@
 		if not rsPro.BOF then
 			while not rsPro.EOF
 				' Response.Write replace(rsPro("fdEvidence"), vbcrlf, "<BR>")
-				Response.Write Replace((replace(rsPro("fdEvidence"), vbcrlf, "<BR/>")), "|", "<br/>-")
+				Response.Write Replace((replace(rsPro("fdEvidence"), vbcrlf, "<BR/>")), "|", "<br/>")
 
 				rsPro.movenext
 			wend
