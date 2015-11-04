@@ -168,7 +168,9 @@
           </td>
           <td>
 <%
-		rsMan.movefirst
+        If Not (rsMan.EOF And rsMan.BOF) then
+		    rsMan.movefirst
+        end if
 
 		while not rsMan.EOF
 			'Response.Write "&nbsp;" & rsMan("Rating") & "<BR>"
@@ -194,7 +196,9 @@
           </td>
           <td rowspan="4">
 <%
-		rsHaz.movefirst
+		If Not (rsHaz.EOF And rsHaz.BOF) then
+		    rsHaz.movefirst
+        end if
 		
 		while not rsHaz.EOF
 			'Response.Write "&nbsp;" & rsHaz("Rating") & "<BR>"
