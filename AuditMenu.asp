@@ -170,7 +170,12 @@
 				else
 			%>
 					<p>You need to complete a Plan before you can create a Facility Audit Form</p>
-			<%	end if
+			<%	end If
+			else		
+			%>
+			<br>
+
+			<%
 			end if %>
 
 		</div>
