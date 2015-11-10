@@ -103,7 +103,7 @@
 
 <tr>
 <!-- colour change from 6699CC for PROD to 669900 for DEV    Put in DEV in the Welcome title-->
-	<td colspan="2" bgcolor="#669900" align="center"><h3><font color="white">DEV   Welcome to the Health and Safety Online Management System!</font></h3></td>
+	<td colspan="2" bgcolor="#6699CC" align="center"><h3><font color="white">Welcome to the Health and Safety Online Management System!</font></h3></td>
 	<td><a href="http://www.uts.edu.au/"><img src="utslogo.gif" width="135" alt="The UTS home page" height="30" border="0" align="right"></a></td>
 </tr>
 

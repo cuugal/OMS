@@ -95,8 +95,19 @@
 
 'DLJ 5may15 changed below using iif to count total as being NOT -1 and conformance as being 2 or 3
 'DLJ 6 May removed IN_Requirements.irManagement AND
-	sqlAll = "SELECT apID as ap_ID,  faComplete as complete, faDate as auditdate, faAuditType as audittype , faLabName as labname, faLocation as location, faAssesName as assessor, "&_
-			"sum(IIf(FA_AuditDetails.fdRating <> -1, 1, 0)) as total, sum(IIf(FA_AuditDetails.fdRating = 2 OR FA_AuditDetails.fdRating = 3, 1, 0)) as conformance, faID as fa_ID "&_
+'	sqlAll = "SELECT apID as ap_ID,  faComplete as complete, faDate as auditdate, faAuditType as audittype , faLabName as labname, faLocation as location, faAssesName as assessor, "&_
+'			"sum(IIf(FA_AuditDetails.fdRating <> -1, 1, 0)) as total, sum(IIf(FA_AuditDetails.fdRating = 2 OR FA_AuditDetails.fdRating = 3, 1, 0)) as conformance, faID as fa_ID "&_
+'			"FROM (((AP_ActionPlans) INNER JOIN FA_Audits ON AP_ActionPlans.apID = FA_Audits.faActionPlan) INNER JOIN FA_AuditDetails on FA_AuditDetails.fdAudit = FA_Audits.faID) "&_
+'			" INNER JOIN IN_Requirements ON FA_AuditDetails.fdRequirement = IN_Requirements.irID "&_
+'			"WHERE AP_ActionPlans.apFaculty = ? and "&_
+'			" ((FA_Audits.faAuditType = 'facility' AND IN_Requirements.irFacility ) OR (FA_Audits.faAuditType = 'management' AND IN_Requirements.irManagement ) "&_
+'			" OR (FA_Audits.faAuditType = 'research' AND IN_Requirements.irResearch ) OR (FA_Audits.faAuditType = 'curriculum' AND IN_Requirements.irCurriculum )) "&_
+'
+'				"group by FA_AuditDetails.fdAudit, faAuditType, faLabName, faLocation, faAssesName, faID , faDate, faComplete, faID, apID ORDER BY max(faDate) desc"
+
+'to help diagnose inaccuracy in counting changed to count conformance and nonconformance, rather than total
+	sqlAll = "SELECT apID as ap_ID, fdAudit as auditno, faComplete as complete, faDate as auditdate, faAuditType as audittype , faLabName as labname, faLocation as location, faAssesName as assessor, "&_
+			"sum(IIf(FA_AuditDetails.fdRating = 0 OR FA_AuditDetails.fdRating = 1, 1, 0)) as nonconformance, sum(IIf(FA_AuditDetails.fdRating = 2 OR FA_AuditDetails.fdRating = 3, 1, 0)) as conformance, faID as fa_ID "&_
 			"FROM (((AP_ActionPlans) INNER JOIN FA_Audits ON AP_ActionPlans.apID = FA_Audits.faActionPlan) INNER JOIN FA_AuditDetails on FA_AuditDetails.fdAudit = FA_Audits.faID) "&_
 			" INNER JOIN IN_Requirements ON FA_AuditDetails.fdRequirement = IN_Requirements.irID "&_
 			"WHERE AP_ActionPlans.apFaculty = ? and "&_
@@ -104,7 +115,6 @@
 			" OR (FA_Audits.faAuditType = 'research' AND IN_Requirements.irResearch ) OR (FA_Audits.faAuditType = 'curriculum' AND IN_Requirements.irCurriculum )) "&_
 
 				"group by FA_AuditDetails.fdAudit, faAuditType, faLabName, faLocation, faAssesName, faID , faDate, faComplete, faID, apID ORDER BY max(faDate) desc"
-
 	
 	objCmd.CommandText = sqlAll
 	objCmd.Parameters.Append DepID
@@ -228,7 +238,7 @@
 		<tr class="header" >
             <!-- can potentially lower this security setting, depending on who needs to see these menu items.  Also change value @ line 277 -->
 		    <% if SecurityCheck(4) = true then %>
-			    <th style="width:100px">Action</th>
+			    <th style="width:150px">Action</th>
                <% end if %>
 			<th>Date of Audit</th>
 			<th>Audit Type</th>
@@ -247,9 +257,12 @@
 			dim conformance ,  total, nonconformance
 			' why is cint used here?
             ' AA - VBScript doesn't play nicely with some numbers, using cint ensures we get a math function rather than a string operation
+			' DLJ 9Nov2015 changed to count conformances and nonconformances for simplicity in debugging counting error
 			conformance= cint(rsFinal("conformance"))
-			total = cint(rsFinal("total"))
-			nonconformance = total-conformance
+			'total = cint(rsFinal("total"))
+			nonconformance= cint(rsFinal("nonconformance"))
+			'nonconformance = total-conformance
+			total = conformance + nonconformance
 			
 			dim name
 			select case rsFinal("audittype")
@@ -268,9 +281,10 @@
 			%>
 			
 		<tr>
+
             
             <% if SecurityCheck(4) = true then %>
-			    <td> <a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditReport.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>');">View</a>
+			    <td> <a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditReport.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>');">View</a>&nbsp No.<%=rsFinal("auditno")%>
 				    <% if not rsFinal("complete") then %>
 			          /<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=rsFinal("ap_ID")%>&faID=<%=rsFinal("fa_ID")%>&type=<%=lcase(rsFinal("audittype"))%>&Mode=Edit');">Edit</a>
 			          /<a href="javascript:void(0)" onclick="checkDelete(<%=rsFinal("fa_ID")%>)">Delete</a>
@@ -280,6 +294,7 @@
 			<td><%=rsFinal("auditdate")%></td>
 			<td><%=rsFinal("audittype")%></td>
 			<td><%=name%><%if not rsFinal("complete") then %> -[DRAFT]<% end if %></td>
+			<!--td><%=nonconformance%> / <%=total%></td-->
 			<td><%=nonconformance%> / <%=total%></td>
 			<td><%=rsFinal("assessor")%></td>
 
