@@ -104,13 +104,13 @@
 <tr>
 <!-- colour change from 6699CC for PROD to 669900 for DEV    Put in DEV in the Welcome title-->
 	<td colspan="2" bgcolor="#6699CC" align="center"><h3><font color="white">Welcome to the Health and Safety Online Management System!</font></h3></td>
-	<td><a href="http://www.uts.edu.au/"><img src="utslogo.gif" width="135" alt="The UTS home page" height="30" border="0" align="right"></a></td>
+	<td><a href="http://www.uts.edu.au/"><img src="utslogo.gif" width="153" alt="The UTS home page" height="65" style="border:10px solid white" align="right"></a></td>
 </tr>
 
 <tr>
 	<td width="15%" bgcolor="#eeeeee" valign="top" align="left">
 		<b>Getting Started</b><br>
-All UTS staff can now access the OMS (view-only).<br><br>Simply enter the login ID and password for your area from the list at right.<br><br><strong>The password is the same as the login ID</strong>, and is not case-sensitive.<br><hr style="color: #a0b8c8; background-color: #a0b8c8; height: 1px; width: 25%; text-align: center; ">
+All UTS staff can access the OMS (view-only).<br><br>Simply enter the login ID and password for your area from the list at right.<br><br><strong>The password is the same as the login ID</strong>, and is not case-sensitive.<br><hr style="color: #a0b8c8; background-color: #a0b8c8; height: 1px; width: 25%; text-align: center; ">
 
 	<form action="index.asp" name="login" method="post">    
 		<font color="#333333" size="2"><b>Login ID</b></font><br>
@@ -121,7 +121,7 @@ All UTS staff can now access the OMS (view-only).<br><br>Simply enter the login 
 	</form>
 
 <b>For More Information</b><br>
-An outline of the University's Health and Safety Management System is available from the <a href="http://www.safetyandwellbeing.uts.edu.au/management/operational/index.html" title="Outline of the UTS Health and Safety Management System at faculty/unit level">Safety &amp; Wellbeing web site</a>.</td>
+An outline of the University's Health and Safety Management System is available from the <a href="http://www.safetyandwellbeing.uts.edu.au/management/index.html" title="Outline of the UTS Health and Safety Management System at faculty/unit level">Safety &amp; Wellbeing web site</a>.</td>
 
 	<td width="45%" valign="top" class="padding-left: 0;">
 	<!-- start of logins -->
@@ -368,11 +368,11 @@ An outline of the University's Health and Safety Management System is available 
 
 	<td width="45%" valign="top" align="left"><!-- start of overview -->
 	<h4>Overview</h4>
-	<p>The Online Management System (OMS) is an online application that supports the operational aspects of the University's health and safety management system. It does this by automatically generating templates for various stages of the planning cycle: PLANNING &amp; SERVICE AGREEMENT NEGOTIATION, IMPLEMENTATION, SELF-ASSESSMENT OF COMPLIANCE and AUDIT.</p>
+	<p>The Online Management System (OMS) is an online application that supports the operational aspects of the University's health and safety management system. It does this by automatically generating templates for various stages of the planning cycle: PLANNING, SELF-ASSESSMENT and AUDIT.</p>
 
 	<hr style="color: #a0b8c8; background-color: #a0b8c8; height: 1px; width: 25%; text-align: center; ">
 
-	<h4>Health and Safety Plans</h4>
+	<h4>Health and Safety Planning</h4>
 	<p>The University's health and safety management system requires all faculties and units to establish and maintain a current Health and Safety Plan. This is an operational plan that focuses on practical procedures to assist in compliance with our health and safety obligations.
 	<br><br>
 	An OMS electronic template is used to assist develop and draft your Plan at a workshop facilitated by the Safety &amp; Wellbeing Branch.
@@ -381,7 +381,7 @@ An outline of the University's Health and Safety Management System is available 
 	<br><br>
 	The Safety &amp; Wellbeing Branch monitors and audits implementation of these plans and reports on implementation and compliance against the plans.</p>
 
-	<hr style="color: #a0b8c8; background-color: #a0b8c8; height: 1px; width: 25%; text-align: center; ">
+	<!--hr style="color: #a0b8c8; background-color: #a0b8c8; height: 1px; width: 25%; text-align: center; ">
 
 	<h4>Service Agreement</h4>
 	<p>At the Planning Workshop, a Service Agreement is also negotiated with the Safety &amp; Wellbeing Branch. The aim of the Service Agreement is to provide each faculty or unit with the specific resources and support they consider useful to improve compliance. It outlines the services that the Safety &amp; Wellbeing Branch will provide to the faculty or unit to assist in the implementation of procedures developed in the plan. 
@@ -393,11 +393,11 @@ An outline of the University's Health and Safety Management System is available 
 	<h4>Self-assessment</h4>
 	<p>At the midpoint of the plan duration, the Dean or Director undertakes a self-assessment of compliance of the whole faculty or unit against the Plan. This involves giving a numerical rating against each item in the Plan for that point in time.
 	<br><br>
-	These ratings are recorded in the OMS to act as a guide to how the faculty/unit estimates it is going and gives an opportunity to note any areas that require attention.</p>
+	These ratings are recorded in the OMS to act as a guide to how the faculty/unit estimates it is going and gives an opportunity to note any areas that require attention.</p-->
 
 	<hr style="color: #a0b8c8; background-color: #a0b8c8; height: 1px; width: 25%; text-align: center; ">
 
-	<h4>Audit</h4>
+	<h4>Audits</h4>
 	<p>This section contains auditing templates with audit criteria derived from each faculty or unit Health and Safety Plan. The Safety &amp; Wellbeing Branch conducts regular audits of high-risk facilities within faculties and units using these audit criteria. Faculties and units can also use these to self-audit their own level of compliance against their Health and Safety Plan.<br><br>
 	Audit results are recorded in the OMS and reports generated by the OMS are provided to the faculty/unit to facilitate continual improvement of health and safety management.</p>
 	<!-- end of overview -->

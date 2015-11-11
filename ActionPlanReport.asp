@@ -52,7 +52,7 @@
 <table width="100%" border="0" cellspacing="3">
 <tr> 
 	<td><!--<img src="ehslogo2.gif" width="142" height="111" alt="EHS logo" border="0">-->&nbsp;</td>
-    <td><div align="right"><img src="utslogo.gif" alt="UTS logo" width="135" height="30"></div></td>
+    <td><div align="right"><img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="right"></div></td>
 </tr>
 <tr> 
     <td colspan="2"><div align="center"><h2><%=rsAP("dpName")%><br>HEALTH AND SAFETY PLAN&nbsp;<%=rsAP("apStartYear")%> - <%=rsAP("apEndYear")%></h2></div></td>

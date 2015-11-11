@@ -52,7 +52,7 @@
   <tr> 
     <td></td>
     <td> 
-      <div align="right"><img src="utslogo.gif" width="135" height="30"></div>
+      <div align="right"><img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="right"></div>
     </td>
   </tr>
   <tr> 
