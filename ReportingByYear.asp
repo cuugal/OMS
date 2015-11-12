@@ -50,7 +50,7 @@
 
 <p>
 <table cellspacing="0" border="0" cellpadding="4">
-<tr bgcolor="#6699cc">
+<tr bgcolor="#0099cc">
   <td><font size="+1" face="arial" color="white"><b>EHS Planning Session Compliance Ratings for <%=Year%></b></font></td>
   <td align="right">
     <table cellpadding="4" cellspacing="0" border="0">

@@ -79,7 +79,7 @@
 </table>
 
 <table width="640" cellspacing="0" border="0" cellpadding="4">
-	<tr bgcolor="#6699cc">
+	<tr bgcolor="#0099cc">
 		<td>
 			<font size="+1" face="Arial" color="white">
 				<b>Compliance Ratings for <%=Session("DepName")%></b>

@@ -127,7 +127,7 @@
 %>
 
 <table style="width:100%" cellspacing="0" border="0" cellpadding="4" align="center">
-<tr  bgcolor="#6699cc" style="height:40px">
+<tr  bgcolor="#0099cc" style="height:40px">
 	<td colspan="2" style="text-align:left">
 		<font size="+1" face="arial" color="white">
 			<b>&nbsp; Audits for the <% =Session("DepName") %></b>
@@ -211,7 +211,7 @@
 <style type = "text/css">
 	.header{
 		color:white;
-		background-color:#6699cc;
+		background-color:#0099cc;
 		font-family: "Arial",Arial,sans-serif;
 		font-size: 12pt;
 	}

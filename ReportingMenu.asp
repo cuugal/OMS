@@ -59,7 +59,7 @@
 %>
 
 <table width="100%" cellspacing="0" border="0" cellpadding="4" align="center">
-<tr bgcolor="#6699cc">
+<tr bgcolor="#0099cc">
 	<td>
 		<font size="+1" face="arial" color="white">&nbsp;<b>Management Reporting for the <% =Session("DepName") %></b></font>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

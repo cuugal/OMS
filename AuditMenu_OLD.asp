@@ -42,7 +42,7 @@
 	set rsFinal = con.execute(sqlFinal)
 %>
 
-<table width=640 cellspacing="0" border="0" cellpadding="4" align="center"><tr bgcolor="#6699cc">
+<table width=640 cellspacing="0" border="0" cellpadding="4" align="center"><tr bgcolor="#0099cc">
 	<td>		<font size="+1" face="arial" color="white">			<b>&nbsp; Facility Audits for the <% =Session("DepName") %></b>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<font size="-1" face="arial" color="white"><%=Session("AccessLevel")%></font>

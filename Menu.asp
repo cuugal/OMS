@@ -126,7 +126,7 @@
 %>
 
 <table width="970" cellspacing="0" border="0" cellpadding="4" align="center">
-<tr bgcolor="#6699cc">
+<tr bgcolor="#0099cc">
   <td valign="middle">
     <font size="+1" face="Arial" color="white"><b>&nbsp;<% =Session("DepName") %></b></font>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

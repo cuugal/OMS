@@ -88,7 +88,7 @@
  </script>
 	<style type="text/css">
 		.abbreviation table {font: Arial;}
-		.abbreviation th { font-size: 90%; background-color: #6699CC; padding: 1px 4px; color: #fff; }
+		.abbreviation th { font-size: 90%; background-color: #0099CC; padding: 1px 4px; color: #fff; }
 		.abbreviation td { font-size: 90%;  padding: 1px 14px; background-color: #eee; color: #000; text-align: left; }
 		body { 	/* background: white url("ehslogo2.gif"); background-repeat: no-repeat; background-position: top right;*/ font: Arial, 10pt; padding: 20px; max-width: 85%; }
 		table { font-family: Arial, sans-serif; font-size: 10pt; }
@@ -102,8 +102,8 @@
 <table border="0" cellpadding="3">
 
 <tr>
-<!-- colour change from 6699CC for PROD to 669900 for DEV    Put in DEV in the Welcome title-->
-	<td colspan="2" bgcolor="#6699CC" align="center"><h3><font color="white">Welcome to the Health and Safety Online Management System!</font></h3></td>
+<!-- colour change from 0099CC for PROD to 669900 for DEV    Put in DEV in the Welcome title-->
+	<td colspan="2" bgcolor="#0099CC" align="center"><h3><font color="white">Welcome to the Health and Safety Online Management System!</font></h3></td>
 	<td><a href="http://www.uts.edu.au/"><img src="utslogo.gif" width="153" alt="The UTS home page" height="65" style="border:10px solid white" align="right"></a></td>
 </tr>
 
