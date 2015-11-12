@@ -122,7 +122,7 @@
 <table width="100%" border="0" cellspacing="3">
 <tr> 
 	<td><!-- commented out the old EHS Branch logo <img src="ehslogo2.gif" width="142" height="111" alt="EHS logo" border="0">-->&nbsp;</td>
-	<td><div align="right"><img src="utslogo.gif" width="135" height="30"></div></td>
+	<td><div align="right"><img src="utslogo.gif" width="102" alt="The UTS home page" height="44" style="border:10px solid white" align="right"></div></td>
 </tr>
 <tr> 
     <td colspan="2">
