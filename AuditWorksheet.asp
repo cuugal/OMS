@@ -32,7 +32,9 @@
 			 "WHERE arSelected = Yes AND arActionPlan = ? AND irStep = 2 " & _
 			 " AND ir"&audittype&" = Yes "&_
 			 "ORDER BY IN_Requirements.irDisplayOrder"
-			 
+			 ' DLJ 1July2016 - these query types needs to be ordered by IN_Procedures.irDisplayOrder, not IN_Requirements.irDisplayOrder
+
+
 	objCmd.CommandText = sqlHaz
 
 	objCmd.Parameters.Append objCmd.CreateParameter("arActionPlan", adWChar, adParamInput, 50)
@@ -415,6 +417,7 @@
 		sqlPro =	"SELECT IN_Procedures.*, prID, prChecked, prResponsibilities, prTimeframe, prTextBox " & _
 					"FROM IN_Procedures INNER JOIN AP_Procedures ON IN_Procedures.ipID = AP_Procedures.prProcedure " & _
 					"WHERE ipRequirement = ? and prActionPlan = ? and prChecked = Yes order by prID"
+'					"WHERE ipRequirement = ? and prActionPlan = ? and prChecked = Yes order by ipDisplayOrder"
 		'set rsPro = con.Execute (sqlPro) 
 		objCmd.CommandText = sqlPro
 		objCmd.Parameters.Append objCmd.CreateParameter("irId", adInteger, adParamInput, 50)

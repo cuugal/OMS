@@ -138,14 +138,14 @@ An outline of the University's Health and Safety Management System is available 
 		<td>UTS Business School</td>
 	</tr>
 
-	<tr>
+	<!--tr>
 		<td>CIIC</td>
 		<td>Creative Industries Innovation Centre</td>
-	</tr>
+	</tr-->
 
 	<tr>
-		<td>ACELG-CLG</td>
-		<td>Australian Centre for Excellence in Local Government &amp;<br />Centre for Local Government</td>
+		<td>IPPG</td>
+		<td>lnstitute for Public Policy and Governance</td>
 	</tr>
 
 	<tr>
@@ -255,6 +255,11 @@ An outline of the University's Health and Safety Management System is available 
 		<td>Institute for International Studies [now FASS]</td>
 	</tr>
 -->
+	<tr>
+		<td>IPPG</td>
+		<td>lnstitute for Public Policy and Governance</td>
+	</tr>
+
 	<tr>
 		<td>ISF</td>
 		<td>Institute for Sustainable Futures</td>
