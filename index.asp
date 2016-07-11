@@ -184,11 +184,14 @@ An outline of the University's Health and Safety Management System is available 
 	</tr>
 
 	<tr>
-		<td>EXTREL</td>
-		<td>External Relations Office, including: <ul><li>Alumni Relations</li><li>Development Office</li><li>Advancement Services</li><li>External Engagement</li></ul></td>
+		<td>ADV</td>
+		<td>Advancement, including: <ul><li>Alumni Relations</li><li>Development Office</li><li>Advancement Services</li><li>Shopfront</li></ul></td>
 	</tr>
- 
- <tr>
+	<tr>
+	<td>EXT</td>
+	<td>External Engagement</td>
+	</tr>
+	<tr>
 		<td>FASS</td>
 		<td>Faculty of Arts and Social Sciences</td>
 	</tr>
@@ -336,10 +339,10 @@ An outline of the University's Health and Safety Management System is available 
 		</ul>
 	</tr>
 
-	<tr>
+	<!--tr>
 		<td>SHOPFRONT</td>
 		<td>UTS Shopfront</td>
-	</tr>
+	</tr-->
 
 	<tr>
 		<td>SSU</td>
