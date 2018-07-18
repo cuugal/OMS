@@ -127,7 +127,7 @@
 %>
 
 <table style="width:100%" cellspacing="0" border="0" cellpadding="4" align="center">
-<tr  bgcolor="#0099cc" style="height:40px">
+<tr  bgcolor="#0f4beb" style="height:40px">
 	<td colspan="2" style="text-align:left">
 		<font size="+1" face="arial" color="white">
 			<b>&nbsp; Audits for the <% =Session("DepName") %></b>
@@ -142,9 +142,9 @@
 			<strong>Create Audit Worksheet</strong><br/>
 			<% if ActionPlan <> "" then
 			%>
-				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=facility');">Facility Audit</a>
-				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=management');">Management Audit</a>
-				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=research');">Research Audit</a>
+				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=facility');">Facility Audit</a>  |  
+				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=management');">Management Audit</a>  |  
+				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=research');">Research Audit</a>  |  
 				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=curriculum');">Curriculum Audit</a>
 			<%
 			else
@@ -171,9 +171,9 @@
 			if SecurityCheck(2) = true then ' User must have write access for this department
 				if ActionPlan <> "" then
 			%>
-					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=facility');">Facility Audit</a>
-					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=management');">Management Audit</a>
-					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=research');">Research Audit</a>
+					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=facility');">Facility Audit</a> | 
+					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=management');">Management Audit</a> | 
+					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=research');">Research Audit</a> | 
 					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=curriculum');">Curriculum Audit</a>
 
 			<%
@@ -211,7 +211,7 @@
 <style type = "text/css">
 	.header{
 		color:white;
-		background-color:#0099cc;
+		background-color:#0f4beb; 
 		font-family: "Arial",Arial,sans-serif;
 		font-size: 12pt;
 	}
@@ -235,7 +235,7 @@
 <br/>
 <table id="audits" class="display"  cellspacing="0">
 	<thead>
-		<tr class="header" >
+		<tr class="header" bgcolor = "#0f4beb">
             <!-- can potentially lower this security setting, depending on who needs to see these menu items.  Also change value @ line 277 -->
 		    <% if SecurityCheck(4) = true then %>
 			    <th style="width:150px">Action</th>
@@ -243,7 +243,7 @@
 			<th>Date of Audit</th>
 			<th>Audit Type</th>
 			<th>Name</th>
-			<th>Non-Conformances</th>
+			<!--th>Non-Conformances</th-->
 			<th>Auditors</th>
 			
 		</tr>
@@ -295,7 +295,7 @@
 			<td><%=rsFinal("audittype")%></td>
 			<td><%=name%><%if not rsFinal("complete") then %> -[DRAFT]<% end if %></td>
 			<!--td><%=nonconformance%> / <%=total%></td-->
-			<td><%=nonconformance%> / <%=total%></td>
+			<!--td><%=nonconformance%> / <%=total%></td-->
 			<td><%=rsFinal("assessor")%></td>
 
 		</tr>

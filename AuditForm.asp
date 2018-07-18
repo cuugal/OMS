@@ -73,17 +73,20 @@
 <input type="hidden" name="audittype" value="<%=audittype%>">
 <input type="hidden" name="action" value="none">
 
+
+
+<a href="http://www.uts.edu.au/"><img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="left"></a>
+
+
 <table width="100%" border="0" cellspacing="3">
   <tr> 
-	<td><h3>AUDIT FORM - <%=UCase(Left(audittype,1))& Mid(audittype,2) %> Audit</h3></td>
-	<td> 
-	  <div align="right"><img src="utslogo.gif" width="145" alt="The UTS home page" height="50" style="border:10px solid white" align="right"></div>
-	</td>
+	<td><h2>AUDIT FORM - <%=UCase(Left(audittype,1))& Mid(audittype,2) %> Audit</h2></td>
   </tr>
-  <tr> 
-	<td colspan="2"> 
-	  &nbsp;&nbsp;
-	  <table border="1" width="100%">
+</table>
+
+
+
+<table id = "planB">
 		<tr> 
 		  <td class="label" width="32%">
 		  <% 
@@ -179,28 +182,17 @@
 			<% end if %>
 		  </td>
 		</tr>
-	  </table>
-	</td>
-  </tr>
-	</td>
-  </tr>
-  <tr> 
-	<td colspan="2"> 
-	  <br><br><h2>&nbsp;&nbsp;HOUSEKEEPING & OBSERVATIONS<br>
-		<textarea name="txt_hous" rows="9" cols="120"><% if Mode = "Edit" then Response.Write rsAudDetails("faHouseKeeping")%></textarea>
-		<br>
-		<br>
-	  </h2>
-	</td>
-  </tr>
-  <tr> 
-	<td colspan="2"> 
-	  <h2>&nbsp;&nbsp;STATUS OF COMPLIANCE - RESULTS IN DETAIL<br>
-	  </h2>
-	</td>
-  </tr>
-  <tr> 
-	<td colspan="2">
+</table>
+
+
+<br>
+<h2>&nbsp;&nbsp;HOUSEKEEPING & OBSERVATIONS</h2>
+<textarea name="txt_hous" rows="9" cols="120"><% if Mode = "Edit" then Response.Write rsAudDetails("faHouseKeeping")%></textarea>
+
+<br>
+<h2>&nbsp;&nbsp;ENTER COMPLIANCE FINDINGS</h2>
+NOTE: Highlight non-compliances with capitalised "NOT".
+
 	
 	<%
 	Function ShowStep(StepID)
@@ -210,9 +202,10 @@
 		sqlStep = "Select stShortName from IN_Steps where stID = " & stepID
 		set rsStep = con.Execute (sqlStep)
 %>
-		<table border="1" cellpadding="2" width="95%">
+
+<table id = "planB">
 		 <tr> 
-		  <td colspan="3" class="StepMenu"><%=rsStep("stShortName")%></td>
+		  <th colspan="3" class="StepMenu"><%=rsStep("stShortName")%></th>
 		</tr>
 		<tr> 
 		  <td class="label" width="30%">COMPLIANCE REQUIREMENTS</td>
@@ -233,7 +226,7 @@
 			sqlReq =	"SELECT irID " & _
 						"FROM IN_Requirements INNER JOIN AP_Requirements ON IN_Requirements.irId = AP_Requirements.arRequirement " & _
 						"WHERE IN_Requirements.irStep = ? AND AP_Requirements.arActionPlan = ? and arSelected = Yes" &_
-						" AND ir"&audittype&" = Yes "
+						" AND ir"&audittype&" = Yes order by irDisplayOrder"
 						
 			objCmd.CommandText = sqlReq
 			objCmd.Parameters.Append objCmd.CreateParameter("irStep", adInteger, adParamInput, 50)
@@ -244,7 +237,7 @@
 		else
 			sqlReq =	"SELECT irID " & _
 						"FROM (FA_AuditDetails INNER JOIN IN_Requirements ON FA_AuditDetails.fdRequirement = IN_Requirements.irId) INNER JOIN AP_Requirements ON IN_Requirements.irId = AP_Requirements.arRequirement " & _
-						"WHERE fdAudit = ? and irStep = ? and arSelected = Yes AND arActionPlan = ?  AND ir"&audittype&" = Yes"
+						"WHERE fdAudit = ? and irStep = ? and arSelected = Yes AND arActionPlan = ?  AND ir"&audittype&" = Yes order by irDisplayOrder"
 			objCmd.CommandText = sqlReq
 			objCmd.Parameters.Append objCmd.CreateParameter("fdAudit", adInteger, adParamInput, 50)
 			objCmd.Parameters("fdAudit") = cint(AuditID)
@@ -284,7 +277,10 @@
 			sqlReq =	"SELECT IN_Requirements.*, 0 as Rating " & _
 						"FROM IN_Requirements INNER JOIN AP_Requirements ON IN_Requirements.irId = AP_Requirements.arRequirement " & _
 						"WHERE AP_Requirements.arActionPlan = ? AND IN_Requirements.irId = ?"&_
-						" AND ir"&audittype&" = Yes "
+						" AND ir"&audittype&" = Yes order by irDisplayOrder"
+
+
+
 			objCmd.CommandText = sqlReq
 			objCmd.Parameters.Append objCmd.CreateParameter("arActionPlan", adInteger, adParamInput, 50)
 			objCmd.Parameters("arActionPlan") = cint(ActionPlan)
@@ -295,7 +291,7 @@
 
 			sqlReq =	"SELECT IN_Requirements.*, fdRating as Rating " & _
 						"FROM FA_Audits INNER JOIN (FA_AuditDetails INNER JOIN IN_Requirements ON FA_AuditDetails.fdRequirement = IN_Requirements.irId) ON FA_Audits.faID = FA_AuditDetails.fdAudit " & _
-						"WHERE faID = ? AND fdRequirement = ? AND ir"&audittype&" = Yes "
+						"WHERE faID = ? AND fdRequirement = ? AND ir"&audittype&" = Yes order by irDisplayOrder"
 			objCmd.CommandText = sqlReq
 			objCmd.Parameters.Append objCmd.CreateParameter("faID", adInteger, adParamInput, 50)
 			objCmd.Parameters("faID") = cint(AuditID)
@@ -379,8 +375,9 @@
 		
 			sqlPro =	"SELECT IN_Procedures.*, prID, prChecked, prResponsibilities, prTimeframe, prTextBox " & _
 						"FROM IN_Procedures INNER JOIN AP_Procedures ON IN_Procedures.ipID = AP_Procedures.prProcedure " & _
-						"WHERE IN_Procedures.ipRequirement = ? and prActionPlan = ? and prChecked = Yes order by prID"
-			
+						"WHERE ipRequirement = ? and prActionPlan = ? and prChecked = Yes order by ipDisplayOrder"
+'						"WHERE IN_Procedures.ipRequirement = ? and prActionPlan = ? and prChecked = Yes order by prID"		
+
 			objCmd.CommandText = sqlPro
 			
 			objCmd.Parameters.Append objCmd.CreateParameter("irID", adInteger, adParamInput, 50)
@@ -448,19 +445,21 @@
 			'		"WHERE fdAudit = " & AuditID & " and irStep = " &  StepID & " and arSelected = Yes AND arActionPlan = " & ActionPlan
 		
 			' ?? IN_Procedures.iprequirement
+	
 			
-			sqlPro =	"SELECT FA_AuditDetails.fdEvidence, IN_Procedures.ipName, prID " & _
+			
+sqlPro =	"SELECT FA_AuditDetails.fdEvidence, IN_Procedures.ipName, prID " & _
 						"FROM (FA_AuditDetails INNER JOIN IN_Procedures ON IN_Procedures.ipRequirement = FA_AuditDetails.fdRequirement) " & _
 						"INNER JOIN AP_Procedures ON IN_Procedures.ipID = AP_Procedures.prProcedure "&_
-						"WHERE fdAudit = ? AND fdRequirement = ? and prActionPlan = ? and prChecked = Yes order by prID"
+   "WHERE fdAudit = ? AND fdRequirement = ? and prActionPlan = ? and prChecked = Yes order by ipDisplayOrder"
+   '     "WHERE fdAudit = ? AND fdRequirement = ? and prActionPlan = ? and prChecked = Yes order by prID"
+					'	"WHERE fdAudit = ? AND fdRequirement = ? and prActionPlan = ? and prChecked = Yes order by ipDisplayOrder"
 			
 			
 
-			
-
-						
+			'	Response.write(sqlPro&" | "&prID)		
 			'set rsPro = con.Execute (sqlPro) 
-			'Response.write(sqlPro&" "&AuditID&" "&ReqID)
+			'Response.write(sqlPro&" | "&AuditID&" | "&ReqID)
 			
 			objCmd.CommandText = sqlPro
 			
@@ -531,9 +530,9 @@
 %>
 <% ShowStep(3) %>
 <BR><BR>
-<% ShowStep(1) %>
-<BR><BR>
 <% ShowStep(2) %>
+<BR><BR>
+<% ShowStep(1) %>
 <BR><BR>
 	
 	</td>

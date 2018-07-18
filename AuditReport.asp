@@ -48,17 +48,23 @@
 	set rsProc = con.Execute (sqlProc)
 %>
 
+
+
+<img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="left">
+
 <table width="100%" border="0" cellspacing="3">
-  <tr> 
-    <td></td>
-    <td> 
-      <div align="right"><img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="right"></div>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"><h2>HEALTH AND SAFETY AUDIT REPORT</h2>
-      &nbsp;&nbsp;
-      <table border="1" width="100%">
+	<tr> 
+		<% if rsAudDetails("faComplete") then  %>
+			<td span="2"><h2>HEALTH AND SAFETY AUDIT REPORT</h2></td>
+		<% Else %>
+			<td span="2"><h2>HEALTH AND SAFETY AUDIT REPORT - DRAFT</h2></td>
+		<% End if %>
+	</tr>
+</table>
+
+
+
+<table id = "planA" cellpadding="1" width="100%">
         <tr> 
           <td class="label" width="32%">
 		   <% 
@@ -126,36 +132,34 @@
             <%=rsAudDetails("faDate")%><br><br>
           </td>
         </tr>
-      </table>
-    </td>
-  </tr>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-      <h2><br>SUMMARY OF RESULTS</h2>
-		<p><font size="1">Compliance Ratings:<br>
-		0 = Non-compliant<br>
-		1 = Non-compliant - some action evident but not yet compliant<br>
-		2 = Compliant - just requires maintenance<br>
-		3 = Best practice evident</font></p>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-      <table width="100%" border="1">
+</table>
+
+<p></br></p>
+
+      
+
+
+
+
+<table id = "planA" cellpadding="1" width="100%">
+		<tr> 
+		  <th colspan="4" class="StepMenu">SUMMARY OF RESULTS</th>
+		</tr>
+
         <tr> 
           <td class="label">HEALTH AND SAFETY MANAGEMENT</td>
           <td width="15%">&nbsp;</td>
           <td class="label">SPECIFIC HAZARD PROGRAMS</td>
           <td width="15%">&nbsp;</td>
         </tr>
+
         <tr> 
           <td>Element</td>
-          <td>Compliance rating<br>[0, 1, 2, 3]</td>
+          <td>Compliance rating (0, 1, 2)</td>
           <td>Program</td>
-          <td>Compliance rating<br>[0, 1, 2, 3]</td>
+          <td>Compliance rating (0, 1, 2)</td>
         </tr>
+
         <tr> 
           <td>
 <%
@@ -215,14 +219,17 @@
 %>
           </td>
         </tr>
+
         <tr> 
           <td class="label">HEALTH AND SAFETY PROCEDURES</td>
           <td>&nbsp;</td>
         </tr>
+
         <tr> 
           <td>Procedure</td>
-          <td>Compliance rating<br>[0, 1, 2, 3]</td>
+          <td>Compliance rating (0, 1, 2)</td>
         </tr>
+
         <tr> 
           <td>
 <%
@@ -257,46 +264,54 @@
 %>
           </td>
         </tr>
-      </table>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-		<h2>HOUSEKEEPING &amp; NOTES</h2>
-    		<table border="1" width="100%">
-		<tr><td><br><%=replace(rsAudDetails("faHouseKeeping"), vbCrLf, "<BR>")%><br><br></td></tr>
-		</table>
-		<br>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-      <h2>STATUS OF COMPLIANCE - RESULTS IN DETAIL<br>   </h2>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2">
+</table>
+
+
+<p><font size="1">Compliance Ratings:<br>
+0 = Non-compliant<br>
+1 = Non-compliant - some action evident but not yet compliant<br>
+2 = Compliant - just requires maintenance
+</font></p>
+
+
+
+<table id = "planA" cellpadding="1" width="100%">
+		<tr> 
+			<th colspan="2" class="StepMenu">HOUSEKEEPING &amp; NOTES</th>
+		</tr>
+		<tr>
+			<td><%=replace(rsAudDetails("faHouseKeeping"), vbCrLf, "<BR>")%></td>
+		</tr>
+</table>
+
+
+
+
     
-    <%
+<%
 	Function ShowStep(StepID)
 		dim sqlStep, sqlReq
 		dim rsStep, rsReq
 		
-		sqlStep = "Select stShortName from IN_Steps where stID = " & stepID
+		sqlStep = "Select stName from IN_Steps where stID = " & stepID
 		set rsStep = con.Execute (sqlStep)
 %>
-		<table border="1" cellpadding="2" width="100%">
+
+
+
+<table id = "planA" cellpadding="1" width="100%">
 		 <tr> 
-          <td colspan="6" class="StepMenu"><%=rsStep("stShortName")%></td>
+          <th colspan="6" class="StepMenu"><%=rsStep("stName")%></th>
         </tr>
+
         <tr> 
-          <td class="label" width="15%">COMPLIANCE REQUIREMENTS</td>
-          <td width="10%"><span class="label"><center>COMPLIANCE RATING 0,1,2,3</center></span> </td>
-          <td class="label">EVIDENCE OF COMPLIANCE</td>
+          <td width="10%"><strong>Compliance Requirements</strong></td>
+          <td  width="7%"><strong>Compliance Rating (0,1,2</strong>)</td>
+          <td><strong>Evidence of Compliance</strong><br><font size="1">Note that non-compliances are highlighted with capitalised "NOT".</font></td>
             <% if rsAudDetails("faComplete") then  %>
-             <td class="label">PERSON TO ACTION</td>
-             <td class="label">TARGET COMPLETION DATE</td>
-             <td class="label">DATE COMPLETED</td>
+             <td width="7%"><strong>Person to Action</strong></td>
+             <td width="7%"><strong>Target Completion Date</strong></td>
+             <td width="7%"><strong>Date Completed</strong></td>
 		    <% end if  %>
         </tr>
 		
@@ -314,10 +329,14 @@
 			rsReq.movenext
 		wend
 %>
-		</table>
+</table>
+
+
 <%
 	end function
 	
+
+
 	function ShowRequirement(ReqID)
 		dim sqlReq
 		dim rsReq
@@ -327,6 +346,7 @@
 					"WHERE faID = " & AuditID & " AND fdRequirement = " & ReqID
 		set rsReq = con.Execute (sqlReq)
 %>
+
 		<tr>
 			<td><span class="label"><%=rsReq("irName")%></span><br><%=rsReq("irdescription")%></td>
 			
@@ -335,7 +355,7 @@
 			<td><center><%
 			'If statement  by DLJ 9March2015 to replace above commented out line
 			If rsReq("Rating") = -1 Then 
-			Response.Write "&nbsp;" & "-"
+			Response.Write "&nbsp;" & "n/a"
 			else
 			Response.Write rsReq("Rating")
 			End if
@@ -375,11 +395,12 @@
 	end function
 %>
 
+<div class="page-break"></div></br>
 	<% ShowStep(3) %>
-	<BR><BR>
-	<% ShowStep(1) %>
-	<BR><BR>
+<div class="page-break"></div></br>
 	<% ShowStep(2) %>
+<div class="page-break"></div></br>
+	<% ShowStep(1) %>
 	<BR><BR>
     
     </td>

@@ -119,7 +119,8 @@
 <table width="100%" border="0" cellspacing="3">
 <tr>
 	<td><!-- commented out the old EHS Branch logo <img src="ehslogo2.gif" width="142" height="111" alt="EHS logo" border="0">-->&nbsp;</td>
-	<td><div align="right"><img src="utslogo.gif" width="135" height="30"></div></td>
+		<td><!--div align="right"><img src="utslogo.gif" width="135" height="30"></div-->
+	<a href="http://www.uts.edu.au/"><img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="right"></a></td>
 </tr>
 <tr>
  <td colspan="2"><span class="label"><b>STATUS:</b></span>
@@ -214,10 +215,16 @@
 		sqlStep = "Select stName from IN_Steps where stID = " & stepID
 		set rsStep = con.Execute (sqlStep)
 %>
-		<i>Compliance Ratings: 0 = Non-Compliant, 1 = Non-Compliant - some action evident but not fully compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</i>
-		<table border="1">
+		<!--i>Compliance Ratings: 0 = Non-Compliant, 1 = Non-Compliant - some action evident but not fully compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</i-->
+		
+		
+		
+		
+		
+		
+		<table id = "planB">
 		<tr> 
-			<td colspan="5" class="StepMenu" bgcolor="#cccccc"><font size="3pt"><b> <%=rsStep("stName")%> </b></font></td>
+			<th colspan="4"> <%=rsStep("stName")%> </th>
 		</tr>
 		<%
 		dim date1
@@ -229,25 +236,25 @@
 		end if
 		%>
 		<tr> 
-			<td class="label">COMPLIANCE REQUIREMENT</td>
-			<td>
+			<td class="label" width ="20%">COMPLIANCE REQUIREMENT</td>
+			<!--td>
 					<!--note that the date in the following line is month and year NOW. <%=monthname(month(Date()),true)%>&nbsp;<%=year(Date())%>
 					It should be month and
 					date report is saved i.e =rs("apCompletionDate")
 					DLJ made this change 10 August 2004
 					-->
-				<span class="label">1. Compliance rating<br>
-					(0, 1, 2, 3) at date: <%=date %></span> 
-			</td>
+				<!--span class="label">1. Compliance rating<br>
+					(0, 1, 2, 3) at date: <%=date %></span--> 
+			</td-->
 			<td>
-				<span class="label">2. Note what is required to comply</span><br>
-				&nbsp;&nbsp;<font color="#FF0000">M - mandatory procedures to comply 
+				<span class="label">Select what is required to comply</span><br>
+				&nbsp;&nbsp;<font color="#FF0000"><strong>M</strong> - mandatory procedures to comply 
 				with legislative requirements</font><br>
 				<input type="checkbox" disabled>
 				- optional activities that might be undertaken to achieve compliance
 			</td>
-			<td class="label" width="200">3. Allocate responsibilities</td>
-			<td class="label" width="80">4. Allocate timeframe to complete by</td>
+			<td class="label" width="30%">Allocate responsibilities</td>
+			<td class="label" width="10%">Allocate timeframe to complete by</td>
 		</tr>
 <%		
 		' Show the requirements (only the ones that have been selected) 
@@ -298,9 +305,9 @@
 		<tr>
 			<td rowspan="<%=rsNumPro("NumProcedures")%>"><span class="label"><%=rsReq("irName")%></span><br><%=rsReq("irdescription")%></td>
 			
-			<td rowspan="<%=rsNumPro("NumProcedures")%>"><% =rating %>
+			<!--td rowspan="<%=rsNumPro("NumProcedures")%>"><% =rating %>
                 <input type="hidden" name="rate_<%=rsReq("irID")%>" value="<% =rating %>" /> 
-			</td>
+			</td-->
 <%		
 
 		ShowProcedures ReqID
@@ -384,7 +391,7 @@
 			if rsPro("ipIsTextBox") = true then
 				'Response.Write "<input type='text' name='proTxt_" & rsPro("prProcedure") & "' value='" & rsPro("prTextBox") & "'>"
 				'Response.Write "<input type='text' name='proTxt_" & rsPro("prProcedure") & "' value='" & responsibility & "'>"  NOT RESPONSIBILITY, created textbox line below - DLJ 17feb15
-				Response.Write "<input type='text' name='proTxt_" & rsPro("prProcedure") & "' value='" & textbox & "'>"
+				Response.Write "<input type='text' size='70' name='proTxt_" & rsPro("prProcedure") & "' value='" & textbox & "'>"
 			end if
 
 			sqlNumOpt = "SELECT count(*) as NumOptions " & _
@@ -400,7 +407,7 @@
 %>
 				</td>
 				<!--  table input boxes below made to fixed size by DLJ on 21Sept2004 also see line 186 -->
-				<td><INPUT type="text" name="resp_<%=rsPro("ipID")%>" value="<%=responsibility%>" size=50><%'if rsPro("ipMandatory") = true then Response.Write " <font size=5 color=red><b>*</b></font>"%></td>
+				<td><INPUT type="text" name="resp_<%=rsPro("ipID")%>" value="<%=responsibility%>" size=75><%'if rsPro("ipMandatory") = true then Response.Write " <font size=5 color=red><b>*</b></font>"%></td>
 				<td><INPUT type="text" name="time_<%=rsPro("ipID")%>" value="<%=timeframe%>" size =15><%'if rsPro("ipMandatory") = true then Response.Write " <font size=5 color=red><b>*</b></font>"%></td>
 			</tr>
 <%		
@@ -463,7 +470,7 @@
 	end function
 %>
 
-<% ShowStep(1) %>
+<% ShowStep(3) %>
 
 <BR><BR>
 
@@ -471,14 +478,18 @@
 
 <BR><BR>
 
-<% ShowStep(3) %>
+<% ShowStep(1) %>
 
 <BR><BR>
 
-<table border="0">
+
+		<table id = "planB" border="0">
 <tr> 
-	<td class="StepMenu" bgcolor='#CCCCCC'><font size=3pt><b> STEP 4 - HEALTH AND SAFETY RESPONSIBILITIES</b></font></td>
+	<th>STEP 4 - HEALTH AND SAFETY RESPONSIBILITIES</th>
 </tr>
+
+<!--
+
 <tr> 
 	<td> 
 		To finalise the plan:<br>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -486,6 +497,7 @@
 		2. Include any specific responsibilities that have been allocated in the Health and Safety Plan, as appropriate.
 	</td>
 </tr>
+
 <tr>
 	<td>
 		<span class="label"><b>Staff must:</b></span>
@@ -523,6 +535,17 @@
 			<li>follow the emergency evacuation procedures.</li>
 		</ul>
 
+	</td>
+</tr>
+
+
+-->
+
+<!-- It would be good to be able to comment out the whole of Step 4 without breaking the Save as Final function. This section is not needed. -->
+
+<tr>
+	<td>
+
 		<span class="label"><b>Supervisors and managers</b> must do whatever is reasonably practicable to ensure that both the workplace and the work itself are safe. This includes:</span>
 
 		<ul>
@@ -540,13 +563,14 @@
 			<li>reporting (to the Human Resources Unit), investigating and responding to all hazards, accidents, incidents and taking action to control the risk</li>
 			<li>assisting with the development, implementation and maintenance of a return to work program for injured staff.</li>
 
+
 			<a name="section1">
 <%
 			ShowAdditionalPoints(1)
 			
 			if SecurityCheck(2) then 
 %>
-			<li>(Other)&nbsp;&nbsp;<input type="text" name="point_1" size="50">&nbsp;&nbsp;<input type="submit" value="Save Dot Point" onclick="javascript:formB.pointID.value=1;formB.pointText.value=formB.point_1.value;formB.action.value='point'"></li>
+			<li>(Other)&nbsp;&nbsp;<input type="text" name="point_1" size="150">&nbsp;&nbsp;<input type="submit" value="Save Dot Point" onclick="javascript:formB.pointID.value=1;formB.pointText.value=formB.point_1.value;formB.action.value='point'"></li>
 <%
 			end if
 %>
@@ -563,11 +587,16 @@
 			
 			if SecurityCheck(2) then
 %>
-			<li>(Other)&nbsp;&nbsp;<input type="text" name="point_2" size="50">&nbsp;&nbsp;<input type="submit" value="Save Dot Point" onclick="javascript:formB.pointID.value=2;formB.pointText.value=formB.point_2.value;formB.action.value='point'"></li>
+			<li>(Other)&nbsp;&nbsp;<input type="text" name="point_2" size="150">&nbsp;&nbsp;<input type="submit" value="Save Dot Point" onclick="javascript:formB.pointID.value=2;formB.pointText.value=formB.point_2.value;formB.action.value='point'"></li>
 <%
 			end if
 %>
 		</ul>
+
+
+
+
+
 		<span class="label"><b>The <%=rs("apDDOption")%> is also responsible for:</b></span>
 		<ul>
 			<li>ensure that the Health and Safety Policy and related health and safety risk management programs are effectively implemented in their areas of control</li>
@@ -590,7 +619,7 @@
 			
 			if SecurityCheck(2) then
 %>
-			<li>(Other)&nbsp;&nbsp;<input type="text" name="point_3" size="50">&nbsp;&nbsp;<input type="submit" value="Save Dot Point" onclick="javascript:formB.pointID.value=3;formB.pointText.value=formB.point_3.value;formB.action.value='point'"></li>
+			<li>(Other)&nbsp;&nbsp;<input type="text" name="point_3" size="150">&nbsp;&nbsp;<input type="submit" value="Save Dot Point" onclick="javascript:formB.pointID.value=3;formB.pointText.value=formB.point_3.value;formB.action.value='point'"></li>
 <%
 			end if
 %>
@@ -598,10 +627,9 @@
 		<a name="section2">
 		Are there any additional responsibilities allocated in the Plan? - <input type="radio" name="add_resp" value="1" <%if rs("apAddResp")=true then Response.Write " checked"%>> Yes <input type="radio" name="add_resp" value="0" <%if rs("apAddResp")=false then Response.Write " checked"%>> No <font color="#FF0000">&lt;Mandatory&gt;</font><br>       
 		<BR>
-		( Note: You can create new Section 4 headings here and then create new dot points under these headings. <BR>
-		&nbsp;&nbsp;-First enter the Position or Title of the person who is responsible and click the save button. <BR>
-		&nbsp;&nbsp;-Second the new responsibility will appear an then you can add new dot points. <BR>
-		&nbsp;&nbsp;-Third type in the new dot point and click the save button and the dot point will appear under the new responsibility heading )
+		(Note: You can create new Section 4 headings here.). <BR>
+		&nbsp;&nbsp;1 - enter the Position or Title of the person who is responsible and click the Save Additional Responsibility button. The new responsibility will appear.<BR>
+		&nbsp;&nbsp;2 - type in the new dot point action and click the save button. The new action will appear under.
 <%
 		dim rsRespHead, sqlRespHead, rsResp, sqlResp
 				
@@ -629,7 +657,7 @@
 		
 			end if
 					
-			Response.Write "<li> (Other)&nbsp;&nbsp;<input type='text' name='point_" & rsRespHead("rhID") & "' size=50>&nbsp;&nbsp;<input type=submit value='Save Dot Point' onclick='javascript:formB.pointID.value=" & rsRespHead("rhID") & ";formB.pointText.value=formB.point_" & rsRespHead("rhID") & ".value;formB.action.value=""point""' id=submit1 name=submit1></li>"
+			Response.Write "<li> (Other)&nbsp;&nbsp;<input type='text' name='point_" & rsRespHead("rhID") & "' size=150>&nbsp;&nbsp;<input type=submit value='Save Dot Point' onclick='javascript:formB.pointID.value=" & rsRespHead("rhID") & ";formB.pointText.value=formB.point_" & rsRespHead("rhID") & ".value;formB.action.value=""point""' id=submit1 name=submit1></li>"
 			Response.Write "</ul>"
 					
 			rsRespHead.MoveNext
@@ -663,6 +691,10 @@
 
 </form>
 
+
+
+
+
 <%
 	Function ScriptStep(StepID)
 		dim sqlStep, sqlReq
@@ -683,6 +715,8 @@
 		wend
 	end function
 	
+
+
 	function ScriptRequirement(ReqID)
 		dim sqlReq, sqlPro
 		dim rsReq, rsPro
@@ -730,6 +764,9 @@
 		ScriptProcedures ReqID
 	end function
 	
+
+
+
 	function ScriptProcedures(ReqID)
 		dim sqlPro, sqlNumOpt
 		dim rsPro, rsNumOpt
@@ -775,6 +812,9 @@
 
 	end function
 	
+
+
+
 	function ScriptOptions(OptID)
 		dim sqlOpt
 		dim rsOpt
@@ -789,6 +829,9 @@
 	end function
 %>
 
+
+
+
 <script type="text/javascript">
 <!--
 
@@ -801,12 +844,12 @@
 		if ( document.formB.developedBy.value == "" ) 
 			message = message + " - You must enter the name, title and position of the people present at the planning workshop\n"
 		
+// DLJ 1 May 2018 - what are the three functions below for? Check mandatory fields are selected?//
+ <!-- % ScriptStep(1) % -->
 
-<% ScriptStep(1) %>
+ <!--% ScriptStep(2) % -->
 
-<% ScriptStep(2) %>
-
-<% ScriptStep(3) %>
+ <!--% ScriptStep(3) % -->
 		
 	
 		if (document.formB.academic_heads.value == "" || document.formB.academic_heads.value == "")

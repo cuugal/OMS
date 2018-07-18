@@ -3,7 +3,8 @@
 <%
 	dim con 
 	dim sqlPass
-	dim rsPass 
+	dim rsPass
+	Dim rsDepList
 	
 	set rsPass = server.createobject("adodb.recordset")
 	Set objCmd  = Server.CreateObject("ADODB.Command")		
@@ -88,7 +89,7 @@
  </script>
 	<style type="text/css">
 		.abbreviation table {font: Arial;}
-		.abbreviation th { font-size: 90%; background-color: #0099CC; padding: 1px 4px; color: #fff; }
+		.abbreviation th { font-size: 90%; background-color: #0f4beb; padding: 1px 4px; color: #fff; }
 		.abbreviation td { font-size: 90%;  padding: 1px 14px; background-color: #eee; color: #000; text-align: left; }
 		body { 	/* background: white url("ehslogo2.gif"); background-repeat: no-repeat; background-position: top right;*/ font: Arial, 10pt; padding: 20px; max-width: 85%; }
 		table { font-family: Arial, sans-serif; font-size: 10pt; }
@@ -103,7 +104,7 @@
 
 <tr>
 <!-- colour change from 0099CC for PROD to 669900 for DEV    Put in DEV in the Welcome title-->
-	<td colspan="2" bgcolor="#0099CC" align="center"><h3><font color="white">Welcome to the Health and Safety Online Management System!</font></h3></td>
+	<td colspan="2" bgcolor="#0f4beb" align="center"><h3><font color="white">Welcome to the Health and Safety Online Management System!</font></h3></td>
 	<td><a href="http://www.uts.edu.au/"><img src="utslogo.gif" width="153" alt="The UTS home page" height="65" style="border:10px solid white" align="right"></a></td>
 </tr>
 
@@ -121,16 +122,61 @@ All UTS staff can access the OMS (view-only).<br><br>Simply enter the login ID a
 	</form>
 
 <b>For More Information</b><br>
-An outline of the University's Health and Safety Management System is available from the <a href="http://www.safetyandwellbeing.uts.edu.au/management/index.html" title="Outline of the UTS Health and Safety Management System at faculty/unit level">Safety &amp; Wellbeing web site</a>.</td>
+An outline of the University's Health and Safety Management System is available from the <a href="https://www.uts.edu.au/about/safety-and-wellbeing/health-and-safety-management" title="Outline of the UTS Health and Safety Management System at faculty/unit level">Safety &amp; Wellbeing web site</a>.</td>
+
+    <!--sqlDepList = "Select dpID, dpName from AD_Departments ORDER by dpName" -->
+
+<!-- DLJ replaced the hard-coded info with an SQL based table with plan period dates  -->
+<%
+
+sqlDepList = "SELECT AD_Departments.dpID, AD_Departments.dpName, AD_Departments.dpActionPlanDuration, AD_Users.lgName, AD_Users.lgPassword, AP_ActionPlans.apStartYear, AP_ActionPlans.apEndYear, AD_Departments.Inactive FROM (AD_Departments INNER JOIN AD_Users ON AD_Departments.dpID = AD_Users.lgDepartment) INNER JOIN AP_ActionPlans ON AD_Departments.dpID = AP_ActionPlans.apFaculty WHERE (((AD_Users.lgName)=[AD_Users].[lgPassword]) AND ((AP_ActionPlans.apEndYear)>Year(Date())-1) AND ((AD_Departments.Inactive)=False)) Order By dpName"
+
+    set rsDepList = con.Execute (sqlDepList)
+%>
+
+
 
 	<td width="45%" valign="top" class="padding-left: 0;">
 	<!-- start of logins -->
 	<b>Login IDs for view-only access</b><br>
-	<table class="abbreviation">
-	<tbody>
+
+
+<table class="abbreviation">
+<tbody>
 	<tr>
 		<th>Login ID</th>
 		<th>Faculty/Unit/Institute</th>
+		<th>Plan duration</th>
+		<th>Latest plan period</th>
+	</tr>
+
+<%
+      while not rsDepList.EOF
+%>
+	<tr>
+		<td><%=(UCase(rsDepList("lgName")))%> </td>
+		<td><%=rsDepList("dpname")%></td>
+		<td><%=rsDepList("dpActionPlanDuration")%> </td>
+		<td><%=rsDepList("apStartYear")%> - <%=rsDepList("apEndYear")%></td>
+	</tr>
+<%
+        rsDepList.MoveNext
+      wend
+%>
+
+</tbody>
+</table>
+
+</br>
+
+
+
+<!--table class="abbreviation">
+	<tbody>
+
+	<tr>
+		<td>ACRI</td>
+		<td>Australia-China Relations Institute</td>
 	</tr>
 
 	<tr>
@@ -138,12 +184,14 @@ An outline of the University's Health and Safety Management System is available 
 		<td>UTS Business School</td>
 	</tr>
 
-	<!--tr>
+<!--
+	<tr>
 		<td>CIIC</td>
 		<td>Creative Industries Innovation Centre</td>
-	</tr-->
+	</tr>
+-->
 
-	<tr>
+	<!--tr>
 		<td>IPPG</td>
 		<td>lnstitute for Public Policy and Governance</td>
 	</tr>
@@ -153,7 +201,7 @@ An outline of the University's Health and Safety Management System is available 
 		<td>Faculty of Design, Architecture and Building</td>
 	</tr>
 
-<!--<tr>
+	<!--tr>
 		<td>EDU</td>
 		<td>Faculty of Education [now FASS]</td>
 	</tr>
@@ -161,9 +209,9 @@ An outline of the University's Health and Safety Management System is available 
 	<tr>
 		<td>ELSSA</td>
 		<td>English Language and Study Skills Assistance Centre</td>
-	</tr>
--->
-	<tr>
+	</tr-->
+
+	<!--tr>
 		<td>EQDU</td>
 		<td>Equity and Diversity Unit</td>
 	</tr>
@@ -188,6 +236,11 @@ An outline of the University's Health and Safety Management System is available 
 		<td>Advancement, including: <ul><li>Alumni Relations</li><li>Development Office</li><li>Advancement Services</li><li>Shopfront</li></ul></td>
 	</tr>
 	<tr>
+		<td>CIC</td>
+		<td>Connected Intelligence Centre</li></ul></td>
+	</tr>
+
+	<tr>
 	<td>EXT</td>
 	<td>External Engagement</td>
 	</tr>
@@ -208,7 +261,7 @@ An outline of the University's Health and Safety Management System is available 
 		<ul><li>Commercial Services</li></ul></td>
 	</tr>
 -->
-	<tr>
+	<!--tr>
 		<td>FMO</td>
 		<td>Facilities Management Operations</td>
 	</tr>
@@ -243,7 +296,7 @@ An outline of the University's Health and Safety Management System is available 
 		<td>Faculty of Humanities and Social Sciences [now FASS]</td>
 	</tr>
 -->
-	<tr>
+	<!--tr>
 		<td>ICI</td>
 		<td>Innovation and Creative Intelligence</td>
 	</tr>
@@ -258,7 +311,7 @@ An outline of the University's Health and Safety Management System is available 
 		<td>Institute for International Studies [now FASS]</td>
 	</tr>
 -->
-	<tr>
+	<!--tr>
 		<td>IPPG</td>
 		<td>lnstitute for Public Policy and Governance</td>
 	</tr>
@@ -274,14 +327,19 @@ An outline of the University's Health and Safety Management System is available 
 		<ul><li>the Institute for Information and Communication Technologies (IICT)</li></ul></td>
 	</tr>
 --> 
-	<tr>
+	<!--tr>
 		<td>ITD</td>
 		<td>Information Technology Division</td>
 	</tr>
 
-	<tr>
+	<!--tr>
 		<td>JIHL</td>
 		<td>Jumbunna Indigenous House of Learning</td>
+	</tr-->
+
+	<!--tr>
+		<td>JUM</td>
+		<td>Jumbunna Institute for Indigenous Education and Research</td>
 	</tr>
 
 	<tr>
@@ -294,13 +352,13 @@ An outline of the University's Health and Safety Management System is available 
 		<td>University Library</td>
 	</tr>
 
-<!--- <tr>
+<!-- <tr>
 		<td>MCU</td>
 		<td>Marketing and Communication Unit</td>
 	</tr>
-	--->
+-->
 
-	<tr>
+	<!--tr>
 		<td>MCU</td>
 		<td>Marketing and Communication Unit (including Events, Exhibitions and Projects)</td>
 	</tr>
@@ -339,12 +397,12 @@ An outline of the University's Health and Safety Management System is available 
 		</ul>
 	</tr>
 
-	<!--tr>
+<!--tr>
 		<td>SHOPFRONT</td>
 		<td>UTS Shopfront</td>
-	</tr-->
+</tr-->
 
-	<tr>
+	<!--tr>
 		<td>SSU</td>
 		<td>Student Services Unit</td>
 	</tr>
@@ -370,8 +428,10 @@ An outline of the University's Health and Safety Management System is available 
 	</tr>
 
 	</tbody>
-	</table>
+	</table-->
 	<!-- end of logins-->
+
+
 	</td>
 
 	<td width="45%" valign="top" align="left"><!-- start of overview -->

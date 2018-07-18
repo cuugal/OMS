@@ -126,7 +126,7 @@
 %>
 
 <table width="970" cellspacing="0" border="0" cellpadding="4" align="center">
-<tr bgcolor="#0099cc">
+<tr bgcolor="#0f4beb">
   <td valign="middle">
     <font size="+1" face="Arial" color="white"><b>&nbsp;<% =Session("DepName") %></b></font>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -135,7 +135,7 @@
     <td align="right">
 <%
   if SecurityCheck(4) = true and SecurityCheck(5) = false then
-    sqlDepList = "Select dpID, dpName from AD_Departments"
+    sqlDepList = "Select dpID, dpName from AD_Departments ORDER by dpName"
     set rsDepList = con.Execute (sqlDepList)
 %>    
     <table cellpadding="4" cellspacing="0" border="0">

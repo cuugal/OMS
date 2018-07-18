@@ -82,19 +82,26 @@
 	set rsProc =  server.createobject("adodb.recordset")
 	rsProc.Open objCmd
 %>
-<table width="100%" border="0" cellspacing="3">
-  <tr> 
-    <td><h3>AUDIT WORKSHEET - <%=UCase(Left(audittype,1))& Mid(audittype,2) %> Audit</h3></td>
-    <td> 
-      <div align="right"><img src="utslogo.gif" width="135" height="30"></div>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-      &nbsp;&nbsp;
-      <table border="1" width="100%" cellpadding="2">
+
+
+<a href="http://www.uts.edu.au/"><img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="left"></a>
+
+
+
+<table  width="95%" border="0" cellspacing="0">
+		<tr> 
+			<td colspan="2"><div align="left"><h2>AUDIT WORKSHEET - <%=UCase(Left(audittype,1))& Mid(audittype,2) %> Audit</h2></div></td>
+		</tr>
+		<tr> 
+			<td colspan="2">&nbsp;&nbsp;
+		</tr>
+</table>
+
+
+
+<table id = "compact" width="100%">
         <tr> 
-          <td class="label" width="65%">
+          <td class="label" width="50%">
 		  <% 
 			Select case audittype
 				Case "facility"
@@ -144,17 +151,16 @@
           <td class="label">Name of Auditors:<br><br></td>
           <td class="label">Date of Audit:<br><br></td>
         </tr>
-        
-      </table>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"><br><h2>SUMMARY OF RESULTS</h2>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-      <table width="100%" border="1">
+</table>
+
+
+	</br>
+
+
+
+
+
+<table id = "compact" width="100%">
         <tr> 
           <td class="label" width="30%">HEALTH AND SAFETY MANAGEMENT</td>
           <!--<td width="20%">&nbsp;</td>-->
@@ -251,41 +257,87 @@
 %>
           </td>-->
         </tr>
-      </table>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-		<h2>HOUSEKEEPING</h2>
+</table>
+
+
+
+
+
+	</br>
+
     	
-    	<table border="1" width="100%">
-		<tr><td><br><br><br><br><br><br><br><br><br><br></td></tr>
-		</table>
+
+
+<table id = "worksheet" cellpadding="2" width="100%">
+			<tr> 
+			  <th colspan="2" class="StepMenu">HOUSEKEEPING</th>
+			</tr>
+			<tr><td><br><br><br><br><br><br><br><br><br><br></td></tr>
+</table>
+		
 			
-		<br>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2"> 
-      <h2>&nbsp;&nbsp;STATUS OF COMPLIANCE - RESULTS IN DETAIL<br>
-      </h2>
-    </td>
-  </tr>
-  <tr> 
-    <td colspan="2">
+	</br>
+
+
+
+<div class="page-break"></div>
+
+
+
+
+	<!--  DLJ 23Mar2018 add management specific questions for non management areas  -->
+
+		<%If audittype <> "management" Then %> 
+		<table id = "worksheet" cellpadding="2" width="100%">
+			<tr>
+				<th colspan="2" class="StepMenu">AWARENESS OF MANAGEMENT STRATEGIES</th>
+			</tr>
+			<tr>
+				<td colspan="2">Enter these findings in the Audit Form under the corresponding Compliance Requirement.</td>
+			</tr>
+			<tr>
+				<td width = "25%"><strong>Consultation:</strong> Evident that staff are aware of faculty/unit mechanisms to allow health and safety issues to be heard and shared with workers.</td><td> &nbsp;</td>
+			</tr>
+			<tr>
+				<td><strong>Planning:</strong> Evident that supervisor is aware of their responsibilities under the faculty/unit plan.</td><td></td>
+			</tr>
+			<tr>
+				<td><strong>Training and competency:</strong> Evident that supervisor is aware of faculty/unit training needs analysis.</td><td></td>
+			<tr>
+				<td><strong>Information:</strong> Evident that staff are aware of faculty/unit health and safety information sources, such as intranet.</td><td></td>
+			</tr>
+			<tr>
+				<td><strong>Faculty/Unit Audits:</strong> Evident that supervisor is aware of faculty/unit run safety audits.</td><td></td>
+			</tr>
+		</table>
+			<% End If %>
+
+
+
+
+
         
     <%
 	Function ShowStep(StepID)
 		dim sqlStep, sqlReq
 		dim rsStep, rsReq
 		
-		sqlStep = "Select stShortName from IN_Steps where stID = " & stepID
+		sqlStep = "Select stName from IN_Steps where stID = " & stepID
 		set rsStep = con.Execute (sqlStep)
 %>
-		<table border="1" cellpadding="2" width=100%>
-		 <tr> 
-          <td colspan="5" class="StepMenu"><%=rsStep("stShortName")%></td>
-        </tr>
+		
+
+
+
+		
+		<table id = "worksheet" cellpadding="2" width="100%">
+
+			<tr> 
+			  <th colspan="5" class="StepMenu"><%=rsStep("stName")%></th>
+			</tr>
+
+
+
         <tr> 
           <td class="label" width="25%">COMPLIANCE REQUIREMENTS</td>
           <!--<td width="14%"><span class="label">COMPLIANCE RATING 0,1,2,3</span> </td>-->
@@ -325,6 +377,9 @@
 <%
 	end function
 	
+
+
+
 	function ShowRequirement(ReqID)
 		dim sqlReq
 		dim rsReq
@@ -381,11 +436,12 @@
 			<br/>
 			<br/>
 			<span class="label">Compliance Rating [&nbsp;&nbsp;&nbsp;&nbsp;]</span><br/>
-			(0,1,2,3,N/A)
+			(0,1,2,N/A)
 			</td>
 			<% end if %>
 				<td><%=row.procedures%></td>
 				<td><%=row.evidenceCompliance%></td>
+				<!--td> <%If audittype = "facility" Then Response.write "check" Else Response.write " " %></td-->
 
 			<% if i=0 then %>
 				<td rowspan="<%if rsCount("Expr1") = 0 then response.write "1" else Response.write rsCount("Expr1") %>">&nbsp;</td>
@@ -401,6 +457,8 @@
 		public evidenceCompliance
 	End class
 	
+
+
 	function ShowProcedures(ReqID)
 		dim sqlPro, sqlNumOpt
 		dim rsPro, rsNumOpt
@@ -414,10 +472,19 @@
 		objCmd.CommandType = adCmdText
 		Set objCmd.ActiveConnection = con
 		
+		'sqlPro =	"SELECT IN_Procedures.*, prID, prChecked, prResponsibilities, prTimeframe, prTextBox " & _
+		'			"FROM IN_Procedures INNER JOIN AP_Procedures ON IN_Procedures.ipID = AP_Procedures.prProcedure " & _
+		'			"WHERE ipRequirement = ? and prActionPlan = ? and prChecked = Yes AND ip"&audittype&" = Yes " & _
+		'			"order by ipDisplayOrder"
+		' DLJ Mar2018 - would be great if the record set was selected by ipAudittype = Yes
+
 		sqlPro =	"SELECT IN_Procedures.*, prID, prChecked, prResponsibilities, prTimeframe, prTextBox " & _
 					"FROM IN_Procedures INNER JOIN AP_Procedures ON IN_Procedures.ipID = AP_Procedures.prProcedure " & _
-					"WHERE ipRequirement = ? and prActionPlan = ? and prChecked = Yes order by prID"
-'					"WHERE ipRequirement = ? and prActionPlan = ? and prChecked = Yes order by ipDisplayOrder"
+					"WHERE ipRequirement = ? and prActionPlan = ? and prChecked = Yes " & _
+					"order by ipDisplayOrder"
+
+
+					'					"WHERE ipRequirement = ? and prActionPlan = ? and prChecked = Yes order by prID"
 		'set rsPro = con.Execute (sqlPro) 
 		objCmd.CommandText = sqlPro
 		objCmd.Parameters.Append objCmd.CreateParameter("irId", adInteger, adParamInput, 50)
@@ -477,6 +544,8 @@
 		ShowProcedures = dcw
 	end function
 	
+
+
 	function ShowOptions(OptID)
 		dim sqlOpt
 		dim rsOpt
@@ -510,20 +579,21 @@
 	end function
 %>
 
-<% ShowStep(3) %>
+<div class="page-break"></div></br>
+	<% ShowStep(3) %>
+<div class="page-break"></div></br>
+	<% ShowStep(2) %>
+<div class="page-break"></div></br>
+	<% ShowStep(1) %>
 
 <BR><BR>
 
-<% ShowStep(1) %>
-
-<BR><BR>
-
-<% ShowStep(2) %>
-
-<BR><BR>
 
     </td>
 
   </tr>
 </table>
+
+
+
 <!-- #Include file="include\footer.asp" -->

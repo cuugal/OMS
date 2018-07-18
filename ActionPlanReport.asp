@@ -22,10 +22,13 @@
 	
 	sqlReq = "SELECT IN_Requirements.* " & _
 			 "FROM IN_Requirements INNER JOIN AP_Requirements ON IN_Requirements.irId = AP_Requirements.arRequirement " & _
-			 "WHERE arActionPlan = " & ActionPlan & " and irStep = 2 and arSelected = Yes order by irid"
+			 "WHERE arActionPlan = " & ActionPlan & " and irStep = 2 and arSelected = Yes order by irDisplayOrder"
+'			 "WHERE arActionPlan = " & ActionPlan & " and irStep = 2 and arSelected = Yes order by irid"
 			 set rsReq = con.Execute (sqlReq)
+	
 			 
-		function ShowLists(ListType)
+
+function ShowLists(ListType)
 		dim rslist, sqlList
 		
 		sqlList =	"SELECT DISTINCTROW IN_Lists.lsPoints " & _
@@ -47,27 +50,53 @@
 			
 			rslist.MoveNext
 		wend
-	end function 
+end function 
+
 %>
-<table width="100%" border="0" cellspacing="3">
+
+<img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="left">
+
+
+
+
+<table  width="95%" border="0" cellspacing="1">
+
 <tr> 
-	<td><!--<img src="ehslogo2.gif" width="142" height="111" alt="EHS logo" border="0">-->&nbsp;</td>
-    <td><div align="right"><img src="utslogo.gif" width="123" alt="The UTS home page" height="52" style="border:10px solid white" align="right"></div></td>
+	<td colspan="2"><div align="center"><h2><%=rsAP("dpName")%><br>HEALTH AND SAFETY PLAN&nbsp;<%=rsAP("apStartYear")%> - <%=rsAP("apEndYear")%></h2></div></td>
 </tr>
+
+
+<!--DLJ 7dec2017 added the valid until date -->
+<%
+valid =   DateAdd ("yyyy", (rsAP("apEndYear")-rsAP("apStartYear")), rsAP("apCompletionDate")) 
+%>
+
 <tr> 
-    <td colspan="2"><div align="center"><h2><%=rsAP("dpName")%><br>HEALTH AND SAFETY PLAN&nbsp;<%=rsAP("apStartYear")%> - <%=rsAP("apEndYear")%></h2></div></td>
+    <td>
+	<p><b><%=rsAP("apDDOption")%>:&nbsp;<%=rsAP("apDDName")%></b></p>
+
+	<p class="label">Date Plan Finalised: <%=rsAP("apCompletionDate")%>	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Valid until: <%=valid%></p>
+	</td>
 </tr>
-<tr> 
-    <td><p><%=rsAP("apDDName")%><br><b><%=rsAP("apDDOption")%></b></p></td>
-    <td><p class="label">&nbsp;<br>Date Plan Finalised: <%=rsAP("apCompletionDate")%></p></td>
-</tr>
+
 <tr> 
     <td colspan="2">
     <p>The <%=rsAP("dpName")%>  is committed to providing a safe and healthy workplace for students, staff, contractors and visitors. Promoting a safe and healthy workplace is the responsibility of all staff.  This is consistent with the University's Health and Safety Policy, the UTS Health and Safety Plan, the NSW Work Health and Safety Act and associated legislation and with legislation exercised by the NSW Environment Protection Authority.</p>
+	</td>
+</tr>
 
-		<p>This Plan was developed by:<br><br><%=rsAp("apDevelopedBy")%></p>
+<tr>
+	<td>
 
-		<p>This group:</p>
+		<strong>This Plan was developed by:</strong><br><%=rsAp("apDevelopedBy")%>
+
+	</td>
+</tr>
+
+<tr>
+	<td>
+
+	<p>This group:</p>
 		<ul>
 			<li>identified the hazards that may be encountered by staff, students, contractors and visitors,</li>
 			<li>assessed the level of compliance of the faculty/unit with each of the compliance requirements,</li>
@@ -75,14 +104,15 @@
 			<li>designated responsibilities and timeframes for implementation of these procedures.</li>
 		</ul>
 
-		<p>This Plan includes the procedures, responsibilities and timeframes for:</p>
+<!--
+	<p>This Plan includes the procedures, responsibilities and timeframes for:</p>
 		<ul>
         <li>Health and Safety Management</li>
         <li>Health and Safety Procedures</li>
         <li>Specific Hazard Programs</li>
-        <ul>
-        <li>Specific Hazards
 			<ul>
+			<li>Specific Hazards
+				<ul>
 <%
 	if not rsReq.BOF then
 		while not rsReq.EOF
@@ -95,8 +125,8 @@
 		
 		rsReq.MoveFirst
 %>   
-			</ul>
-			<!-- </ul>  -->
+				</ul>
+			<ul>
 <%
 		while not rsReq.EOF
 			if rsReq("irid") = 16 or rsReq("irid") = 17 or rsReq("irid") = 18 or rsReq("irid") = 19 then 
@@ -107,230 +137,45 @@
 		wend
 	end if
 %>		
-		</ul>
+			</ul>
     </td>
-	</tr>
-	<tr>
-	<td colspan="2" width="100%">
-		<table border="1" width="100%">
-		<tr>
-			<td width="100%">
-				<table width="100%">
-				<tr>
-					<td width="40%"><br>
-          <b>Dean/Director:</b></td>
-					<td><br>
-          <b>Signature:</b><br><br><br>
-          <b>Date: <!--<%=date()%>--></b><br><br></td>
-				</tr>
-				</table>
-			</td>
-		</tr>
+</tr>
+
+-->
+
+<tr>
+
+
+		<table id = "plan" border="1" width="95%" cellspacing="1">
+			<tr>
+				<td width="40%"><br>
+				<b>Dean/Director:</b>
+				</td>
+
+				<td><br>
+				<b>Signature:</b><br><br><br>
+				<b>Date: </b><br><br>
+				</td>
+			</tr>
 		</table>
-	</td>
+
+	
+
 </tr>		
+
 <tr>
 	<td colspan="2"><br></td>
 </tr>
-<tr>
-	<td colspan="2"><hr></td>
-</tr>
+
 <tr>
 	<td colspan="2">
 
-	<table border="0">
-		<tr>
-			<td class="label">HEALTH AND SAFETY RESPONSIBILITIES<br><br></td>
-		</tr>
-		<tr>
-			<td>
-				<ul>
-				<li><span class="label">Staff must:</span>
-				<ul>
-					<li>take reasonable care of, and cooperate with actions taken to protect, the health and safety of both themselves and others</li>
-					<li>follow safe work practices as provided by their supervisor, including the proper use of any personal protective equipment supplied</li>
-					<li>seek information or advice from a supervisor before performing new or unfamiliar tasks</li>
-					<li>report all health and safety accidents, incidents and hazards to their supervisor as soon as is practicable</li>
-					<li>follow the emergency evacuation procedures</li>
-					<li>support workplace injury management and return-to-work programs in their work areas.</li>
-				</ul>
-				</li>
 
-				<li><span class="label">In addition, academic staff will:</span>
-					<ul>
-						<li>provide relevant and practical health and safety information to students (through inclusion in curricula and course notes)</li>
-						<li>take steps to ensure students adopt safe work practices</li>
-						<li>conduct and document risk assessments on research and consulting programs/projects, and ensuring that risks are eliminated or controlled</li>
-						<li>consult with staff who may be affected by health and safety risks during risk assessments, when decisions are made about the measures to be taken to eliminate or control these risks, and when these risk assessments are reviewed.</li>
-					</ul>
-				</li>
 
-				<li><span class="label">Other workers must:</span>
-					<ul>
-						<li>take reasonable care of, and cooperate with actions taken to protect, the health and safety of both themselves and others</li>
-						<li>follow safe work practices as provided by their supervisor, including the proper use of any personal protective equipment supplied</li>
-						<li>seek information or advice from a supervisor before performing new or unfamiliar tasks</li>
-						<li>report all health and safety accidents, incidents and hazards to their supervisor as soon as is practicable</li>
-						<li>follow the emergency evacuation procedures.</li>
-					</ul>
-				</li>
+	
 
-				<li><span class="label">Students must:</span>
-					<ul>
-						<li>take reasonable care of, and cooperate with actions taken to protect, the health and safety of both themselves and others</li>
-						<li>follow safe work practices, including the proper use of any personal protective equipment supplied</li>
-						<li>seek information or advice from a staff member before performing new or unfamiliar tasks</li>
-						<li>report all health and safety accidents, incidents and hazards to a staff member as soon as is practicable</li>
-						<li>follow the emergency evacuation procedures.</li>
-					</ul>
-				</li>
 
-				<li><span class="label">Visitors to UTS must:</span>
-				<ul>
-					<li>take reasonable care of, and cooperate with actions taken to protect, the health and safety of both themselves and others</li>
-					<li>report all health and safety accidents, incidents and hazards to a staff member as soon as is practicable</li>
-					<li>follow the emergency evacuation procedures.</li>
-				</ul>
-				</li>
 
-				<li><span class="label">Deans and Directors must:</span>
-				<ul>
-					<li>ensure that the Health and Safety Policy and related health and safety risk management programs are effectively implemented in their areas of control</li>
-					<li>integrate health and safety risk management into their operations, teaching, research and consulting functions and work environments</li>
-					<li>support supervisors and managers in providing appropriate resources for the effective implementation of their Faculty/Unit Health and Safety Plan</li>
-					<li>ensure that managers, supervisors and staff are aware of their responsibilities under the Health and Safety Policy and Faculty/Unit Health and Safety Plan through effective delegation, training and promotion of the Policy and health and safety procedures</li>
-					<li>hold supervisors and managers accountable for their specific responsibilities</li>
-					<li>authorise appropriate action to remedy non-compliance with the Health and Safety Policy or health and safety procedures</li>
-					<li>ensure that a Faculty/Unit Health and Safety Plan is developed, implemented and monitored in consultation with staff</li>
-					<li>conduct a self-assessment of their faculty or unit's compliance against their Faculty/Unit Health and Safety Plan at regular intervals and report on progress to the Human Resources Unit.</li>
-				</ul>
-
-				<li><span class="label">Deans and Directors of academic units must also:</span>
-				<ul>
-					<li>ensure all staff undertake appropriate health and safety risk assessments for curriculum, research and consulting activities</li>
-					<li>encourage the incorporation of health and safety risk management into curriculum and research.</li>
-				</ul>
-
-				<li><span class="label">Associate Deans, Heads of School and equivalent Faculty-based academic managers must:</span>
-				<ul>
-					<li>ensure that the Health and Safety Policy and related health and safety risk management programs are effectively implemented in their areas of control</li>
-					<li>integrate health and safety risk management into their operations, teaching, research and consulting functions and work environments</li>
-					<li>support supervisors and managers in providing appropriate resources for the effective implementation of their Faculty/Unit Health and Safety Plan</li>
-					<li>ensure that managers, supervisors and staff are aware of their responsibilities under the Health and Safety Policy and Faculty/Unit Health and Safety Plan through effective delegation, training and promotion of the Policy and health and safety procedures</li>
-					<li>hold supervisors and managers accountable for their specific responsibilities</li>
-					<li>authorise appropriate action to remedy non-compliance with the Health and Safety Policy or health and safety procedures.</li>
-				</ul>
-				</li>
-
-					
-<%
-			ShowAdditionalPoints(1)
-%> 
-				<!-- CKL commented out 13/5/2013
-				</ul>
-				<li><span class="label">Academics are also responsible for:</span></li>
-				<ul>
-					<li>providing relevant and practical health and safety information to students</li>
-					<li>taking steps to ensure students adopt safe work practices<br><br></li> 
-				-->
-<%
-			ShowAdditionalPoints(2)
-%>
-				<!-- CKL commented out 13/5/2013
-				</ul>
-				<li><b>The <%=rsAP("apDDOption")%> is also responsible for:</b></li>
-				<ul>
-					<li>developing and maintaining a Faculty/Unit Health and Safety Plan</li>
-					<li>ensuring that the Health and Safety Policy and hazard management programs are effectively implemented in their areas of control</li>
-					<li>supporting supervisors and holding them accountable for their specific responsibilities</li>
-					<li>providing appropriate resources for the effective implementation of this Health and Safety Plan</li>
-					<li>ensuring that management and staff are aware of their responsibilities under the Health and Safety Policy through effective delegation, training and promotion of the Health and Safety Policy and procedures<br></li>
-					<li>authorising appropriate action to remedy non-compliance with the Health and Safety Policy or with safety procedures<BR><BR>
-							<b>and, as part of their academic leadership role <%=rsAP("apHeadOfUnit")%> are also required to:</b></li>
-            		<li>ensure appropriate safety issues are included in curriculum and research projects</li>
-            		<li>encourage the incorporation of health and safety risk management into curriculum and research.</li> -->
-<%
-			ShowAdditionalPoints(3)
-%>
-				</ul> 
-<%
-		dim rsRespHead, sqlRespHead, rsResp, sqlResp
-				
-		set rsRespHead = server.CreateObject ("adodb.recordset")
-		set rsResp = server.CreateObject ("adodb.recordset")
-				
-		sqlRespHead = "Select * from AP_ResponsibilityHeadings where rhActionPlan = " & ActionPlan
-		set rsRespHead = con.Execute (sqlRespHead)
-				
-		while not rsRespHead.EOF
-			Response.Write "<li><span class='label'>" & rsRespHead("rhTitle") & "</span></li>"
-					
-			sqlResp = "Select * from AP_Points where arSection = " & rsRespHead("rhID") & " and arActionPlan = " & ActionPlan
-			set rsResp = con.Execute(sqlResp)
-					
-			Response.Write "<ul>"
-					
-			if not rsResp.BOF then
-
-				while not rsResp.EOF
-					Response.Write "<li>" & rsResp("arText") & "</li>"
-						
-					rsResp.MoveNext
-				wend
-		
-			end if
-					
-			Response.Write "</ul>"
-					
-			rsRespHead.MoveNext
-		wend
-%> 
-			</ul></td>
-		</tr>
-		</table>
-
-	</td>
-</tr>
-<tr>
-	<td colspan="2"><hr></td>
-</tr>
-<tr>
-  <td colspan="2">
-		<!--
-		XXXXXXXXXXXXXXXXXXXXXXXX
-		DLJ EDIT - temporarily commented out until list generation function is repaired 5/5/4
-		
-		Stephen - Readded this section and tested  to be working correctly according to new specification
-		-->
-		<p class="label">The following records and documentation are available to prove compliance:</p>
-		<ul>
-<%
-		ShowLists("rec")
-%>    
-		</ul>
-		<p class="label">The following signage and posters will be displayed</p>
-		<ul>
-<%
-		ShowLists("sig")
-%> 
-		</ul>
-		<p class="label">Information/training sessions will be conducted</p>
-		<ul>
-<%
-		ShowLists("tra")
-%>
-		</ul><p class="label">The following is a checklist of procedures to meet compliance in high-risk facilities and work areas</p>
-		<ul>
-<%
-		ShowLists("ccl")
-%>
-
-		</ul>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"><hr><br></td>
-</tr>
 <!-- Form Outline removed<tr>
 	<td colspan=2>--><%
 	function ShowFormBOutline()		dim sqlSteps		dim rsSteps	
@@ -408,33 +253,44 @@
 
 
 
+
+
+
+
+
+
 <%
 	Function ShowStep(StepID)
 		dim sqlStep, sqlReq
 		dim rsStep, rsReq
 		
-		sqlStep = "Select stShortName from IN_Steps where stID = " & stepID
+		sqlStep = "Select stShortName, stName, stFormOrder from IN_Steps where stID = " & stepID
+		'Response.write sqlStep
 		set rsStep = con.Execute (sqlStep)
 %>
 
-		<p><font size="1">*Compliance Ratings:<br>
-		0 = Non-compliant, 1 = Non-compliant - Some action evident but not yet compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</font></p>
+		<!--p><font size="1">*Compliance Ratings:<br>
+		0 = Non-compliant, 1 = Non-compliant - Some action evident but not yet compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</font></p-->
 
-		<table border="1" cellpadding="2" width="100%">
+
+<div class="page-break"></div>
+
+
+		<table id = "plan" cellpadding="2" width="100%">
 			<tr> 
-			  <td colspan="5" class="StepMenu"><%=rsStep("stShortName")%></td>
+			  <th colspan="5" class="StepMenu"><%=rsStep("stName")%></th>
 			</tr>
 
 			<tr> 
-			  <td class="label">COMPLIANCE REQUIREMENT</td>
+			  <td class="label" width ="30%">COMPLIANCE REQUIREMENT</td>
 			<!--note that the date in the following line is month and year NOW. It should be month and
 			date report is saved i.e <%=rsAP("apCompletionDate")%>
 		DLJ made this change 10 August 2004
 			-->
-			  <td><span class="label">Compliance at <%=rsAP("apCompletionDate")%> <!--<%=monthname(month(Date()),true)%>&nbsp;<%=year(Date())%> -->*</span></td>
+			  <!--td><span class="label">Compliance at <%=rsAP("apCompletionDate")%> <<%=monthname(month(Date()),true)%>&nbsp;<%=year(Date())%>>*</span></td-->
 			  <td class="label">Health and Safety Procedures</td> <!-- dlj took out open span tag -->
-			  <td class="label">Responsibilities</td>
-			  <td class="label">Complete by</td>
+			  <td class="label" width = "10%">Responsibilities</td>
+			  <td class="label" width = "10%">Complete by</td>
 			</tr>
 <%
 		'Response.Write rsStep("stBasicHeader")
@@ -460,7 +316,8 @@
 		
 		sqlReq =	"SELECT IN_Requirements.*, AP_Requirements.arRating " & _
 					"FROM IN_Requirements INNER JOIN AP_Requirements ON IN_Requirements.irId = AP_Requirements.arRequirement " & _
-					"WHERE AP_Requirements.arActionPlan = " & ActionPlan & " AND IN_Requirements.irId = " & ReqID
+					"WHERE AP_Requirements.arActionPlan = " & ActionPlan & " AND IN_Requirements.irId = " & ReqID & " order by irDisplayOrder"
+
         'response.write sqlReq
 		set rsReq = con.Execute (sqlReq)
 		
@@ -471,7 +328,7 @@
 %>
 		<tr>
 			<td rowspan="<%=rsCount("Expr1")%>"><span class="label"><%=rsReq("irName")%></span><br><%=rsReq("irdescription")%></td>
-			<td rowspan="<%=rsCount("Expr1")%>"><%=rsReq("arRating")%></td>
+			<!--td rowspan="<%=rsCount("Expr1")%>"><%=rsReq("arRating")%></td-->
 		
 <%		
 
@@ -570,37 +427,86 @@
 
 <br><br>
 
+<% ShowStep(2) %>
+
+<br><br>
+
 <% ShowStep(1) %>
 
 <br><br>
 
-<% ShowStep(2) %>
 
-<br><br>
+<div class="page-break"></div>
+
+
 <table width="100%" border="0">
-<tr> 
-	<td class="label">RESOURCE LIST</td>
-</tr>
-<%
-	dim sqlResource, rsResource
-	
-	sqlResource =	"SELECT * FROM IN_Requirements INNER JOIN AP_Requirements ON IN_Requirements.irId = AP_Requirements.arRequirement " & _
-					"where arActionPlan = " & ActionPlan & " and arSelected = Yes order by irid"
-	set rsResource = con.Execute (sqlResource)
-%>
-<tr> 
-	<td>
+	<tr>
+		<td colspan="2"><hr></td>
+	</tr>
+
+	<tr>
+			<td class="label">HEALTH AND SAFETY RESPONSIBILITIES<br><br></td>
+	</tr>
+		<!-- DLJ 14Jun2017 deleted responsibilties list -->
+	<tr>
+			<td>Refer to the UTS <i>Health and Safety Responsibilities Vice-Chancellor's Directive</i> on the Health and Safety website for detailed responsibilities of discrete groups within the University community.</td>
+			
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="2"><hr></td>
+	</tr>
+
+	<tr>
+		<td colspan="2"><br></td>
+	</tr>
+	<tr> 
+		<td class="label">RESOURCE LIST</td> 
+	</tr>
+	<tr>
+		<td>
+
+		<!--
+		XXXXXXXXXXXXXXXXXXXXXXXX
+		DLJ EDIT - temporarily commented out until list generation function is repaired 5/5/4
+		
+		Stephen - Readded this section and tested  to be working correctly according to new specification
+		-->
+		<p class="label">The following records and documentation are available to prove compliance:</p>
 		<ul>
 <%
-		while not rsResource.EOF
-			Response.Write "<br><li><b>" & rsResource("irName") & "</b></li>"
-			Response.Write "<ul>" & rsResource("irResourceList") & "</ul>"
-			
-	
-			rsResource.MoveNext
-		wend
+		ShowLists("rec")
+%>    
+		</ul>
+		<p class="label">The following signage and posters will be displayed</p>
+		<ul>
+<%
+		ShowLists("sig")
+%> 
+		</ul>
+		<p class="label">Information/training sessions will be conducted</p>
+		<ul>
+<%
+		ShowLists("tra")
 %>
-	</ul></td>
-</tr>
+		</ul><p class="label">The following is a checklist of procedures to meet compliance in high-risk facilities and work areas</p>
+		<ul>
+<%
+		ShowLists("ccl")
+%>
+
+		</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2"><hr><br></td>
+	</tr>
+
 </table>
+
+
+
 <!-- #Include file="include\footer.asp" -->

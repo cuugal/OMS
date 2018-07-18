@@ -236,3 +236,16 @@ to:
 
 8/05/2014 - C. Lee
 In IN_Procedures, for ipID=37 : changed erroneous entry for manual handling compliance requirement from, "Provide information on safe work practices to <i>staff</i> at risk" to become "Provide instruction on safe work practices to <i>staff</i> at risk"
+
+
+
+
+9 March 2018 - D Lloyd-Jones
+Major update to content shown on Action plan forms and report
+Edited ActionPlanReport.asp, ActionPlanFormB.asp, ActionPlanFormA.asp, ActionPlanMenu.asp, Menu.asp and include/Header.asp
+Edited the CSS and took out redundant information, pertaining to ratings, signature and moved the resource list 
+
+
+
+
+

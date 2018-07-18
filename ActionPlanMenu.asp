@@ -40,7 +40,7 @@
 	end if
 %>
 
-<table width="100%" cellspacing="0" border="0" cellpadding="4" align="center"><tr bgcolor="#0099cc">
+<table width="100%" cellspacing="0" border="0" cellpadding="4" align="center"><tr bgcolor="#0f4beb">
 	<td>		<font size=+1 face=arial color=white>			<b>&nbsp; Health &amp; Safety Plans for the <% =Session("DepName") %></b>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<font size=-1 face=arial color=white><%=Session("AccessLevel")%></font>

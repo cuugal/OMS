@@ -121,8 +121,8 @@
 
 <table width="100%" border="0" cellspacing="3">
 <tr> 
-	<td><!-- commented out the old EHS Branch logo <img src="ehslogo2.gif" width="142" height="111" alt="EHS logo" border="0">-->&nbsp;</td>
-	<td><div align="right"><img src="utslogo.gif" width="102" alt="The UTS home page" height="44" style="border:10px solid white" align="right"></div></td>
+	<td><div align="left"><img src="utslogo.gif" width="102" alt="The UTS home page" height="44" style="border:10px solid white" align="right"></div></td>
+	<td></td>
 </tr>
 <tr> 
     <td colspan="2">
@@ -142,13 +142,16 @@
 		<input type="hidden" name="apID" value="<%=ActionPlan%>">
 		<input type="hidden" name="department" value="<%=Session("DepID")%>">
     
-		<table width="100%" border="0" cellspacing="0">
+
+
+
+	<table width="90%" id = "planA">
         <tr> 
-			<td class="label" colspan="4">Faculty/Unit:</td>
+			<td class="label"  width="15%">Faculty/Unit:</td>
 			<td><%=Session("DepName")%></td>
         </tr>
         <tr> 
-			<td class="label" colspan="4">Dean/Director:</td>
+			<td class="label">Dean/Director:</td>
 			<td> 
 				<input type="text" name="apDeanDirector" value="<%=apDeanDirector%>">
 				<i>&nbsp;&nbsp;&nbsp;Select:</i> 
@@ -159,18 +162,21 @@
 			</td>
         </tr>
         <tr> 
-			<td class="label" colspan="4">Date: </td>
+			<td class="label">Date:</td>
 			<td><%=date()%></td>
         </tr>
-        <tr>
+
+        <!--tr>
 			<td colspan="5">
 				<br>
 				<font size="3"><b>Health and Safety Procedures</b></font><br>
 				<b>Rate your current level of compliance against each compliance requirement.</b><br>
 				<i>Compliance Ratings: 0 = Non-Compliant, 1 = Non-Compliant - some action evident but not fully compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</i>
 			</td>
-        </tr>
-        </table>
+        </tr-->
+        
+	</table>
+
 
 		<%
 		dim date1
@@ -184,11 +190,11 @@
 	
 		
 		%>
-        <table border="1" width="90%">
+        <!--table border="1" width="90%">
         <tr>
 			<td width="75%">Compliance Requirement</td>
 			<td width="25%">Previous Compliance Rating (0, 1, 2, 3)</td>
-			<!-- td width="25%">Compliance Rating (0, 1, 2, 3) at date: <%=date1%></td -->
+			< td width="25%">Compliance Rating (0, 1, 2, 3) at date: <%=date1%></td>
         </tr>
 <%
 		dim rating
@@ -210,7 +216,7 @@
 			if(rating = "" or rating <0) then rating = "00" end If
 			' would be better if 00 was replaced with a dash
 %>
-			<tr>
+			<!tr>
 				<td><%=rsFormA("irFormADescription")%> </td>
 			
 				<td><% =rating %>
@@ -223,20 +229,20 @@
 			rsFormA.movenext
 		wend		
 %>
-        </table>
+        </table-->
         
+		<p>
         <br>
-		<font size="3"><b>Specific Hazard Programs</b></font><br>
-		<b>&nbsp;&nbsp;&nbsp;&nbsp;1) Note if any of the following have been identified in your Faculty/Unit, and<BR>
-		&nbsp;&nbsp;&nbsp;&nbsp;2) Rate your current level of compliance.</b><BR>
-		<i>Compliance Ratings: 0 = Non-Compliant, 1 = Non-Compliant - some action evident but not fully compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</i>
+		</p>
+		<font size="3"><b>Specific Hazard Programs</b></font> - Select hazards identified in your Faculty/Unit<BR>
+		<!--i>Compliance Ratings: 0 = Non-Compliant, 1 = Non-Compliant - some action evident but not fully compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</i-->
 		
-        <table border="1" width="90%">
+        <table id = "planA" width="90%">
         <tr>
-			<td width="30%">Specific Hazards</td>
-			<td>For example - staff/student undertake work which involves:</td>
+			<th width="15%"><strong>Specific Hazards</strong></th>
+			<th><strong>For example - staff/student undertake work which involves:</strong></th>
 			<!-- td width="25%">Compliance Rating (0, 1, 2, 3) at date: <%=date1%></td -->
-			<td width="25%">Previous Compliance Rating (0, 1, 2, 3)</td>
+			<!--td width="25%">Previous Compliance Rating (0, 1, 2, 3)</td-->
         </tr>
 <%
 		rsFormA.movefirst
@@ -275,7 +281,7 @@
 				  <%=rsFormA("irName")%>
 				</td>
 				<td><%=rsFormA("irFormADescription")%> </td>
-				<td><% =rating%></td>
+				<!--td><% =rating%></td-->
 			</tr>
 <%		
 			end if
@@ -286,13 +292,15 @@
 		</table>
 		
 		<br>
-		<font size="3"><b>Health and Safety Management</b></font><br>
+
+		<!--font size="3"><b>Health and Safety Management</b></font><br>
 		<b>Rate your current level of compliance against each compliance requirement.</b><BR>
-        <i>Compliance Ratings: 0 = Non-Compliant, 1 = Non-Compliant - some action evident but not fully compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</i>
-        <table border="1" width="90%">
+        <i>Compliance Ratings: 0 = Non-Compliant, 1 = Non-Compliant - some action evident but not fully compliant, 2 = Compliant - just requires maintenance, 3 = Best practice evident</i-->
+        
+		<!--table border="1" width="90%">
         <tr>
 			<td width="75%">Compliance Requirement</td>
-			<!-- td width="25%">Compliance Rating (0, 1, 2, 3) at date: <%=date1%> </td -->
+			<td width="25%">Compliance Rating (0, 1, 2, 3) at date: <%=date1%> </td>
 			<td width="25%">Previous Compliance Rating (0, 1, 2, 3)</td>
         </tr>
 <%
@@ -326,7 +334,7 @@
 			rsFormA.movenext
 		wend
 %>
-        </table>
+        </table-->
 <%
 	if SecurityCheck(2) then ' User must have write access for this department
 %>
