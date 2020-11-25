@@ -391,7 +391,7 @@
 			if rsPro("ipIsTextBox") = true then
 				'Response.Write "<input type='text' name='proTxt_" & rsPro("prProcedure") & "' value='" & rsPro("prTextBox") & "'>"
 				'Response.Write "<input type='text' name='proTxt_" & rsPro("prProcedure") & "' value='" & responsibility & "'>"  NOT RESPONSIBILITY, created textbox line below - DLJ 17feb15
-				Response.Write "<input type='text' size='70' name='proTxt_" & rsPro("prProcedure") & "' value='" & textbox & "'>"
+				Response.Write "<input type='text' size='90' name='proTxt_" & rsPro("prProcedure") & "' value='" & textbox & "'>"
 			end if
 
 			sqlNumOpt = "SELECT count(*) as NumOptions " & _
@@ -407,7 +407,7 @@
 %>
 				</td>
 				<!--  table input boxes below made to fixed size by DLJ on 21Sept2004 also see line 186 -->
-				<td><INPUT type="text" name="resp_<%=rsPro("ipID")%>" value="<%=responsibility%>" size=75><%'if rsPro("ipMandatory") = true then Response.Write " <font size=5 color=red><b>*</b></font>"%></td>
+				<td><INPUT type="text" name="resp_<%=rsPro("ipID")%>" value="<%=responsibility%>" size=90><%'if rsPro("ipMandatory") = true then Response.Write " <font size=5 color=red><b>*</b></font>"%></td>
 				<td><INPUT type="text" name="time_<%=rsPro("ipID")%>" value="<%=timeframe%>" size =15><%'if rsPro("ipMandatory") = true then Response.Write " <font size=5 color=red><b>*</b></font>"%></td>
 			</tr>
 <%		

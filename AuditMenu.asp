@@ -144,7 +144,7 @@
 			%>
 				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=facility');">Facility Audit</a>  |  
 				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=management');">Management Audit</a>  |  
-				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=research');">Research Audit</a>  |  
+				<!--a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=research');">Research Audit</a>  |  -->
 				<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditWorksheet.asp?apID=<%=ActionPlan%>&type=curriculum');">Curriculum Audit</a>
 			<%
 			else
@@ -173,7 +173,7 @@
 			%>
 					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=facility');">Facility Audit</a> | 
 					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=management');">Management Audit</a> | 
-					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=research');">Research Audit</a> | 
+					<!--a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=research');">Research Audit</a> | -->
 					<a href="javascript:void(0)" onclick="javascript:OpenWindow('AuditForm.asp?apID=<%=ActionPlan%>&Mode=New&type=curriculum');">Curriculum Audit</a>
 
 			<%
