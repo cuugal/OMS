@@ -82,7 +82,7 @@
 
 	<tr> 
 		<td colspan="2">
-		<p>The <%=rsAP("dpName")%> is committed to providing a safe and healthy workplace for students, staff, contractors and visitors. Promoting a safe and healthy workplace is the responsibility of all staff.  This is consistent with the University's Health and Safety Policy, the UTS Health and Safety Plan, the NSW Work Health and Safety Act and associated legislation and with legislation exercised by the NSW Environment Protection Authority.</p>
+		<p>The <%=rsAP("dpName")%> is committed to providing a safe and healthy workplace for students, staff, contractors and visitors. Promoting a safe and healthy workplace is the responsibility of all staff.  This is consistent with the University's Health and Safety Policy, the UTS Health and Safety Plan and NSW Work Health legislation.</p>
 
 		<p>This Plan was developed by:<br><br><%=rsAp("apDevelopedBy")%></p>
 
@@ -417,7 +417,7 @@
 		</tr>
 		<!-- DLJ 14Jun2017 deleted responsibilties list -->
 		<tr>
-			<td>Refer to the UTS <i>Health and Safety Responsibilities Vice-Chancellor's Directive</i> on the Health and Safety website for detailed responsibilities of discrete groups within the University community.</td>
+			<td>Refer to the UTS <i>Health and Safety Policy</i> on the Health and Safety website for detailed responsibilities of discrete groups within the University community.</td>
 			
 		</tr>
 		<tr><td>&nbsp;</td>
