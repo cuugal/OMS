@@ -129,7 +129,7 @@ An outline of the University's Health and Safety Management System is available 
 <!-- DLJ replaced the hard-coded info with an SQL based table with plan period dates  -->
 <%
 
-sqlDepList = "SELECT AD_Departments.dpID, AD_Departments.dpName, AD_Departments.dpActionPlanDuration, AD_Users.lgName, AD_Users.lgPassword, AP_ActionPlans.apStartYear, AP_ActionPlans.apEndYear, AD_Departments.Inactive FROM (AD_Departments INNER JOIN AD_Users ON AD_Departments.dpID = AD_Users.lgDepartment) INNER JOIN AP_ActionPlans ON AD_Departments.dpID = AP_ActionPlans.apFaculty WHERE (((AD_Users.lgName)=[AD_Users].[lgPassword]) AND ((AP_ActionPlans.apEndYear)>Year(Date())-1) AND ((AD_Departments.Inactive)=False)) Order By dpName"
+sqlDepList = "SELECT AD_Departments.dpID, AD_Departments.dpName, AD_Departments.dpActionPlanDuration, AD_Users.lgName, AD_Users.lgPassword, AP_ActionPlans.apStartYear, AP_ActionPlans.apEndYear, AD_Departments.Inactive FROM (AD_Departments INNER JOIN AD_Users ON AD_Departments.dpID = AD_Users.lgDepartment) INNER JOIN AP_ActionPlans ON AD_Departments.dpID = AP_ActionPlans.apFaculty WHERE (((AD_Users.lgName)=[AD_Users].[lgPassword]) AND ((AP_ActionPlans.apEndYear)>Year(Date())+0) AND ((AD_Departments.Inactive)=False)) Order By dpName"
 
     set rsDepList = con.Execute (sqlDepList)
 %>
@@ -147,7 +147,7 @@ sqlDepList = "SELECT AD_Departments.dpID, AD_Departments.dpName, AD_Departments.
 		<th>Login ID</th>
 		<th>Faculty/Unit/Institute</th>
 		<th>Plan duration</th>
-		<th>Latest plan period</th>
+		<th>Current Plan Period</th>
 	</tr>
 
 <%
